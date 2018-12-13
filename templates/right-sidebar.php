@@ -13,7 +13,7 @@
 					<div class="col-md-12">
 						<a href="default/index.html" class="c-demo-container c-demo-img-lg">
 							<div class="c-demo-thumb active">
-								<img src="../assets/base/img/content/quick-sidebar/default.jpg" class="c-demo-thumb-img"/>
+								<img src="assets/base/img/content/quick-sidebar/default.jpg" class="c-demo-thumb-img"/>
 							</div>
 						</a>
 					</div>
@@ -22,14 +22,14 @@
 					<div class="col-md-6">
 						<a href="corporate_1/index.html" class="c-demo-container">
 							<div class="c-demo-thumb  c-thumb-left">
-								<img src="../assets/base/img/content/quick-sidebar/corporate_1.jpg" class="c-demo-thumb-img"/>
+								<img src="assets/base/img/content/quick-sidebar/corporate_1.jpg" class="c-demo-thumb-img"/>
 							</div>
 						</a>
 					</div>
 					<div class="col-md-6">
 						<a href="agency_1/index.html" class="c-demo-container">
 							<div class="c-demo-thumb  c-thumb-right">
-								<img src="../assets/base/img/content/quick-sidebar/corporate_1-onepage.jpg" class="c-demo-thumb-img"/>
+								<img src="assets/base/img/content/quick-sidebar/corporate_1-onepage.jpg" class="c-demo-thumb-img"/>
 							</div>
 						</a>
 					</div>

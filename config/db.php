@@ -5,7 +5,7 @@
   $host = 'localhost';
   $user = 'root';
   $pass = '';
-  $db = 'tcc';
+  $db = 'tanauaud_tcc';
 
   $conn = mysqli_connect($host, $user, $pass, $db);
 
