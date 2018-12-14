@@ -70,3 +70,95 @@
     })
   })
 </script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#reasonEntryTCC').change(function() {
+      if ( $("#reasonEntryTCC").val ()  ==  "Others") 
+      {                              
+          $('#reasonEntryTCCOther').show();
+      }
+      else
+          $("#reasonEntryTCCOther").hide();
+      }); 
+  });
+
+  $(document).ready(function() {
+    $('#shsTrack').change(function() {
+      if ( $("#shsTrack").val ()  ==  "Academic") 
+      {                              
+          $('#shsTrackAcademic').show();
+          $("#shsTrackTVL").hide();
+      }
+      else if ( $("#shsTrack").val ()  ==  "Technology Vocational Livelihood") 
+      {                              
+          $('#shsTrackAcademic').hide();
+          $("#shsTrackTVL").show();
+      }
+      else if ( $("#shsTrack").val ()  ==  "Arts and Design") 
+      {                              
+          $('#shsTrackAcademic').hide();
+          $("#shsTrackTVL").hide();
+      }
+      else if ( $("#shsTrack").val ()  ==  "Sports") 
+      {                              
+          $('#shsTrackAcademic').hide();
+          $("#shsTrackTVL").hide();
+      }
+      }); 
+  });
+
+  $(document).ready(function() {
+    $('#reasonEntryTCC').change(function() {
+        if ( $("#reasonEntryTCC").val ()  ==  "Others") 
+        {                              
+            $('#reasonEntryTCCOther').show();
+        }
+        else
+            $("#reasonEntryTCCOther").hide();
+      }); 
+  });
+
+  $(document).ready(function() {
+    $('#knowAboutCollege').change(function() {
+        if ( $("#knowAboutCollege").val ()  ==  "Others") 
+        {                              
+            $('#knowAboutCollegeOther').show();
+        }
+        else
+            $("#knowAboutCollegeOther").hide();
+      }); 
+  });
+
+  $(document).on('click', '#civilStatus', function(){
+    var status = $(this).val();
+    if(status == "Married"){
+      $("#for_married").show();
+    }
+    else if(status == "Single"){
+      $("#for_married").hide();
+    }
+  });
+
+  $(document).ready(function() {
+    $('#religion').change(function() {
+        if ( $("#religion").val ()  ==  "Other") 
+        {                              
+            $('#otherReligion').show();
+        }
+        else
+            $("#otherReligion").hide();
+      }); 
+  });
+
+  function addChild() {
+    $('#tableChildren').find('tbody').append($(
+      '<tr><td><input type="text" id="childrenName[]" name="childrenName[]" class="form-control childrenName" placeholder=""></td>' +
+      '<td><input type="text" id="childrenSex[]" name="childrenSex[]" class="form-control childrenSex" placeholder=""></td>' +
+      '<td><input type="text" id="childrenAge[]" name="childrenAge[]" class="form-control childrenAge" placeholder=""></td>' +
+      '<td><input type="date" id="childrenBirthDate[]" name="childrenBirthDate[]" class="form-control childrenBirthDate" placeholder=""></td>' +
+      '<td><input type="text" id="childrenBirthPlace[]" name="childrenBirthPlace[]" class="form-control childrenBirthPlace" placeholder=""></td>' +
+      '<td colspan="2"><input type="text" id="childrenEducationalAttainment[]" name="childrenEducationalAttainment[]" class="form-control childrenEducationalAttainment" placeholder=""></td></tr>'
+       ));
+    }
+</script>

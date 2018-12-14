@@ -3,6 +3,7 @@
   <div class="c-line-center c-theme-bg"></div>
 </div>
 
+<div id="for_married" style="display: none;">
 <div class="form-group">
   <div class="col-md-6">
     <h2 class="c-center c-font-uppercase c-font-bold">For Married: Information about spouse</h2>
@@ -106,6 +107,7 @@
       </tr>
     </tbody>
   </table>
+</div>
 </div>
 
 <div class="form-group">

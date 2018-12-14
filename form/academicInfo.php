@@ -268,13 +268,13 @@
 </div>
 
 <div class="form-group">
-<label for="vocationalRegion" class="col-md-2 control-label"></label>
+<label for="shsTrack" class="col-md-2 control-label"></label>
   <div class="col-md-4">
 	<select class='form-control' id='shsTrack'>
-		<option class="academicProblemFail" value="Academic">Academic</option>
-		<option class="academicProblemFail" value="Arts and Design">Arts and Design</option>
-		<option class="academicProblemFail" value="Sports">Sports</option>
-		<option class="academicProblemFail" value="Technology Vocational Livelihood">Technology Vocational Livelihood</option>
+		<option value="Arts and Design">Arts and Design</option>
+		<option value="Academic">Academic</option>
+		<option value="Sports">Sports</option>
+		<option value="Technology Vocational Livelihood">Technology Vocational Livelihood</option>
 	</select>
 	</div>
 
@@ -302,24 +302,24 @@
 </div>
 
 <div class="form-group">
-	<label for="vocationalRegion" class="col-md-2 control-label"></label>
+	<label for="reasonEntryTCC" class="col-md-2 control-label"></label>
 	  <div class="col-md-4">
 		<select class='form-control' id='reasonEntryTCC'>
-			<option class="academicProblemFail" value="Quality Education">Quality Education</option>
-			<option class="academicProblemFail" value="Proximity">Proximity</option>
-			<option class="academicProblemFail" value="Competent Professor">Competent Professor</option>
-			<option class="academicProblemFail" value="Recommended by Relatives">Recommended by Relatives</option>
-			<option class="academicProblemFail" value="Campus Environment">Campus Environment</option>
-			<option class="academicProblemFail" value="Good Facilities">Good Facilities</option>
-			<option class="academicProblemFail" value="Availability of Program">Availability of Program</option>
-			<option class="academicProblemFail" value="With National Government Subsidy">With National Government Subsidy</option>
-			<option class="academicProblemFail" value="With Local Government Subsidy">With Local Government Subsidy</option>
-			<option class="academicProblemFail" value="Others">Others (please specify)</option>
+			<option value="Quality Education">Quality Education</option>
+			<option value="Proximity">Proximity</option>
+			<option value="Competent Professor">Competent Professor</option>
+			<option value="Recommended by Relatives">Recommended by Relatives</option>
+			<option value="Campus Environment">Campus Environment</option>
+			<option value="Good Facilities">Good Facilities</option>
+			<option value="Availability of Program">Availability of Program</option>
+			<option value="With National Government Subsidy">With National Government Subsidy</option>
+			<option value="With Local Government Subsidy">With Local Government Subsidy</option>
+			<option value="Others">Others (please specify)</option>
 	    </select>
 	</div>
 
-	<div class="col-md-2">
-		<input type="text" class="form-control c-square c-theme" id="vocationalYearGrad" placeholder="Year Graduated" name="vocationalYearGrad" style="display: none">
+	<div class="col-md-4">
+		<input type="text" class="form-control c-square c-theme" id="reasonEntryTCCOther" placeholder="Other Reason" name="reasonEntryTCCOther" style="display: none">
 	</div>
 </div>
 
@@ -343,18 +343,18 @@
 </div>
 
 <div class="form-group">
-	<label for="gwAverage" class="col-md-2 control-label"></label>
+	<label for="knowAboutCollege" class="col-md-2 control-label"></label>
 	<div class="col-md-4">
 		<select class='form-control' id='knowAboutCollege'>
-			<option class="academicProblemFail" value="Career Orientation">Career Orientation</option>
-			<option class="academicProblemFail" value="Social Media">Social Media</option>
-			<option class="academicProblemFail" value="Employee of TCC">Employee of TCC</option>
-			<option class="academicProblemFail" value="Student of TCC">Student of TCC</option>
-			<option class="academicProblemFail" value="Others">Others(please specify)</option>
+			<option value="Career Orientation">Career Orientation</option>
+			<option value="Social Media">Social Media</option>
+			<option value="Employee of TCC">Employee of TCC</option>
+			<option value="Student of TCC">Student of TCC</option>
+			<option value="Others">Others(please specify)</option>
 		</select>
 	</div>
 
-	<div class="col-md-2">
+	<div class="col-md-4">
 		<input type="text" class="form-control c-square c-theme" id="knowAboutCollegeOther" placeholder="Other reason." name="knowAboutCollegeOther"  style="display: none">
 	</div>
 

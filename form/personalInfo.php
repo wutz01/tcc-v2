@@ -114,7 +114,7 @@
 
         <label for="age" class="col-md-1 control-label">Age</label>
         <div class="col-md-1">
-          <input type="email" class="form-control c-square c-theme" id="age" placeholder="Age" name="age" disabled>
+          <input type="text" class="form-control c-square c-theme" id="age" placeholder="Age" name="age" disabled>
         </div>
 
         <label for="age" class="col-md-1 control-label">Religion</label>
@@ -131,7 +131,7 @@
           </select>
         </div>
         <div class="col-md-2">
-          <input type="email" class="form-control c-square c-theme" id="otherReligion" placeholder="Other" name="otherReligion" style="display: none">
+          <input type="text" class="form-control c-square c-theme" id="otherReligion" placeholder="Other" name="otherReligion" style="display: none">
         </div>
       </div>
       
