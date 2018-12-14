@@ -72,16 +72,16 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             </div>
             <div class="modal-body">
-                <h3 class="c-font-24 c-font-sbold">Good Afternoon!</h3>
+                <h3 class="c-font-24 c-font-sbold">Hello!</h3>
                 <p>Let's make today a great day!</p>
-                <form>
+                <form id="global-login-frm" method="POST" action="../Login/ajaxRequest.php">
                     <div class="form-group">
-                        <label for="login-email" class="hide">Email</label>
-                        <input type="email" class="form-control input-lg c-square" id="login-email" placeholder="Email">
+                        <label for="login-email" class="hide">Username</label>
+                        <input type="text" class="form-control input-lg c-square" id="login-email" placeholder="Username" name="username">
                     </div>
                     <div class="form-group">
                         <label for="login-password" class="hide">Password</label>
-                        <input type="password" class="form-control input-lg c-square" id="login-password" placeholder="Password">
+                        <input type="password" class="form-control input-lg c-square" id="login-password" placeholder="Password" name="password">
                     </div>
                     <div class="form-group">
                         <div class="c-checkbox">
@@ -98,7 +98,7 @@
                         <button type="submit" class="btn c-theme-btn btn-md c-btn-uppercase c-btn-bold c-btn-square c-btn-login">Login</button>
                         <a href="javascript:;" data-toggle="modal" data-target="#forget-password-form" data-dismiss="modal" class="c-btn-forgot">Forgot Your Password ?</a>
                     </div>
-                    <div class="clearfix">
+                    <!-- <div class="clearfix">
                         <div class="c-content-divider c-divider-sm c-icon-bg c-bg-grey c-margin-b-20">
                             <span>or signup with</span>
                         </div>
@@ -122,13 +122,13 @@
                                 </a>
                             </li>
                         </ul>
-                    </div>
+                    </div> -->
                 </form>
             </div>
-            <div class="modal-footer c-no-border">
+            <!-- <div class="modal-footer c-no-border">
                 <span class="c-text-account">Don't Have An Account Yet ?</span>
                 <a href="javascript:;" data-toggle="modal" data-target="#signup-form" data-dismiss="modal" class="btn c-btn-dark-1 btn c-btn-uppercase c-btn-bold c-btn-slim c-btn-border-2x c-btn-square c-btn-signup">Signup!</a>
-            </div>
+            </div> -->
         </div>
     </div>
 </div><!-- END: CONTENT/USER/LOGIN-FORM -->

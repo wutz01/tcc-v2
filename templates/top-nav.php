@@ -38,7 +38,7 @@
               <a href="javascript:;" class="c-link">Courses</a>
             </li>
             <li class="all-nav login-nav">
-              <a href="javascript:;" class="c-link">Login</a>
+              <a href="javascript:showLogin();" class="c-link">Login</a>
             </li>
         	</ul>
         </nav>

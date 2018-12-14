@@ -158,10 +158,31 @@
 	<script src="../assets/base/js/components.js" type="text/javascript"></script>
 	<script src="../assets/base/js/components-shop.js" type="text/javascript"></script>
 	<script src="../assets/base/js/app.js" type="text/javascript"></script>
+	<script src="../assets/plugins/jquery-form/jquery-form.min.js"></script>
 	<script>
 	$(document).ready(function() {
 		App.init(); // init core
+
+
+		$('#global-login-frm').ajaxForm({
+      dataType: 'json',
+			data: {getfunctionName: 'logIn'},
+      success: (o) => {
+				if (o.is_successful) {
+					alert(o.message)
+					window.location.assign("General/dashboard.php");
+				} else {
+					alert(o.message)
+				}
+      },
+      beforeSubmit: (o) => {
+      }
+    })
 	});
+
+	function showLogin () {
+		$("#login-form").modal('toggle')
+	}
 	</script>
 	<!-- END: THEME SCRIPTS -->
 

@@ -186,7 +186,6 @@
 <?php
   include('templates/footer.php');
 ?>
-<script src="assets/plugins/jquery-form/jquery-form.min.js"></script>
 <script type="text/javascript">
   $(function () {
     $(".all-nav").removeClass('c-active')
