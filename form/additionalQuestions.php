@@ -34,21 +34,21 @@
     <input type="text" class="form-control c-square c-theme" id="spouseAddress" placeholder="Spouse Address" name="spouseAddress">
   </div>
 
-  <label for="employerApplicantAddress" class="col-md-2 control-label">Contact No.</label>
+  <label for="employerSpouseContact" class="col-md-2 control-label">Contact No.</label>
   <div class="col-md-4">
-    <input type="text" class="form-control c-square c-theme" id="employerSpouseAddress" placeholder="Spouse Contact No." name="employerApplicantAddress">
+    <input type="text" class="form-control c-square c-theme" id="employerSpouseContact" placeholder="Spouse Contact No." name="employerSpouseContact">
   </div>
 </div>
 
 <div class="form-group">
-  <label for="employerApplicantAddress" class="col-md-2 control-label">Occupation</label>
+  <label for="employerOccupation" class="col-md-2 control-label">Occupation</label>
   <div class="col-md-4">
-    <input type="text" class="form-control c-square c-theme" id="employerSpouseAddress" placeholder="Employer Address" name="employerApplicantAddress">
+    <input type="text" class="form-control c-square c-theme" id="employerOccupation" placeholder="Employer Address" name="employerOccupation">
   </div>
 
-  <label for="employerApplicantAddress" class="col-md-2 control-label">Employer</label>
+  <label for="employerSpouseEmployer" class="col-md-2 control-label">Employer</label>
   <div class="col-md-4">
-    <input type="text" class="form-control c-square c-theme" id="employerSpouseAddress" placeholder="Employer Address" name="employerApplicantAddress">
+    <input type="text" class="form-control c-square c-theme" id="employerSpouseEmployer" placeholder="Employer Name" name="employerSpouseEmployer">
   </div>
 </div>
 

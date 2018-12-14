@@ -36,33 +36,17 @@
       						<div class="tab-pane" id="tab_2_3_content">
       							<?php include 'form/additionalQuestions.php' ?>
       						</div>
-        						<div class="tab-pane" id="tab_2_4_content">
-        							<div class="c-content-title-1 c-title-md c-margin-b-20 clearfix">
-                        <h3 class="c-center c-font-uppercase c-font-bold">Academic Information</h3>
-                        <div class="c-line-center c-theme-bg"></div>
-                      </div>
-
-
-
-                      <div class="row">
-                        <div class="col-md-12">
-                          <div class="form-group c-margin-t-40">
-                              <div class="col-sm-offset-9 col-md-4">
-                                <button type="submit" class="btn c-theme-btn c-btn-square c-btn-uppercase c-btn-bold">Apply</button>
-                                <button type="button" class="btn btn-default c-btn-square c-btn-uppercase c-btn-bold">Back</button>
-                              </div>
-                          </div>
-                        </div>
-                      </div>
-        						</div>
-        					</div>
-        				</div>
-  						</form>
-  					</div>
-  				</div>
-        </div>
+      						<div class="tab-pane" id="tab_2_4_content">
+      							<?php include 'form/academicInfo.php' ?>
+      						</div>
+      					</div>
+      				</div>
+						</form>
+					</div>
+				</div>
       </div>
     </div>
+  </div>
 </div>
 <!-- END: PAGE CONTAINER -->
 <?php
