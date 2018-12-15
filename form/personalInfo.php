@@ -39,7 +39,7 @@
 
           <label for="birthDate" class="col-md-2 control-label">Birthdate</label>
           <div class="col-md-3">
-            <input type="date" class="form-control c-square c-theme" id="birthDate" placeholder="Birthdate" name="birthDate">
+            <input type="date" class="form-control c-square c-theme" id="birthDate" placeholder="Birthdate" name="birthDate"  onblur="getAge()">
           </div>
       </div>
 
@@ -62,7 +62,7 @@
             <input type="radio" name="sexApplicant" id="sexApplicant"  value="Male">Male
           </label>
           <label class="radio-inline">
-            <input type="radio" name="sexApplicant" id="sexApplicant" value="Female">Female
+            <input type="radio" name="sexApplicant2" id="sexApplicant" value="Female">Female
           </label>
         </div>
 
@@ -108,13 +108,13 @@
             <input type="radio" name="civilStatus" id="civilStatus" value="Single">Single
           </label>
           <label class="radio-inline">
-            <input type="radio" name="civilStatus" id="civilStatus" value="Married">Married
+            <input type="radio" name="civilStatus" id="civilStatus2" value="Married">Married
           </label>
         </div>
 
         <label for="age" class="col-md-1 control-label">Age</label>
         <div class="col-md-1">
-          <input type="text" class="form-control c-square c-theme" id="age" placeholder="Age" name="age" disabled>
+          <input type="text" class="form-control c-square c-theme" id="age" placeholder="Age" name="age">
         </div>
 
         <label for="age" class="col-md-1 control-label">Religion</label>
@@ -137,73 +137,6 @@
       
     </div>
 
-
-    <!-- <div class="col-md-6">
-      <div class="form-group">
-			   	<label for="inputEmail3" class="col-md-4 control-label">Email</label>
-			   	<div class="col-md-6">
-			   		<input type="email" class="form-control c-square c-theme" id="inputEmail3" placeholder="Email" name="email">
-			  	</div>
-			</div>
-    </div>
-
-    <div class="col-md-6">
-      <div class="form-group">
-			   	<label for="inputPassword3" class="col-md-4 control-label">Password</label>
-			   	<div class="col-md-6">
-			   		<input type="password" class="form-control  c-square c-theme" id="inputPassword3" placeholder="Password" name="password">
-			   	</div>
-			</div>
-    </div>
-
-    <div class="col-md-6">
-      <div class="form-group">
-			   	<label for="inputPassword3" class="col-md-4 control-label">Dropdown</label>
-			   	<div class="col-md-6">
-			   		<select class="form-control c-square c-theme">
-					  	<option value="1">Option 1</option>
-				  		<option value="2">Option 2</option>
-					  	<option value="3">Option 3</option>
-					  	<option value="4">Option 4</option>
-					  	<option value="5">Option 5</option>
-					</select>
-			    </div>
-			</div>
-    </div>
-
-    <div class="col-md-6">
-      <div class="form-group">
-        <label  class="col-md-4 control-label">Inline Checkboxes</label>
-          <div class="col-md-6">
-            <label class="checkbox-inline">
-            <input type="checkbox" id="inlineCheckbox1" value="option1"> 1
-          </label>
-          <label class="checkbox-inline">
-            <input type="checkbox" id="inlineCheckbox2" value="option2"> 2
-          </label>
-          <label class="checkbox-inline">
-            <input type="checkbox" id="inlineCheckbox3" value="option3"> 3
-          </label>
-          </div>
-      </div>
-    </div>
-
-    <div class="col-md-6">
-      <div class="form-group">
-        <label  class="col-md-4 control-label">Inline Radio Buttons</label>
-          <div class="col-md-6">
-            <label class="radio-inline">
-            <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> 1
-          </label>
-          <label class="radio-inline">
-            <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> 2
-          </label>
-          <label class="radio-inline">
-            <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> 3
-          </label>
-          </div>
-      </div>
-    </div> -->
     <div class="row">
       <div class="col-md-12">
         <div class="form-group c-margin-t-40">

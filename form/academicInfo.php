@@ -18,7 +18,7 @@
   <div class="col-md-1">
     <label class="radio-inline">
       <input type="radio" name="elementarySchoolType" id="elementarySchoolType"  value="Public">Public
-      <input type="radio" name="elementarySchoolType" id="elementarySchoolType" value="Private">Private
+      <input type="radio" name="elementarySchoolType" id="elementarySchoolType2" value="Private">Private
     </label>
   </div>
 
@@ -78,7 +78,7 @@
   <div class="col-md-1">
     <label class="radio-inline">
       <input type="radio" name="secondarySchoolType" id="secondarySchoolType"  value="Public">Public
-      <input type="radio" name="secondarySchoolType" id="secondarySchoolType" value="Private">Private
+      <input type="radio" name="secondarySchoolType" id="secondarySchoolType2" value="Private">Private
     </label>
   </div>
 
@@ -138,7 +138,7 @@
   <div class="col-md-1">
     <label class="radio-inline">
       <input type="radio" name="collegeSchoolType" id="collegeSchoolType"  value="Public">Public
-      <input type="radio" name="collegeSchoolType" id="collegeSchoolType" value="Private">Private
+      <input type="radio" name="collegeSchoolType" id="collegeSchoolType2" value="Private">Private
     </label>
   </div>
 
@@ -198,7 +198,7 @@
   <div class="col-md-1">
     <label class="radio-inline">
       <input type="radio" name="vocationalSchoolType" id="vocationalSchoolType"  value="Public">Public
-      <input type="radio" name="vocationalSchoolType" id="vocationalSchoolType" value="Private">Private
+      <input type="radio" name="vocationalSchoolType" id="vocationalSchoolType2" value="Private">Private
     </label>
   </div>
 

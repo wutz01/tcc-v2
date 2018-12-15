@@ -21,10 +21,10 @@
       <input type="radio" name="marriedStatus" id="marriedStatus"  value="Living">Living
     </label>
     <label class="radio-inline">
-      <input type="radio" name="marriedStatus" id="marriedStatus" value="Deceased">Deceased
+      <input type="radio" name="marriedStatus" id="marriedStatus2" value="Deceased">Deceased
     </label>
     <label class="radio-inline">
-      <input type="radio" name="marriedStatus" id="marriedStatus" value="Separated">Separated
+      <input type="radio" name="marriedStatus" id="marriedStatus3" value="Separated">Separated
     </label>
   </div>
 </div>
@@ -42,9 +42,9 @@
 </div>
 
 <div class="form-group">
-  <label for="employerOccupation" class="col-md-2 control-label">Occupation</label>
+  <label for="employerSpouseOccupation" class="col-md-2 control-label">Occupation</label>
   <div class="col-md-4">
-    <input type="text" class="form-control c-square c-theme" id="employerOccupation" placeholder="Employer Address" name="employerOccupation">
+    <input type="text" class="form-control c-square c-theme" id="employerSpouseOccupation" placeholder="Employer Address" name="employerSpouseOccupation">
   </div>
 
   <label for="employerSpouseEmployer" class="col-md-2 control-label">Employer</label>
@@ -56,7 +56,7 @@
 <div class="form-group">
   <label for="employerApplicantAddress" class="col-md-2 control-label">Employer's Address</label>
   <div class="col-md-6">
-    <input type="text" class="form-control c-square c-theme" id="employerSpouseAddress" placeholder="Employer Address" name="employerApplicantAddress">
+    <input type="text" class="form-control c-square c-theme" id="employerApplicantAddress" placeholder="Employer Address" name="employerApplicantAddress">
   </div>
 
   <div class="col-md-4">
@@ -65,7 +65,7 @@
       <input type="radio" name="localAbroadSpouse" id="localAbroadSpouse"  value="Living">Local
     </label>
     <label class="radio-inline">
-      <input type="radio" name="localAbroadSpouse" id="localAbroadSpouse" value="Deceased">Abroad
+      <input type="radio" name="localAbroadSpouse" id="localAbroadSpouse2" value="Deceased">Abroad
     </label>
   </div>
 </div>
@@ -86,7 +86,7 @@
         <th width="20%">Birth Date</th>
         <th width="15%">Birth Place</th>
         <th width="10%">Educational Attainment</th>
-        <th><input type="button" class="btn btn-info" value="+" /></th>
+        <th><input type="button" class="btn btn-info" value="+" onclick="addChild()" /></th>
       </tr>
     </thead>
     <tbody>
@@ -96,7 +96,7 @@
           <div class="col-md-1">
             <label class="radio-inline">
               <input type="radio" name="childrenSex[]" id="childrenSex"  value="Male">Male
-              <input type="radio" name="childrenSex[]" id="childrenSex" value="Female">Female
+              <input type="radio" name="childrenSex[]" id="childrenSex2" value="Female">Female
             </label>
           </div>
         </td>
@@ -137,10 +137,10 @@
   <div class="col-md-5">
     <!-- <label for="fatherName" class="col-md-4 control-label">Name</label> -->
     <label class="radio-inline">
-      <input type="radio" name="localAbroad" id="localAbroad"  value="Living">Local
+      <input type="radio" name="localAbroadApplicant" id="localAbroadApplicant"  value="Living">Local
     </label>
     <label class="radio-inline">
-      <input type="radio" name="localAbroad" id="localAbroad" value="Deceased">Abroad
+      <input type="radio" name="localAbroadApplicant" id="localAbroadApplicant2" value="Deceased">Abroad
     </label>
   </div>
 </div>

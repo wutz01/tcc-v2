@@ -10,7 +10,7 @@
       <input type="radio" name="fatherStatus" id="fatherStatus"  value="Living">Living
     </label>
     <label class="radio-inline">
-      <input type="radio" name="fatherStatus" id="fatherStatus" value="Deceased">Deceased
+      <input type="radio" name="fatherStatus" id="fatherStatus2" value="Deceased">Deceased
     </label>
   </div>
 
@@ -20,7 +20,7 @@
       <input type="radio" name="motherStatus" id="motherStatus"  value="Living">Living
     </label>
     <label class="radio-inline">
-      <input type="radio" name="motherStatus" id="motherStatus" value="Deceased">Deceased
+      <input type="radio" name="motherStatus" id="motherStatus2" value="Deceased">Deceased
     </label>
   </div>
 </div>
