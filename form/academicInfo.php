@@ -10,13 +10,13 @@
 </div>
 
 <div class="form-group">
-  <label for="elementarySchoolName" class="col-md-2 control-label">Name</label>
+  <label for="elementarySchoolName" class="col-md-2 control-label">Name<span style="color:red; font-size: 18px;">*</span></label>
   <div class="col-md-3">
-    <input type="text" class="form-control c-square c-theme" id="elementarySchoolName" placeholder="School Name" name="elementarySchoolName">
+    <input type="text" class="form-control c-square c-theme" id="elementarySchoolName" placeholder="School Name" name="elementarySchoolName" required>
   </div>
 
   <div class="col-md-1">
-    <label class="radio-inline">
+    <label class="radio-inline" required>
       <input type="radio" name="elementarySchoolType" id="elementarySchoolType"  value="Public">Public
       <input type="radio" name="elementarySchoolType" id="elementarySchoolType2" value="Private">Private
     </label>
@@ -57,9 +57,9 @@
 	  </select>
 	</div>
 
-  <label for="elementaryYearGrad" class="col-md-1 control-label">Year Graduated</label>
+  <label for="elementaryYearGrad" class="col-md-1 control-label">Year Graduated<span style="color:red; font-size: 18px;">*</span></label>
   <div class="col-md-2">
-    <input type="text" class="form-control c-square c-theme" id="elementaryYearGrad" placeholder="Year Graduated" name="elementaryYearGrad">
+    <input type="number" class="form-control c-square c-theme" id="elementaryYearGrad" placeholder="Year Graduated" name="elementaryYearGrad" required>
   </div>
 </div>
 
@@ -70,13 +70,13 @@
 </div>
 
 <div class="form-group">
-  <label for="secondarySchoolName" class="col-md-2 control-label">Name</label>
+  <label for="secondarySchoolName" class="col-md-2 control-label">Name<span style="color:red; font-size: 18px;">*</span></label>
   <div class="col-md-3">
-    <input type="text" class="form-control c-square c-theme" id="secondarySchoolName" placeholder="School Name" name="secondarySchoolName">
+    <input type="text" class="form-control c-square c-theme" id="secondarySchoolName" placeholder="School Name" name="secondarySchoolName" required>
   </div>
 
   <div class="col-md-1">
-    <label class="radio-inline">
+    <label class="radio-inline" required>
       <input type="radio" name="secondarySchoolType" id="secondarySchoolType"  value="Public">Public
       <input type="radio" name="secondarySchoolType" id="secondarySchoolType2" value="Private">Private
     </label>
@@ -117,9 +117,9 @@
 	  </select>
 	</div>
 
-  <label for="secondaryYearGrad" class="col-md-1 control-label">Year Graduated</label>
+  <label for="secondaryYearGrad" class="col-md-1 control-label">Year Graduated<span style="color:red; font-size: 18px;">*</span></label>
   <div class="col-md-2">
-    <input type="text" class="form-control c-square c-theme" id="secondaryYearGrad" placeholder="Year Graduated" name="secondaryYearGrad">
+    <input type="number" class="form-control c-square c-theme" id="secondaryYearGrad" placeholder="Year Graduated" name="secondaryYearGrad" required>
   </div>
 </div>
 
@@ -179,7 +179,7 @@
 
   <label for="collegeYearGrad" class="col-md-1 control-label">Year Graduated</label>
   <div class="col-md-2">
-    <input type="text" class="form-control c-square c-theme" id="collegeYearGrad" placeholder="Year Graduated" name="collegeYearGrad">
+    <input type="number" class="form-control c-square c-theme" id="collegeYearGrad" placeholder="Year Graduated" name="collegeYearGrad">
   </div>
 </div>
 
@@ -239,7 +239,7 @@
 
 <label for="vocationalYearGrad" class="col-md-1 control-label">Year Graduated</label>
 	<div class="col-md-2">
-	<input type="text" class="form-control c-square c-theme" id="vocationalYearGrad" placeholder="Year Graduated" name="vocationalYearGrad">
+	<input type="number" class="form-control c-square c-theme" id="vocationalYearGrad" placeholder="Year Graduated" name="vocationalYearGrad">
 	</div>
 </div>
 
@@ -252,7 +252,7 @@
 <div class="form-group">
 <label for="vocationalRegion" class="col-md-2 control-label"></label>
   <div class="col-md-4">
-	  <select class='form-control' id='learnersData'>
+	  <select class='form-control' id='learnersData' name="learnersData">
         <option value="Balik-Aral">Balik-Aral</option>
         <option value="Indigenous Peoples Learner">Indigenous Peoples Learner</option>
         <option value="Muslim Learner">Muslim Learner</option>
@@ -270,7 +270,7 @@
 <div class="form-group">
 <label for="shsTrack" class="col-md-2 control-label"></label>
   <div class="col-md-4">
-	<select class='form-control' id='shsTrack'>
+	<select class='form-control' id='shsTrack' name="shsTrack">
 		<option value="Arts and Design">Arts and Design</option>
 		<option value="Academic">Academic</option>
 		<option value="Sports">Sports</option>
@@ -279,13 +279,13 @@
 	</div>
 
 	<div class="col-md-4">
-		<select class='form-control' id='shsTrackAcademic' style="display: none;">
+		<select class='form-control' id='shsTrackAcademic' name="shsTrackAcademic" style="display: none;">
 			<option value="STEM">STEM</option>
 			<option value="ABM">ABM</option>
 			<option value="HUMMS">HUMMS</option>
 			<option value="GAS">GAS</option>
 		</select>
-		<select class='form-control' id='shsTrackTVL' style="display: none;">
+		<select class='form-control' id='shsTrackTVL' name="shsTrackTVL" style="display: none;">
 			<option value="Home Economics">Home Economics</option>
 			<option value="Agri-Fishery">Agri-Fishery</option>
 			<option value="Industrial Arts">Industrial Arts</option>
@@ -304,7 +304,7 @@
 <div class="form-group">
 	<label for="reasonEntryTCC" class="col-md-2 control-label"></label>
 	  <div class="col-md-4">
-		<select class='form-control' id='reasonEntryTCC'>
+		<select class='form-control' id='reasonEntryTCC' name="reasonEntryTCC">
 			<option value="Quality Education">Quality Education</option>
 			<option value="Proximity">Proximity</option>
 			<option value="Competent Professor">Competent Professor</option>
@@ -325,19 +325,19 @@
 
 <div class="form-group">
   <div class="col-md-4">
-    <h2 class="c-center c-font-uppercase c-font-bold">GENERAL WEIGHTED AVERAGE</h2>
+    <h2 class="c-center c-font-uppercase c-font-bold">GENERAL WEIGHTED AVERAGE<span style="color:red; font-size: 18px;">*</span></h2>
   </div>
 </div>
 
 <div class="form-group">
 	<label for="gwAverage" class="col-md-2 control-label"></label>
 	<div class="col-md-2">
-		<input type="text" class="form-control c-square c-theme" id="gwAverage" placeholder="General Average" name="gwAverage"">
+		<input type="number" class="form-control c-square c-theme" id="gwAverage" placeholder="General Average" name="gwAverage" required>
 	</div>
 </div>
 
 <div class="form-group">
-  <div class="col-md-4">
+  <div class="col-md-6">
     <h2 class="c-center c-font-uppercase c-font-bold">HOW DID YOU GET TO KNOW ABOUT TANAUAN CITY COLLEGE?</h2>
   </div>
 </div>
@@ -345,7 +345,7 @@
 <div class="form-group">
 	<label for="knowAboutCollege" class="col-md-2 control-label"></label>
 	<div class="col-md-4">
-		<select class='form-control' id='knowAboutCollege'>
+		<select class='form-control' id='knowAboutCollege' name="knowAboutCollege">
 			<option value="Career Orientation">Career Orientation</option>
 			<option value="Social Media">Social Media</option>
 			<option value="Employee of TCC">Employee of TCC</option>

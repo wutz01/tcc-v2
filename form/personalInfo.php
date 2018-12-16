@@ -7,46 +7,46 @@
   <div class="row">
     <div class="col-md-22">
       <div class="form-group">
-          <label for="Name" class="col-md-2 control-label">Name of Applicant</label>
+          <label for="Name" class="col-md-2 control-label">Name of Applicant<span style="color:red; font-size: 18px;">*</span></label>
           <div class="col-md-3">
-            <input type="text" class="form-control c-square c-theme" id="firstName" placeholder="Firstname" name="firstName">
+            <input type="text" class="form-control c-square c-theme" id="firstName" placeholder="Firstname" name="firstName" required>
           </div>
           <div class="col-md-3">
-            <input type="text" class="form-control c-square c-theme" id="middleName" placeholder="Middlename" name="middleName">
+            <input type="text" class="form-control c-square c-theme" id="middleName" placeholder="Middlename" name="middleName" required>
           </div>
           <div class="col-md-3">
-            <input type="text" class="form-control c-square c-theme" id="lastName" placeholder="Lastname" name="lastName">
+            <input type="text" class="form-control c-square c-theme" id="lastName" placeholder="Lastname" name="lastName" required>
           </div>
       </div>
 
       <div class="form-group">
-          <label for="homeAddress" class="col-md-2 control-label">Home Address</label>
+          <label for="homeAddress" class="col-md-2 control-label">Home Address<span style="color:red; font-size: 18px;">*</span></label>
           <div class="col-md-4">
-            <input type="text" class="form-control c-square c-theme" id="homeAddress" placeholder="Home Address" name="homeAddress">
+            <input type="text" class="form-control c-square c-theme" id="homeAddress" placeholder="Home Address" name="homeAddress" required>
           </div>
 
-          <label for="emailAddress" class="col-md-2 control-label">Email Address</label>
+          <label for="emailAddress" class="col-md-2 control-label">Email Address<span style="color:red; font-size: 18px;">*</span></label>
           <div class="col-md-3">
-            <input type="email" class="form-control c-square c-theme" id="emailAddress" placeholder="Email Address" name="emailAddress">
+            <input type="email" class="form-control c-square c-theme" id="emailAddress" placeholder="Email Address" name="emailAddress" required>
           </div>
       </div>
 
       <div class="form-group">
-          <label for="birthPlace" class="col-md-2 control-label">Birth Place</label>
+          <label for="birthPlace" class="col-md-2 control-label">Birth Place<span style="color:red; font-size: 18px;">*</span></label>
           <div class="col-md-4">
-            <input type="text" class="form-control c-square c-theme" id="birthPlace" placeholder="Birth Place" name="birthPlace">
+            <input type="text" class="form-control c-square c-theme" id="birthPlace" placeholder="Birth Place" name="birthPlace" required>
           </div>
 
-          <label for="birthDate" class="col-md-2 control-label">Birthdate</label>
+          <label for="birthDate" class="col-md-2 control-label">Birthdate<span style="color:red; font-size: 18px;">*</span></label>
           <div class="col-md-3">
-            <input type="date" class="form-control c-square c-theme" id="birthDate" placeholder="Birthdate" name="birthDate"  onblur="getAge()">
+            <input type="date" class="form-control c-square c-theme" id="birthDate" placeholder="Birthdate" name="birthDate"  onblur="getAge()" required>
           </div>
       </div>
 
       <div class="form-group">
-          <label for="mobileNo" class="col-md-2 control-label">Mobile Phone No.</label>
+          <label for="mobileNo" class="col-md-2 control-label">Mobile Phone No.<span style="color:red; font-size: 18px;">*</span></label>
           <div class="col-md-4">
-            <input type="text" class="form-control c-square c-theme" id="mobileNo" placeholder="Mobile No" name="mobileNo">
+            <input type="text" class="form-control c-square c-theme" id="mobileNo" placeholder="Mobile No" name="mobileNo" required>
           </div>
 
           <label for="telephoneNo" class="col-md-2 control-label">Telephone No.</label>
@@ -62,7 +62,7 @@
             <input type="radio" name="sexApplicant" id="sexApplicant"  value="Male">Male
           </label>
           <label class="radio-inline">
-            <input type="radio" name="sexApplicant2" id="sexApplicant" value="Female">Female
+            <input type="radio" name="sexApplicant" id="sexApplicant2" value="Female">Female
           </label>
         </div>
 

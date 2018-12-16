@@ -36,14 +36,14 @@
 </div>
 
 <div class="form-group">
-  <label for="fatherName" class="col-md-2 control-label">Name</label>
+  <label for="fatherName" class="col-md-2 control-label">Name<span style="color:red; font-size: 18px;">*</span></label>
   <div class="col-md-4">
-    <input type="text" class="form-control c-square c-theme" id="fatherName" placeholder="Father Name" name="fatherName">
+    <input type="text" class="form-control c-square c-theme" id="fatherName" placeholder="Father Name" name="fatherName" required>
   </div>
 
-  <label for="motherName" class="col-md-2 control-label">Name</label>
+  <label for="motherName" class="col-md-2 control-label">Name<span style="color:red; font-size: 18px;">*</span></label>
   <div class="col-md-4">
-    <input type="text" class="form-control c-square c-theme" id="motherName" placeholder="Mother Name" name="motherName">
+    <input type="text" class="form-control c-square c-theme" id="motherName" placeholder="Mother Name" name="motherName" required>
   </div>
 </div>
 

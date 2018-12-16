@@ -61,7 +61,8 @@
     $('#apply-frm').ajaxForm({
       dataType: 'json',
       success: (o) => {
-        console.log(o)
+        console.log(o),
+        alert(json['message'])
       },
       beforeSubmit: (o) => {
         // notify('sending data...', 'info')
@@ -158,14 +159,15 @@
           '<div class="col-md-1">'+
             '<label class="radio-inline">'+
               '<input type="radio" name="childrenSex[]" id="childrenSex"  value="Male">Male<br>' +
-              '<input type="radio" name="childrenSex[]" id="childrenSex" value="Female">Female' +
+              '</label>' + '<label>' +
+              '<input type="radio" name="childrenSex[]" id="childrenSex2" value="Female">Female' +
             '</label>' +
           '</div>' +
         '</td>' +
-      '<td><input type="text" id="childrenAge[]" name="childrenAge[]" class="form-control childrenAge" placeholder=""></td>' +
-      '<td><input type="date" id="childrenBirthDate[]" name="childrenBirthDate[]" class="form-control childrenBirthDate" placeholder=""></td>' +
-      '<td><input type="text" id="childrenBirthPlace[]" name="childrenBirthPlace[]" class="form-control childrenBirthPlace" placeholder=""></td>' +
-      '<td colspan="2"><input type="text" id="childrenEducationalAttainment[]" name="childrenEducationalAttainment[]" class="form-control childrenEducationalAttainment" placeholder=""></td></tr>'
+      '<td><input type="date" id="childrenBirthDate" name="childrenBirthDate[]" class="form-control childrenBirthDate" placeholder="" onblur="getAgeChildren()"></td>' +
+      '<td><input type="text" id="childrenAge" name="childrenAge[]" class="form-control childrenAge" placeholder=""></td>' +
+      '<td><input type="text" id="childrenBirthPlace" name="childrenBirthPlace[]" class="form-control childrenBirthPlace" placeholder=""></td>' +
+      '<td colspan="2"><input type="text" id="childrenEducationalAttainment" name="childrenEducationalAttainment[]" class="form-control childrenEducationalAttainment" placeholder=""></td></tr>'
        ));
     }
 
@@ -176,4 +178,12 @@
       var ageApplicant = Math.floor((today - birthDate)/(365.25 * 24 * 60 * 60 *1000));
       document.getElementById('age').value = ageApplicant;
     } console.log(ageApplicant);
+
+    function getAgeChildren(){
+      var childrenBirthDate = document.getElementById('childrenBirthDate').value;
+      childrenBirthDate = new Date(childrenBirthDate);
+      var today = new Date();
+      var ageChildren = Math.floor((today - childrenBirthDate)/(365.25 * 24 * 60 * 60 *1000));
+      document.getElementById('childrenAge').value = ageChildren;
+    } console.log(ageChildren);
 </script>

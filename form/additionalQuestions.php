@@ -11,9 +11,9 @@
 </div>
 
 <div class="form-group">
-  <label for="spouseName" class="col-md-2 control-label">Name</label>
+  <label for="spouseName" class="col-md-2 control-label">Name<span style="color:red; font-size: 18px;">*</span></label>
   <div class="col-md-4">
-    <input type="text" class="form-control c-square c-theme" id="spouseName" placeholder="Spouse Name" name="spouseName">
+    <input type="text" class="form-control c-square c-theme" id="spouseName" placeholder="Spouse Name" name="spouseName" required>
   </div>
 
   <div class="col-md-5">
@@ -56,16 +56,15 @@
 <div class="form-group">
   <label for="employerApplicantAddress" class="col-md-2 control-label">Employer's Address</label>
   <div class="col-md-6">
-    <input type="text" class="form-control c-square c-theme" id="employerApplicantAddress" placeholder="Employer Address" name="employerApplicantAddress">
+    <input type="text" class="form-control c-square c-theme" id="employerApplicantAddresss" placeholder="Employer Address" name="employerApplicantAddresss">
   </div>
 
   <div class="col-md-4">
-    <!-- <label for="fatherName" class="col-md-4 control-label">Name</label> -->
     <label class="radio-inline">
-      <input type="radio" name="localAbroadSpouse" id="localAbroadSpouse"  value="Living">Local
+      <input type="radio" name="localAbroadSpouse" id="localAbroadSpouse"  value="Local">Local
     </label>
     <label class="radio-inline">
-      <input type="radio" name="localAbroadSpouse" id="localAbroadSpouse2" value="Deceased">Abroad
+      <input type="radio" name="localAbroadSpouse" id="localAbroadSpouse2" value="Abroad">Abroad
     </label>
   </div>
 </div>
@@ -81,29 +80,31 @@
     <thead>
       <tr>
         <th width="25%">Name</th>
-        <th width="10%">Sex</th>
-        <th width="20%">Age</th>
-        <th width="20%">Birth Date</th>
-        <th width="15%">Birth Place</th>
+        <th width="20%">Sex</th>
+        <th width="15%">Birth Date</th>
+        <th width="15%">Age</th>
+        <th width="20%">Birth Place</th>
         <th width="10%">Educational Attainment</th>
         <th><input type="button" class="btn btn-info" value="+" onclick="addChild()" /></th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><input type="text" id="childrenName[]" name="childrenName[]" class="form-control childrenName" placeholder="Children Name"></td>
+        <td><input type="text" id="childrenName[]" name="childrenName" class="form-control childrenName" placeholder="Children Name"></td>
         <td>
           <div class="col-md-1">
             <label class="radio-inline">
               <input type="radio" name="childrenSex[]" id="childrenSex"  value="Male">Male
+            </label>
+            <label>
               <input type="radio" name="childrenSex[]" id="childrenSex2" value="Female">Female
             </label>
           </div>
         </td>
-        <td><input type="text" id="childrenAge[]" name="childrenAge[]" class="form-control childrenAge" placeholder=""></td>
-        <td><input type="date" id="childrenBirthDate[]" name="childrenBirthDate[]" class="form-control childrenBirthDate" placeholder=""></td>
-        <td><input type="text" id="childrenBirthPlace[]" name="childrenBirthPlace[]" class="form-control childrenBirthPlace" placeholder=""></td>
-        <td colspan="2"><input type="text" id="childrenEducationalAttainment[]" name="childrenEducationalAttainment[]" class="form-control childrenEducationalAttainment" placeholder=""></td>
+        <td><input type="date" id="childrenBirthDate" name="childrenBirthDate[]" class="form-control childrenBirthDate" placeholder="" onblur="getAgeChildren()"></td>
+        <td><input type="text" id="childrenAge" name="childrenAge[]" class="form-control childrenAge" placeholder=""></td>
+        <td><input type="text" id="childrenBirthPlace" name="childrenBirthPlace[]" class="form-control childrenBirthPlace" placeholder=""></td>
+        <td colspan="2"><input type="text" id="childrenEducationalAttainment" name="childrenEducationalAttainment[]" class="form-control childrenEducationalAttainment" placeholder=""></td>
       </tr>
     </tbody>
   </table>
@@ -137,10 +138,10 @@
   <div class="col-md-5">
     <!-- <label for="fatherName" class="col-md-4 control-label">Name</label> -->
     <label class="radio-inline">
-      <input type="radio" name="localAbroadApplicant" id="localAbroadApplicant"  value="Living">Local
+      <input type="radio" name="localAbroadApplicant" id="localAbroadApplicant"  value="Local">Local
     </label>
     <label class="radio-inline">
-      <input type="radio" name="localAbroadApplicant" id="localAbroadApplicant2" value="Deceased">Abroad
+      <input type="radio" name="localAbroadApplicant" id="localAbroadApplicant2" value="Abroad">Abroad
     </label>
   </div>
 </div>
@@ -152,14 +153,14 @@
 </div>
 
 <div class="form-group">
-  <label for="guardianName" class="col-md-2 control-label">Name</label>
+  <label for="guardianName" class="col-md-2 control-label">Name<span style="color:red; font-size: 18px;">*</span></label>
   <div class="col-md-4">
-    <input type="text" class="form-control c-square c-theme" id="guardianName" placeholder="Guardian Name" name="guardianName">
+    <input type="text" class="form-control c-square c-theme" id="guardianName" placeholder="Guardian Name" name="guardianName" required>
   </div>
 
-  <label for="guardianRelation" class="col-md-2 control-label">Relationship</label>
+  <label for="guardianRelation" class="col-md-2 control-label">Relationship<span style="color:red; font-size: 18px;">*</span></label>
   <div class="col-md-4">
-    <input type="text" class="form-control c-square c-theme" id="guardianRelation" placeholder="Guardian Relation" name="guardianRelation">
+    <input type="text" class="form-control c-square c-theme" id="guardianRelation" placeholder="Guardian Relation" name="guardianRelation" required>
   </div>
 </div>
 
@@ -171,14 +172,14 @@
 
   <label for="guardianEmailAddress" class="col-md-2 control-label">Email Address</label>
   <div class="col-md-4">
-    <input type="text" class="form-control c-square c-theme" id="guardianEmailAddress" placeholder="Guardian Email Address" name="guardianEmailAddress">
+    <input type="email" class="form-control c-square c-theme" id="guardianEmailAddress" placeholder="Guardian Email Address" name="guardianEmailAddress">
   </div>
 </div>
 
 <div class="form-group">
-  <label for="guardianMobileno" class="col-md-2 control-label">Mobile No.</label>
+  <label for="guardianMobileno" class="col-md-2 control-label">Mobile No.<span style="color:red; font-size: 18px;">*</span></label>
   <div class="col-md-4">
-    <input type="text" class="form-control c-square c-theme" id="guardianMobileno" placeholder="Guardian Mobile No." name="guardianMobileno">
+    <input type="text" class="form-control c-square c-theme" id="guardianMobileno" placeholder="Guardian Mobile No." name="guardianMobileno" required>
   </div>
 
   <label for="employerApplicantAddress" class="col-md-2 control-label">Telephone No.</label>
@@ -194,14 +195,14 @@
 </div>
 
 <div class="form-group">
-  <label for="guardianName2" class="col-md-2 control-label">Name</label>
+  <label for="guardianName2" class="col-md-2 control-label">Name<span style="color:red; font-size: 18px;">*</span></label>
   <div class="col-md-4">
-    <input type="text" class="form-control c-square c-theme" id="guardianName2" placeholder="Guardian Name" name="guardianName2">
+    <input type="text" class="form-control c-square c-theme" id="guardianName2" placeholder="Guardian Name" name="guardianName2" required>
   </div>
 
-  <label for="guardianRelation" class="col-md-2 control-label">Relationship</label>
+  <label for="guardianRelation" class="col-md-2 control-label">Relationship<span style="color:red; font-size: 18px;">*</span></label>
   <div class="col-md-4">
-    <input type="text" class="form-control c-square c-theme" id="guardianRelation2" placeholder="Guardian Relation" name="guardianRelation2">
+    <input type="text" class="form-control c-square c-theme" id="guardianRelation2" placeholder="Guardian Relation" name="guardianRelation2" required>
   </div>
 </div>
 
@@ -213,14 +214,14 @@
 
   <label for="guardianEmailAddress2" class="col-md-2 control-label">Email Address</label>
   <div class="col-md-4">
-    <input type="text" class="form-control c-square c-theme" id="guardianEmailAddress2" placeholder="Guardian Email Address" name="guardianEmailAddress2">
+    <input type="email" class="form-control c-square c-theme" id="guardianEmailAddress2" placeholder="Guardian Email Address" name="guardianEmailAddress2">
   </div>
 </div>
 
 <div class="form-group">
-  <label for="guardianMobileno2" class="col-md-2 control-label">Mobile No.</label>
+  <label for="guardianMobileno2" class="col-md-2 control-label">Mobile No.<span style="color:red; font-size: 18px;">*</span></label>
   <div class="col-md-4">
-    <input type="text" class="form-control c-square c-theme" id="guardianMobileno2" placeholder="Guardian Mobile No." name="guardianMobileno2">
+    <input type="text" class="form-control c-square c-theme" id="guardianMobileno2" placeholder="Guardian Mobile No." name="guardianMobileno2" required>
   </div>
 
   <label for="employerApplicantAddress2" class="col-md-2 control-label">Telephone No.</label>
