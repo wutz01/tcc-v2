@@ -78,7 +78,7 @@
                           ?>
                       </table>
                       </center>
-                      <button class="btn btn-success pull-right" name="validate" type="submit">Save</button> 
+                      <button class="btn btn-success pull-right" name="validate" type="submit">Save</button>
                       <a href="acceptedApplicantProfile.php?id=<?php echo $_GET["id"] ?>"><button class="btn btn-danger">Cancel</button></a>
                       </form>
                     </div>
@@ -99,7 +99,7 @@
    include_once "../General/footer.php";
 ?>
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> -->
-<script src="../OSPI/assets/js/jquery.form.min.js"></script>
+<script src="../assets/plugins/jquery-form/jquery-form.min.js"></script>
 <!-- <script src="../OSPI/assets/js/jquery-3.1.1.min.js"></script> -->
 
 <script>
@@ -107,7 +107,7 @@
     let subject = $("#subjectNameSelect").val();
     let subjectList = $("#subjectNameSelect option:selected").text();
     let html = '';
-    html += '<tr><td><input  type="text" name="subjectName[<?php echo $id ?>]" id="subjectName" hidden>' +subjectList+ '</td>' + 
+    html += '<tr><td><input  type="text" name="subjectName[<?php echo $id ?>]" id="subjectName" hidden>' +subjectList+ '</td>' +
       '<td><input type="number" class="form-control" name="grade[]" id="grade" placeholder="Grade" /></td><td><button class="btn btn-danger" type="button" onclick="removeRow()">-</button></tr>';
     $('#example').find('tbody').append(html);
   }
@@ -129,12 +129,11 @@
         }
       },
       beforeSubmit: (o) => {
-        alert('Do you want to save?');
       }
     });
   })
 </script>
-<link rel="stylesheet" type="text/css" href="../assets/js/datatables.min.css"/> 
+<link rel="stylesheet" type="text/css" href="../assets/js/datatables.min.css"/>
 <script type="text/javascript" src="../assets/js/datatables.min.js"></script>
 <script type="text/javascript">
   $(document).ready( function () {
