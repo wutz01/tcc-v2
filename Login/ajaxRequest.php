@@ -6,13 +6,17 @@ if($_POST['getfunctionName'] == 'logIn')
 {
 	$Username = $_POST['username'];
 	$Password = $_POST['password'];
-
-	if($Login->triggerLogin($Username,$Password))
-	{
-		$json['message'] = "Success";
-		$json['is_successful'] = true;
-	}else{
-		$json['message'] = "Error";
+	try {
+		if($Login->triggerLogin($Username,$Password))
+		{
+			$json['message'] = "Success";
+			$json['is_successful'] = true;
+		}else{
+			$json['message'] = "Error";
+			$json['is_successful'] = false;
+		}
+	} catch (\Exception $e) {
+		$json['message'] = $e;
 		$json['is_successful'] = false;
 	}
 }

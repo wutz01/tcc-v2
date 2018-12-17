@@ -177,7 +177,10 @@
 				}
       },
       beforeSubmit: (o) => {
-      }
+      },
+			error: (o) => {
+				alert('failed connecting to database')
+			}
     })
 	});
 
