@@ -87,9 +87,10 @@
                                              <input type="text" class="form-control" name="sectionName" id="sectionName" placeholder="Section Name" />
                                           </div>
                                           <div class="col-sm-3">
-                                             <select class='form-control' name='programID' id='programID' data-plugin="selectpicker" data-live-search="true">
+                                             <select class='form-control' name='programID' id='programID'>
                                                 <option value='' data-hidden="true">Select Program</option>
                                                 <?php
+
                                                    while($row = $getAllPrograms->fetch(PDO::FETCH_ASSOC)){
                                                    extract($row);
                                                    echo "<option value='{$fld_programID}'>{$fld_programName}</option>";
@@ -98,7 +99,7 @@
                                              </select>
                                           </div>
                                           <div class="col-sm-3">
-                                             <select class='form-control' name='yearLevel' id='yearLevel' data-plugin="selectpicker" data-live-search="true">
+                                             <select class='form-control' name='yearLevel' id='yearLevel'>
                                                 <option value='' data-hidden="true">Select Year Level</option>
                                                 <option value='1st'>1st Year</option>
                                                 <option value='2nd'>2nd Year</option>
@@ -137,7 +138,7 @@
                                                    <td><?php echo $fld_yearLevel; ?></td>
                                                    <td><?php echo $fld_maxNoOfStudents; ?></td>
                                                    <td>
-                                                      <select class="form-control" id="selectStaff" data-section="<?php echo $fld_sectionID; ?>" data-plugin="selectpicker" data-live-search="true">
+                                                      <select class="form-control" id="selectStaff" data-section="<?php echo $fld_sectionID; ?>">
                                                         <option value=""></option>
                                                          <?php 
                                                             $getAllStaffs = $admin->readAllStaffs();
@@ -308,7 +309,7 @@
                                                         echo "<tr>
                                                               <td>{$fld_prospectusName}</td>
                                                               <td>{$fld_programName}</td>
-                                                              <td><select data-value='{$fld_prospectusName}' data-program='{$fld_programID}' status='assignProspectusStatus' id='selectProspectus' name='selectProspectus' class='form-control selectProspectus' data-plugin='selectpicker' data-live-search='true'>";
+                                                              <td><select data-value='{$fld_prospectusName}' data-program='{$fld_programID}' status='assignProspectusStatus' id='selectProspectus' name='selectProspectus' class='form-control selectProspectus'>";
                                                               
                                                               echo "<option value='Active'";
                                                             if($fld_status == "Active"){
@@ -801,4 +802,12 @@
       window.location = 'updateAccessType.php?staffID=' + btoa(getID);
    }
    });
+</script>
+
+<link rel="stylesheet" type="text/css" href="../assets/js/datatables.min.css"/> 
+<script type="text/javascript" src="../assets/js/datatables.min.js"></script>
+<script type="text/javascript">
+  $(document).ready( function () {
+    $('#tableSection').DataTable();
+} );
 </script>

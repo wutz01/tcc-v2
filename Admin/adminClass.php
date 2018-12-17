@@ -363,6 +363,50 @@ class Admin
         return $stmt;
     }
 
+    public function getApplicantSubject()
+    {
+        $query = "SELECT * FROM tbl_subjects_applicant";
+        
+        $stmt = $this->importConn->prepare($query);
+        
+        $stmt->execute();
+        
+        return $stmt;
+    }
+
+    public function getUsersList()
+    {
+        $query = "SELECT * FROM tbl_users WHERE accesstype != 'Student'";
+        
+        $stmt = $this->importConn->prepare($query);
+        
+        $stmt->execute();
+        
+        return $stmt;
+    }
+
+    public function getApplicantSubjectDefault()
+    {
+        $query = "SELECT * FROM tbl_subjects_applicant WHERE fld_status = 'ACTIVE' AND fld_default = 1";
+        
+        $stmt = $this->importConn->prepare($query);
+        
+        $stmt->execute();
+        
+        return $stmt;
+    }
+
+    public function getApplicantSubjectNotDefault()
+    {
+        $query = "SELECT * FROM tbl_subjects_applicant WHERE fld_status = 'ACTIVE' AND fld_default = 0";
+        
+        $stmt = $this->importConn->prepare($query);
+        
+        $stmt->execute();
+        
+        return $stmt;
+    }
+
     public function addSection($sectionName, $programID, $capacity, $yearLevel)
     {
         

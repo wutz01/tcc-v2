@@ -1,4 +1,7 @@
 <?php session_start(); 
+  if (!isset($_SESSION['firstName'])) {
+    header('Location: ../');
+  }
 ?>
 <!DOCTYPE html>
 <html class="no-js before-run" lang="en">
@@ -15,7 +18,7 @@
   <link rel="shortcut icon" href="../assets/images/TCC.png">
 
   <!-- Stylesheets -->
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
+  <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css"> -->
 
   <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="../assets/css/bootstrap-extend.min.css">
@@ -43,23 +46,23 @@
   <link rel="stylesheet" href="../assets/css/../fonts/glyphicons/glyphicons.css">
   <link rel="stylesheet" href="../assets/fonts/web-icons/web-icons.min.css">
   <link rel="stylesheet" href="../assets/fonts/brand-icons/brand-icons.min.css">
-  <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic'>
+  <!-- <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic'> -->
+  <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+  <!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script> -->
 
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
+  
   <!-- <link href="../assets/css/dataTables/dataTables.bootstrap.css" rel="stylesheet">
   <link href="../assets/css/dataTables/dataTables.responsive.css" rel="stylesheet">
   <script src="../assets/js/dataTables/jquery.dataTables.min.js"></script>
   <script src="../assets/js/dataTables/dataTables.bootstrap.min.js"></script> -->
-  <script src="../assets/js/jquery.dataTables.min.js"></script>
-  <script src="../assets/js/dataTables.js"></script>
-  <script>
+  <!-- <script src="../assets/js/jquery.dataTables.min.js"></script> -->
+  <!-- <script src="../assets/js/dataTables.js"></script> -->
+<!--   <script>
       $(document).ready(function() {
           $('#example').DataTable();
       } );
-  </script>
-  <link rel="stylesheet" type="text/css" href="../assets/css/jquery.dataTables.min.css">
+  </script> -->
+  <!-- <link rel="stylesheet" type="text/css" href="../assets/css/jquery.dataTables.min.css"> -->
 
   <!-- Inline -->
   <style>
@@ -90,3 +93,7 @@
     Breakpoints();
   </script>
 </head>
+<style type="text/css">
+  .button1 {font-size: 7px;}
+  .listApply {font-size: 11px;}
+</style>

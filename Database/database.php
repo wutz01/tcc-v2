@@ -1,5 +1,5 @@
 <?php
-date_default_timezone_set("Asia/Singapore");
+date_default_timezone_set("Asia/Manila");
 
 class Database{
 
@@ -15,10 +15,10 @@ class Database{
         $this->conn = null;
         try{
             $this->conn = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->db_name, $this->username, $this->password);
+             return $this->conn;
         }catch(PDOException $exception){
             echo "Connection error: " . $exception->getMessage();
         }
-        return $this->conn;
     }
 }
 ?>
