@@ -29,158 +29,24 @@
         						</ul>
         					</div>
         					<div class="tab-content c-bordered c-padding-lg">
-        						<div class="tab-pane active" id="tab_2_1_content">
-                      <div class="c-content-title-1 c-title-md c-margin-b-20 clearfix">
-          							<h3 class="c-center c-font-uppercase c-font-bold">Personal Information</h3>
-          							<div class="c-line-center c-theme-bg"></div>
-          						</div>
-                      <div class="row">
-                        <div class="col-md-6">
-                          <div class="form-group">
-            							   	<label for="inputEmail3" class="col-md-4 control-label">Email</label>
-            							   	<div class="col-md-6">
-            							   		<input type="email" class="form-control c-square c-theme" id="inputEmail3" placeholder="Email" name="email">
-            							  	</div>
-            							</div>
-                        </div>
-
-                        <div class="col-md-6">
-                          <div class="form-group">
-            							   	<label for="inputPassword3" class="col-md-4 control-label">Password</label>
-            							   	<div class="col-md-6">
-            							   		<input type="password" class="form-control  c-square c-theme" id="inputPassword3" placeholder="Password" name="password">
-            							   	</div>
-            							</div>
-                        </div>
-
-                        <div class="col-md-6">
-                          <div class="form-group">
-            							   	<label for="inputPassword3" class="col-md-4 control-label">Dropdown</label>
-            							   	<div class="col-md-6">
-            							   		<select class="form-control c-square c-theme">
-            									  	<option value="1">Option 1</option>
-            								  		<option value="2">Option 2</option>
-            									  	<option value="3">Option 3</option>
-            									  	<option value="4">Option 4</option>
-            									  	<option value="5">Option 5</option>
-            									</select>
-            							    </div>
-            							</div>
-                        </div>
-
-                        <div class="col-md-6">
-                          <div class="form-group">
-                            <label  class="col-md-4 control-label">Inline Checkboxes</label>
-                              <div class="col-md-6">
-                                <label class="checkbox-inline">
-                                <input type="checkbox" id="inlineCheckbox1" value="option1"> 1
-                              </label>
-                              <label class="checkbox-inline">
-                                <input type="checkbox" id="inlineCheckbox2" value="option2"> 2
-                              </label>
-                              <label class="checkbox-inline">
-                                <input type="checkbox" id="inlineCheckbox3" value="option3"> 3
-                              </label>
-                              </div>
-                          </div>
-                        </div>
-
-                        <div class="col-md-6">
-                          <div class="form-group">
-                            <label  class="col-md-4 control-label">Inline Radio Buttons</label>
-                              <div class="col-md-6">
-                                <label class="radio-inline">
-                                <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> 1
-                              </label>
-                              <label class="radio-inline">
-                                <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> 2
-                              </label>
-                              <label class="radio-inline">
-                                <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"> 3
-                              </label>
-                              </div>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col-md-12">
-                            <div class="form-group c-margin-t-40">
-              							   	<div class="col-sm-offset-9 col-md-4">
-              							   		<button type="button" class="btn c-theme-btn c-btn-square c-btn-uppercase c-btn-bold">Next</button>
-              							  	</div>
-              							</div>
-                          </div>
-                        </div>
-                      </div> <!-- end row -->
-        						</div> <!-- end tab -->
-        						<div class="tab-pane" id="tab_2_2_content">
-        							<p>
-        								Lorem ipsum dolor sit amet, exerci et tation diam nisl ut aliquip ex ea commodo consequat euismod tincidunt ut laoreet dolore magna aluam
-        								sed elit diam nonummy nibh euismod tincidunt ut laoreet dolore magna sed elit diam nonummy nibh euismod tincidunt ut laoreet dolore magna.
-        							</p>
-        							<p>
-        								Lorem ipsum dolor sit amet, consectetuer tation diam nisl ut aliquip ex ea commodo consequat euismod tincidunt ut laoreet dolore magna aluam
-        								sed elit diam nonummy nibh euismod tincidunt ut laoreet dolore magna ex ea commodo consequat euismod tincidunt ut laoreet dolore magna aluam
-        								sed elit diam nonummy nibh euismod tincidunt ut laoreet dolore magna sed elit diam nonummy nibh euismod tincidunt ut laoreet dolore magna.
-        							</p>
-                      <div class="row">
-                        <div class="col-md-12">
-                          <div class="form-group c-margin-t-40">
-                              <div class="col-sm-offset-9 col-md-4">
-                                <button type="button" class="btn c-theme-btn c-btn-square c-btn-uppercase c-btn-bold">Next</button>
-                                <button type="button" class="btn btn-default c-btn-square c-btn-uppercase c-btn-bold">Back</button>
-                              </div>
-                          </div>
-                        </div>
-                      </div>
-        						</div>
-        						<div class="tab-pane" id="tab_2_3_content">
-        							<p>
-        								Lorem ipsum dolor sit amet, consectetuer adipiscing diam nisl ut aliquip ex ea commodo consequat euismod tincidunt ut laoreet dolore magna aluam
-        								sed elit diam nonummy nibh euismod tincidunt ut laoreet dolore magna sed elit diam nonummy nibh euismod tincidunt ut laoreet dolore magna.
-        							</p>
-        							<p>
-        								Lorem ipsum dolor sit amet, consectetuer adipiscing elit,  nisl ut aliquip ex ea commodo consequat euismod tincidunt ut laoreet dolore magna aluam
-        								sed elit diam nonummy nibh euismod tincidunt ut laoreet dolore magna sed elit diam nonummy nibh euismod tincidunt ut laoreet dolore magna.
-        							</p>
-                      <div class="row">
-                        <div class="col-md-12">
-                          <div class="form-group c-margin-t-40">
-                              <div class="col-sm-offset-9 col-md-4">
-                                <button type="button" class="btn c-theme-btn c-btn-square c-btn-uppercase c-btn-bold">Next</button>
-                                <button type="button" class="btn btn-default c-btn-square c-btn-uppercase c-btn-bold">Back</button>
-                              </div>
-                          </div>
-                        </div>
-                      </div>
-        						</div>
-        						<div class="tab-pane" id="tab_2_4_content">
-        							<p>
-        								Lorem ipsum dolor sit amet, consectetuer adipiscing diam nisl ut aliquip ex ea commodo consequat euismod tincidunt ut laoreet dolore magna aluam
-        								sed elit diam nonummy nibh euismod tincidunt ut laoreet dolore magna sed elit diam nonummy nibh euismod tincidunt ut laoreet dolore magna.
-        							</p>
-        							<p>
-        								Lorem ipsum dolor sit amet, consectetuer adipiscing elit,  nisl ut aliquip ex ea commodo consequat euismod tincidunt ut laoreet dolore magna aluam
-        								sed elit diam nonummy nibh euismod tincidunt ut laoreet dolore magna sed elit diam nonummy nibh euismod tincidunt ut laoreet dolore magna.
-        							</p>
-                      <div class="row">
-                        <div class="col-md-12">
-                          <div class="form-group c-margin-t-40">
-                              <div class="col-sm-offset-9 col-md-4">
-                                <button type="submit" class="btn c-theme-btn c-btn-square c-btn-uppercase c-btn-bold">Apply</button>
-                                <button type="button" class="btn btn-default c-btn-square c-btn-uppercase c-btn-bold">Back</button>
-                              </div>
-                          </div>
-                        </div>
-                      </div>
-        						</div>
-        					</div>
-        				</div>
-  						</form>
-  					</div>
-  				</div>
-        </div>
+        						<?php include 'form/personalInfo.php' ?>
+      						<div class="tab-pane" id="tab_2_2_content">
+                    <?php include 'form/familyBackground.php' ?>
+      						</div>
+      						<div class="tab-pane" id="tab_2_3_content">
+      							<?php include 'form/additionalQuestions.php' ?>
+      						</div>
+      						<div class="tab-pane" id="tab_2_4_content">
+      							<?php include 'form/academicInfo.php' ?>
+      						</div>
+      					</div>
+      				</div>
+						</form>
+					</div>
+				</div>
       </div>
     </div>
+  </div>
 </div>
 <!-- END: PAGE CONTAINER -->
 <?php
@@ -194,7 +60,8 @@
     $('#apply-frm').ajaxForm({
       dataType: 'json',
       success: (o) => {
-        console.log(o)
+        console.log(o),
+        alert(json['message'])
       },
       beforeSubmit: (o) => {
         // notify('sending data...', 'info')
@@ -202,4 +69,120 @@
       }
     })
   })
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#reasonEntryTCC').change(function() {
+      if ( $("#reasonEntryTCC").val ()  ==  "Others") 
+      {                              
+          $('#reasonEntryTCCOther').show();
+      }
+      else
+          $("#reasonEntryTCCOther").hide();
+      }); 
+  });
+
+  $(document).ready(function() {
+    $('#shsTrack').change(function() {
+      if ( $("#shsTrack").val ()  ==  "Academic") 
+      {                              
+          $('#shsTrackAcademic').show();
+          $("#shsTrackTVL").hide();
+      }
+      else if ( $("#shsTrack").val ()  ==  "Technology Vocational Livelihood") 
+      {                              
+          $('#shsTrackAcademic').hide();
+          $("#shsTrackTVL").show();
+      }
+      else if ( $("#shsTrack").val ()  ==  "Arts and Design") 
+      {                              
+          $('#shsTrackAcademic').hide();
+          $("#shsTrackTVL").hide();
+      }
+      else if ( $("#shsTrack").val ()  ==  "Sports") 
+      {                              
+          $('#shsTrackAcademic').hide();
+          $("#shsTrackTVL").hide();
+      }
+      }); 
+  });
+
+  $(document).ready(function() {
+    $('#reasonEntryTCC').change(function() {
+        if ( $("#reasonEntryTCC").val ()  ==  "Others") 
+        {                              
+            $('#reasonEntryTCCOther').show();
+        }
+        else
+            $("#reasonEntryTCCOther").hide();
+      }); 
+  });
+
+  $(document).ready(function() {
+    $('#knowAboutCollege').change(function() {
+        if ( $("#knowAboutCollege").val ()  ==  "Others") 
+        {                              
+            $('#knowAboutCollegeOther').show();
+        }
+        else
+            $("#knowAboutCollegeOther").hide();
+      }); 
+  });
+
+  $(document).on('click', '#civilStatus2', function(){
+    var status = $(this).val();
+    if(status == "Married"){
+      $("#for_married").show();
+    }
+    else if(status == "Single"){
+      $("#for_married").hide();
+    }
+  });
+
+  $(document).ready(function() {
+    $('#religion').change(function() {
+        if ( $("#religion").val ()  ==  "Other") 
+        {                              
+            $('#otherReligion').show();
+        }
+        else
+            $("#otherReligion").hide();
+      }); 
+  });
+
+  function addChild() {
+    $('#tableChildren').find('tbody').append($(
+      '<tr><td><input type="text" id="childrenName[]" name="childrenName[]" class="form-control childrenName" placeholder=""></td>' +
+      '<td>'+
+          '<div class="col-md-1">'+
+            '<label class="radio-inline">'+
+              '<input type="radio" name="childrenSex[]" id="childrenSex"  value="Male">Male<br>' +
+              '</label>' + '<label>' +
+              '<input type="radio" name="childrenSex[]" id="childrenSex2" value="Female">Female' +
+            '</label>' +
+          '</div>' +
+        '</td>' +
+      '<td><input type="date" id="childrenBirthDate" name="childrenBirthDate[]" class="form-control childrenBirthDate" placeholder="" onblur="getAgeChildren()"></td>' +
+      '<td><input type="text" id="childrenAge" name="childrenAge[]" class="form-control childrenAge" placeholder=""></td>' +
+      '<td><input type="text" id="childrenBirthPlace" name="childrenBirthPlace[]" class="form-control childrenBirthPlace" placeholder=""></td>' +
+      '<td colspan="2"><input type="text" id="childrenEducationalAttainment" name="childrenEducationalAttainment[]" class="form-control childrenEducationalAttainment" placeholder=""></td></tr>'
+       ));
+    }
+
+    function getAge(){
+      var birthDate = document.getElementById('birthDate').value;
+      birthDate = new Date(birthDate);
+      var today = new Date();
+      var ageApplicant = Math.floor((today - birthDate)/(365.25 * 24 * 60 * 60 *1000));
+      document.getElementById('age').value = ageApplicant;
+    } console.log(ageApplicant);
+
+    function getAgeChildren(){
+      var childrenBirthDate = document.getElementById('childrenBirthDate').value;
+      childrenBirthDate = new Date(childrenBirthDate);
+      var today = new Date();
+      var ageChildren = Math.floor((today - childrenBirthDate)/(365.25 * 24 * 60 * 60 *1000));
+      document.getElementById('childrenAge').value = ageChildren;
+    } console.log(ageChildren);
 </script>
