@@ -1,0 +1,16 @@
+[22-Dec-2017 01:40:08 America/New_York] PHP Fatal error:  Cannot redeclare Student::readGrades() in /home/tanauaud/public_html/Student/studentClass.php on line 555
+[04-Jan-2018 11:04:51 Asia/Singapore] PHP Fatal error:  Call to a member function execute() on boolean in /home/tanauaud/public_html/Student/studentClass.php on line 679
+[04-Jan-2018 11:04:51 Asia/Singapore] PHP Fatal error:  Call to a member function execute() on boolean in /home/tanauaud/public_html/Student/studentClass.php on line 679
+[04-Jan-2018 11:04:51 Asia/Singapore] PHP Fatal error:  Call to a member function execute() on boolean in /home/tanauaud/public_html/Student/studentClass.php on line 679
+[04-Jan-2018 11:04:51 Asia/Singapore] PHP Fatal error:  Call to a member function execute() on boolean in /home/tanauaud/public_html/Student/studentClass.php on line 679
+[04-Jan-2018 11:04:51 Asia/Singapore] PHP Fatal error:  Call to a member function execute() on boolean in /home/tanauaud/public_html/Student/studentClass.php on line 679
+[04-Jan-2018 11:05:06 Asia/Singapore] PHP Fatal error:  Call to a member function execute() on boolean in /home/tanauaud/public_html/Student/studentClass.php on line 679
+[04-Jan-2018 11:05:06 Asia/Singapore] PHP Fatal error:  Call to a member function execute() on boolean in /home/tanauaud/public_html/Student/studentClass.php on line 679
+[04-Jan-2018 11:05:06 Asia/Singapore] PHP Fatal error:  Call to a member function execute() on boolean in /home/tanauaud/public_html/Student/studentClass.php on line 679
+[04-Jan-2018 11:05:06 Asia/Singapore] PHP Fatal error:  Call to a member function execute() on boolean in /home/tanauaud/public_html/Student/studentClass.php on line 679
+[04-Jan-2018 11:05:06 Asia/Singapore] PHP Fatal error:  Call to a member function execute() on boolean in /home/tanauaud/public_html/Student/studentClass.php on line 679
+[04-Jan-2018 11:56:00 Asia/Singapore] PHP Fatal error:  Call to a member function execute() on boolean in /home/tanauaud/public_html/Student/studentClass.php on line 679
+[04-Jan-2018 11:56:00 Asia/Singapore] PHP Fatal error:  Call to a member function execute() on boolean in /home/tanauaud/public_html/Student/studentClass.php on line 679
+[04-Jan-2018 11:56:00 Asia/Singapore] PHP Fatal error:  Call to a member function execute() on boolean in /home/tanauaud/public_html/Student/studentClass.php on line 679
+[04-Jan-2018 11:56:00 Asia/Singapore] PHP Fatal error:  Call to a member function execute() on boolean in /home/tanauaud/public_html/Student/studentClass.php on line 679
+[04-Jan-2018 11:56:00 Asia/Singapore] PHP Fatal error:  Call to a member function execute() on boolean in /home/tanauaud/public_html/Student/studentClass.php on line 679

@@ -1,0 +1,10 @@
+ALTER TABLE `tbl_applicant`  ADD `fld_gender` VARCHAR(50) NOT NULL  AFTER `fld_working`,  ADD `fld_regionApplicant` VARCHAR(100) NOT NULL  AFTER `fld_gender`,  ADD `fld_guardianName2` VARCHAR(250) NOT NULL  AFTER `fld_regionApplicant`,  ADD `fld_guardianRelation2` VARCHAR(250) NOT NULL  AFTER `fld_guardianName2`,  ADD `fld_guardianAddress2` VARCHAR(250) NOT NULL  AFTER `fld_guardianRelation2`,  ADD `fld_guardianTelNo2` VARCHAR(50) NOT NULL  AFTER `fld_guardianAddress2`,  ADD `fld_guardianMobileNo2` VARCHAR(20) NOT NULL  AFTER `fld_guardianTelNo2`,  ADD `fld_guardianEmailaddress2` VARCHAR(250) NOT NULL  AFTER `fld_guardianMobileNo2`,  ADD `fld_learnersData` VARCHAR(50) NOT NULL  AFTER `fld_guardianEmailaddress2`,  ADD `fld_gwAverage` INT(50) NOT NULL  AFTER `fld_learnersData`,  ADD `fld_reasonEntryTCC` VARCHAR(250) NOT NULL  AFTER `fld_gwAverage`,  ADD `fld_shsTrack` VARCHAR(250) NOT NULL  AFTER `fld_reasonEntryTCC`,  ADD `fld_shsTrackStrand` VARCHAR(250) NOT NULL  AFTER `fld_shsTrack`,  ADD `fld_reasonEntryTCCOther` VARCHAR(250) NOT NULL  AFTER `fld_shsTrackStrand`,  ADD `fld_knowAboutCollege` VARCHAR(250) NOT NULL  AFTER `fld_reasonEntryTCCOther`,  ADD `fld_knowAboutCollegeOther` VARCHAR(250) NOT NULL  AFTER `fld_knowAboutCollege`;
+
+
+ALTER TABLE `tbl_applicant` ADD `fld_otherReligion` VARCHAR(250) NOT NULL AFTER `fld_knowAboutCollegeOther`;
+
+
+ALTER TABLE `tbl_applicant` ADD `fld_statusApplicant` INT NOT NULL AFTER `fld_otherReligion`;
+
+
+ALTER TABLE `tbl_applicant` ADD `fld_applicantGeneratedID` VARCHAR(250) NOT NULL AFTER `fld_statusApplicant`;
