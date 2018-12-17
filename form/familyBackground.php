@@ -4,33 +4,35 @@
 </div>
 
 <div class="form-group">
-  <div class="col-md-4">
-    <!-- <label for="fatherName" class="col-md-4 control-label">Name</label> -->
-    <label class="radio-inline">
-      <input type="radio" name="fatherStatus" id="fatherStatus"  value="Living">Living
-    </label>
-    <label class="radio-inline">
-      <input type="radio" name="fatherStatus" id="fatherStatus2" value="Deceased">Deceased
-    </label>
+  <div class="col-md-6 pull">
+    <div style="text-align:center">
+      <label class="radio-inline">
+        <input type="radio" name="fatherStatus" id="fatherStatus"  value="Living">Living
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="fatherStatus" id="fatherStatus2" value="Deceased">Deceased
+      </label>
+    </div>
   </div>
 
-  <div class="col-md-4">
-    <!-- <label for="fatherName" class="col-md-3 control-label">Name</label> -->
-    <label class="radio-inline">
-      <input type="radio" name="motherStatus" id="motherStatus"  value="Living">Living
-    </label>
-    <label class="radio-inline">
-      <input type="radio" name="motherStatus" id="motherStatus2" value="Deceased">Deceased
-    </label>
+  <div class="col-md-6">
+    <div style="text-align:center">
+      <label class="radio-inline">
+        <input type="radio" name="motherStatus" id="motherStatus"  value="Living">Living
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="motherStatus" id="motherStatus2" value="Deceased">Deceased
+      </label>
+    </div>
   </div>
 </div>
 
 <div class="form-group">
-  <div class="col-md-2">
+  <div class="col-md-6">
     <h2 class="c-center c-font-uppercase c-font-bold">Father</h2>
   </div>
 
-  <div class="col-md-10">
+  <div class="col-md-6">
     <h2 class="c-center c-font-uppercase c-font-bold">Mother</h2>
   </div>
 </div>
@@ -99,8 +101,8 @@
   <div class="col-md-12">
     <div class="form-group c-margin-t-40">
         <div class="col-sm-offset-9 col-md-4">
-          <button type="button" class="btn c-theme-btn c-btn-square c-btn-uppercase c-btn-bold">Next</button>
-          <button type="button" class="btn btn-default c-btn-square c-btn-uppercase c-btn-bold">Back</button>
+          <button type="button" class="btn c-theme-btn c-btn-square c-btn-uppercase c-btn-bold" onclick="nextStep()">Next</button>
+          <button type="button" class="btn btn-default c-btn-square c-btn-uppercase c-btn-bold" onclick="prevStep()">Back</button>
         </div>
     </div>
   </div>

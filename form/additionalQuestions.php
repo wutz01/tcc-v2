@@ -234,8 +234,8 @@
   <div class="col-md-12">
     <div class="form-group c-margin-t-40">
         <div class="col-sm-offset-9 col-md-4">
-          <button type="button" class="btn c-theme-btn c-btn-square c-btn-uppercase c-btn-bold">Next</button>
-          <button type="button" class="btn btn-default c-btn-square c-btn-uppercase c-btn-bold">Back</button>
+          <button type="button" class="btn c-theme-btn c-btn-square c-btn-uppercase c-btn-bold" onclick="nextStep()">Next</button>
+          <button type="button" class="btn btn-default c-btn-square c-btn-uppercase c-btn-bold" onclick="prevStep()">Back</button>
         </div>
     </div>
   </div>

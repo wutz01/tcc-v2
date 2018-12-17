@@ -134,14 +134,14 @@
           <input type="text" class="form-control c-square c-theme" id="otherReligion" placeholder="Other" name="otherReligion" style="display: none">
         </div>
       </div>
-      
+
     </div>
 
     <div class="row">
       <div class="col-md-12">
         <div class="form-group c-margin-t-40">
 				   	<div class="col-sm-offset-9 col-md-4">
-				   		<button type="button" class="btn c-theme-btn c-btn-square c-btn-uppercase c-btn-bold">Next</button>
+				   		<button type="button" class="btn c-theme-btn c-btn-square c-btn-uppercase c-btn-bold" onclick="nextStep()">Next</button>
 				  	</div>
 				</div>
       </div>

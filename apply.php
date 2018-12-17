@@ -22,10 +22,10 @@
         				<div class="c-content-tab-1 c-theme c-margin-t-30">
         					<div class="clearfix">
         						<ul class="nav nav-tabs c-font-sbold pull-right">
-        							<li class="active"><a href="#tab_2_1_content" data-toggle="tab" class="c-border-green">Personal Information</a></li>
-        							<li><a href="#tab_2_2_content" data-toggle="tab" class="c-border-green">Family Background</a></li>
-        							<li><a href="#tab_2_3_content" data-toggle="tab" class="c-border-green">Additional Questions</a></li>
-        							<li><a href="#tab_2_4_content" data-toggle="tab" class="c-border-green">Academic Information</a></li>
+        							<li class="active"><a href="#tab_2_1_content" onclick="javascript: void(0);" class="c-border-green">Personal Information</a></li>
+        							<li><a href="#tab_2_2_content" onclick="javascript: void(0);" class="c-border-green">Family Background</a></li>
+        							<li><a href="#tab_2_3_content" onclick="javascript: void(0);" class="c-border-green">Additional Questions</a></li>
+        							<li><a href="#tab_2_4_content" onclick="javascript: void(0);" class="c-border-green">Academic Information</a></li>
         						</ul>
         					</div>
         					<div class="tab-content c-bordered c-padding-lg">
@@ -53,6 +53,22 @@
   include('templates/footer.php');
 ?>
 <script type="text/javascript">
+  var step = 1
+
+  function nextStep () {
+    console.log(`valid?`, $('#apply-frm')[0].checkValidity())
+    let $myForm = $('#apply-frm');
+    if ($myForm[0].checkValidity()) {
+      step++
+      $(`a[href="#tab_2_${step}_content"]`).tab('show')
+    } else {
+      $myForm.find(':submit').click();
+    }
+  }
+  function prevStep () {
+    step--
+    $(`a[href="#tab_2_${step}_content"]`).tab('show')
+  }
   $(function () {
     $(".all-nav").removeClass('c-active')
     $(".apply-nav").addClass('c-active')
@@ -61,95 +77,90 @@
       dataType: 'json',
       success: (o) => {
         console.log(o),
-        alert(json['message'])
+        alert(json.message)
       },
       beforeSubmit: (o) => {
         // notify('sending data...', 'info')
-        alert('running this alert before sending data')
+        // for (var i = 1; i < 4; i++) {
+        //   setTimeout(function () {
+        //     $(`a[href="#tab_2_${i}_content"]`).tab('show')
+        //   }, 500)
+        // }
+        console.log(`trying to submit`)
       }
     })
-  })
-</script>
 
-<script type="text/javascript">
-  $(document).ready(function() {
+    // UPDATES ---- BEN
+
     $('#reasonEntryTCC').change(function() {
-      if ( $("#reasonEntryTCC").val ()  ==  "Others") 
-      {                              
+      if ( $("#reasonEntryTCC").val ()  ==  "Others")
+      {
           $('#reasonEntryTCCOther').show();
       }
       else
           $("#reasonEntryTCCOther").hide();
-      }); 
-  });
+    });
 
-  $(document).ready(function() {
     $('#shsTrack').change(function() {
-      if ( $("#shsTrack").val ()  ==  "Academic") 
-      {                              
+      if ( $("#shsTrack").val ()  ==  "Academic")
+      {
           $('#shsTrackAcademic').show();
           $("#shsTrackTVL").hide();
       }
-      else if ( $("#shsTrack").val ()  ==  "Technology Vocational Livelihood") 
-      {                              
+      else if ( $("#shsTrack").val ()  ==  "Technology Vocational Livelihood")
+      {
           $('#shsTrackAcademic').hide();
           $("#shsTrackTVL").show();
       }
-      else if ( $("#shsTrack").val ()  ==  "Arts and Design") 
-      {                              
+      else if ( $("#shsTrack").val ()  ==  "Arts and Design")
+      {
           $('#shsTrackAcademic').hide();
           $("#shsTrackTVL").hide();
       }
-      else if ( $("#shsTrack").val ()  ==  "Sports") 
-      {                              
+      else if ( $("#shsTrack").val ()  ==  "Sports")
+      {
           $('#shsTrackAcademic').hide();
           $("#shsTrackTVL").hide();
       }
-      }); 
-  });
+    });
 
-  $(document).ready(function() {
     $('#reasonEntryTCC').change(function() {
-        if ( $("#reasonEntryTCC").val ()  ==  "Others") 
-        {                              
+        if ( $("#reasonEntryTCC").val ()  ==  "Others")
+        {
             $('#reasonEntryTCCOther').show();
         }
         else
             $("#reasonEntryTCCOther").hide();
-      }); 
-  });
+    });
 
-  $(document).ready(function() {
     $('#knowAboutCollege').change(function() {
-        if ( $("#knowAboutCollege").val ()  ==  "Others") 
-        {                              
+        if ( $("#knowAboutCollege").val ()  ==  "Others")
+        {
             $('#knowAboutCollegeOther').show();
         }
         else
             $("#knowAboutCollegeOther").hide();
-      }); 
-  });
+    });
 
-  $(document).on('click', '#civilStatus2', function(){
-    var status = $(this).val();
-    if(status == "Married"){
-      $("#for_married").show();
-    }
-    else if(status == "Single"){
-      $("#for_married").hide();
-    }
-  });
+    $(document).on('click', '#civilStatus2', function(){
+      var status = $(this).val();
+      if(status == "Married"){
+        $("#for_married").show();
+      }
+      else if(status == "Single"){
+        $("#for_married").hide();
+      }
+    });
 
-  $(document).ready(function() {
     $('#religion').change(function() {
-        if ( $("#religion").val ()  ==  "Other") 
-        {                              
-            $('#otherReligion').show();
-        }
-        else
-            $("#otherReligion").hide();
-      }); 
-  });
+      if ( $("#religion").val ()  ==  "Other")
+      {
+          $('#otherReligion').show();
+      }
+      else
+          $("#otherReligion").hide();
+    });
+  })
 
   function addChild() {
     $('#tableChildren').find('tbody').append($(
@@ -167,22 +178,22 @@
       '<td><input type="text" id="childrenAge" name="childrenAge[]" class="form-control childrenAge" placeholder=""></td>' +
       '<td><input type="text" id="childrenBirthPlace" name="childrenBirthPlace[]" class="form-control childrenBirthPlace" placeholder=""></td>' +
       '<td colspan="2"><input type="text" id="childrenEducationalAttainment" name="childrenEducationalAttainment[]" class="form-control childrenEducationalAttainment" placeholder=""></td></tr>'
-       ));
-    }
+    ));
+  }
 
-    function getAge(){
-      var birthDate = document.getElementById('birthDate').value;
-      birthDate = new Date(birthDate);
-      var today = new Date();
-      var ageApplicant = Math.floor((today - birthDate)/(365.25 * 24 * 60 * 60 *1000));
-      document.getElementById('age').value = ageApplicant;
-    } console.log(ageApplicant);
+  function getAge(){
+    var birthDate = document.getElementById('birthDate').value;
+    birthDate = new Date(birthDate);
+    var today = new Date();
+    var ageApplicant = Math.floor((today - birthDate)/(365.25 * 24 * 60 * 60 *1000));
+    document.getElementById('age').value = ageApplicant;
+  }
 
-    function getAgeChildren(){
-      var childrenBirthDate = document.getElementById('childrenBirthDate').value;
-      childrenBirthDate = new Date(childrenBirthDate);
-      var today = new Date();
-      var ageChildren = Math.floor((today - childrenBirthDate)/(365.25 * 24 * 60 * 60 *1000));
-      document.getElementById('childrenAge').value = ageChildren;
-    } console.log(ageChildren);
+  function getAgeChildren(){
+    var childrenBirthDate = document.getElementById('childrenBirthDate').value;
+    childrenBirthDate = new Date(childrenBirthDate);
+    var today = new Date();
+    var ageChildren = Math.floor((today - childrenBirthDate)/(365.25 * 24 * 60 * 60 *1000));
+    document.getElementById('childrenAge').value = ageChildren;
+  }
 </script>

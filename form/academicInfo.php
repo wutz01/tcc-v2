@@ -268,7 +268,7 @@
 </div>
 
 <div class="form-group">
-<label for="shsTrack" class="col-md-2 control-label"></label>
+  <label for="shsTrack" class="col-md-2 control-label"></label>
   <div class="col-md-4">
 	<select class='form-control' id='shsTrack' name="shsTrack">
 		<option value="Arts and Design">Arts and Design</option>
@@ -365,7 +365,7 @@
 	  <div class="form-group c-margin-t-40">
 	      <div class="col-sm-offset-9 col-md-4">
 	        <button type="submit" class="btn c-theme-btn c-btn-square c-btn-uppercase c-btn-bold">Apply</button>
-	        <button type="button" class="btn btn-default c-btn-square c-btn-uppercase c-btn-bold">Back</button>
+	        <button type="button" class="btn btn-default c-btn-square c-btn-uppercase c-btn-bold" onclick="prevStep()">Back</button>
 	      </div>
 	  </div>
 	</div>
