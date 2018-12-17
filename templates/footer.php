@@ -155,10 +155,10 @@
 				<!-- END: LAYOUT PLUGINS -->
 
 	<!-- BEGIN: THEME SCRIPTS -->
-	<script src="../assets/base/js/components.js" type="text/javascript"></script>
-	<script src="../assets/base/js/components-shop.js" type="text/javascript"></script>
-	<script src="../assets/base/js/app.js" type="text/javascript"></script>
-	<script src="../assets/plugins/jquery-form/jquery-form.min.js"></script>
+	<script src="assets/base/js/components.js" type="text/javascript"></script>
+	<script src="assets/base/js/components-shop.js" type="text/javascript"></script>
+	<script src="assets/base/js/app.js" type="text/javascript"></script>
+	<script src="assets/plugins/jquery-form/jquery-form.min.js"></script>
 
 	<script>
 	$(document).ready(function() {

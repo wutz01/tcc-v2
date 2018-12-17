@@ -74,7 +74,7 @@
             <div class="modal-body">
                 <h3 class="c-font-24 c-font-sbold">Hello!</h3>
                 <p>Let's make today a great day!</p>
-                <form id="global-login-frm" method="POST" action="../Login/ajaxRequest.php">
+                <form id="global-login-frm" method="POST" action="Login/ajaxRequest.php">
                     <div class="form-group">
                         <label for="login-email" class="hide">Username</label>
                         <input type="text" class="form-control input-lg c-square" id="login-email" placeholder="Username" name="username">
