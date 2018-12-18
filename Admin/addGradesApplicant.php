@@ -79,7 +79,7 @@
                       </table>
                       </center>
                       <button class="btn btn-success pull-right" name="validate" type="submit">Save</button> 
-                      <a href="acceptedApplicantProfile.php?id=<?php echo $_GET["id"] ?>"><button class="btn btn-danger">Cancel</button></a>
+                      <a href="acceptedApplicantProfile.php?id=<?php echo $_GET["id"] ?>"><button class="btn btn-danger" type="button">Cancel</button></a>
                       </form>
                     </div>
                   </div>

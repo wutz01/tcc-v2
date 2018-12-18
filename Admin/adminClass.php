@@ -385,6 +385,17 @@ class Admin
         return $stmt;
     }
 
+    public function getStudentList()
+    {
+        $query = "SELECT * FROM tbl_users WHERE accesstype = 'Student'";
+        
+        $stmt = $this->importConn->prepare($query);
+        
+        $stmt->execute();
+        
+        return $stmt;
+    }
+
     public function getApplicantSubjectDefault()
     {
         $query = "SELECT * FROM tbl_subjects_applicant WHERE fld_status = 'ACTIVE' AND fld_default = 1";
