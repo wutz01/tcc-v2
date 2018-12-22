@@ -39,7 +39,7 @@
                 <div class="example">
                   <div class="form-group row">
                     <form method="post" id="gradeApplicantSubmit" action="addGradesApplicantAPI.php">
-                      <center><table id="example" style="width: 50%">
+                      <center><table id="example" style="width: 50%" class="table-bordered">
                             <tr>
                                <th>Subject Name</th>
                                <th>Grade</th>

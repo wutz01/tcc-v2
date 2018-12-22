@@ -58,7 +58,7 @@
 
               <h4 class="example-title">Manage Students</h4>
 
-              <button class="btn btn-primary pull-right"  data-toggle="modal" data-target="#addSubject">Add new student</button><br><br>
+              <button class="btn btn-primary pull-right" data-toggle="modal" data-target="#addStudent">Add new student</button><br><br>
 
                 <div class="example">
 
@@ -158,7 +158,7 @@
 
 <!-- Modal -->
 
-<div class="modal fade" id="addSubject" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="addStudent" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 
   <div class="modal-dialog" role="document">
 
@@ -182,15 +182,23 @@
 
 
 
-          <form action="addStudentAPI.php" method="post">
+          <form  method="post" action="../api/addUser.php" id="addUser">
 
               <div class="form-group row">
+
+                <div class="col-sm-12">
+
+                  <label>Student Number</label>
+
+                  <input type="text" class="form-control" name="studentNo" id="studentNo" placeholder="Student Number" required />
+
+                </div>
 
                 <div class="col-sm-4">
 
                   <label>Firstname</label>
 
-                  <input type="text" class="form-control" name="firstName" id="Firstname" placeholder="Firstname" />
+                  <input type="text" class="form-control" name="firstName" id="firstName" placeholder="Firstname" required/>
 
                 </div>
 
@@ -198,7 +206,7 @@
 
                   <label>Middlename</label>
 
-                  <input type="text" class="form-control" name="middleName" id="Middlename" placeholder="Middlename" />
+                  <input type="text" class="form-control" name="middleName" id="middleName" placeholder="Middlename" required/>
 
                 </div>
 
@@ -206,107 +214,58 @@
 
                   <label>Lastname</label>
 
-                  <input type="text" class="form-control" name="lastName" id="Lastname" placeholder="Lastname" />
+                  <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Lastname" required/>
 
                 </div>
 
                 <div class="col-sm-4">
 
-                  <label>Email Address</label>
+                  <label>Sex</label>
 
-                  <input type="email" class="form-control" name="emailAddress" id="emailAddress" placeholder="Email Address" />
-
-                </div>
-
-                <div class="col-sm-4">
-
-                  <label>Employment Type</label>
-
-                  <select class='form-control' name='employmentType' id='employmentType'>
-
-                    <option value='1' data-hidden="true">Part Time</option>
-
-                    <option value='2' data-hidden="true">Full Time</option>
-
+                  <select name="sexStudent" id="sexStudent" class='form-control'>
+                    <option class="form-control" value="Male">Male</option>
+                    <option class="form-control" value="Female">Female</option>
                   </select>
 
                 </div>
 
                 <div class="col-sm-4">
 
-                  <label>Max Units</label>
+                  <label>Gender</label>
 
-                  <input type="number" class="form-control" name="maxUnits" id="maxUnits" placeholder="Max Units" />
+                  <select name="genderStudent" id="genderStudent" class='form-control'>
+                    <option class="form-control" value="Not Specified">Not Specified</option>
+                    <option class="form-control" value="Gay">Gay</option>
+                    <option class="form-control" value="Lesbian">Lesbian</option>
+                    <option class="form-control" value="Bisexual">Bisexual</option>
+                    <option class="form-control" value="Transgender">Transgender</option>
+                  </select>
 
                 </div>
 
                 <div class="col-sm-4">
 
-                  <label>Schedule</label>
+                  <label>Date of Birth</label>
 
-                  <input type="text" class="form-control" name="schedule" id="schedule" placeholder="MTWHFS" />
+                  <input type="date" class="form-control" name="birthDate" id="birthDate" placeholder="Birthdate" required/>
+
+                </div>
+
+               <!--  <div class="col-sm-6">
+
+                  <label>Place of Birth</label>
+
+                  <input type="tetx" class="form-control" name="birthPlace" id="birthPlace" placeholder="Birth Place" required/>
 
                 </div>
 
-                  <div class="col-sm-4">
+                <div class="col-sm-2">
 
-                    <label>Username</label>
+                  <label>Age</label>
 
-                    <input type="text" class="form-control" name="userName" id="userName" placeholder="Username" />
+                  <input type="tetx" class="form-control" name="age" id="age" placeholder="Age" required/>
 
-                  </div>
-
-                  <div class="col-sm-4">
-
-                    <label>Access Type</label>
-
-                    <select class='form-control' name='accessType' id='accessType'>
-
-                      <option value='Admin' data-hidden="true">ADMIN</option>
-
-                      <option value='Faculty' data-hidden="true">FACULTY</option>
-
-                      <option value='Registrar4old' data-hidden="true">REGISTRAR4OLD</option>
-
-                    </select>
-
-                  </div>
-
-                  <div class="col-sm-4">
-
-                    <label>Status</label>
-
-                    <select class='form-control' name='statusUser' id='statusUser'>
-
-                      <option value='active' data-hidden="true">ACTIVE</option>
-
-                      <option value='inactive' data-hidden="true">INACTIVE</option>
-
-                      <option value='resignedTerminated' data-hidden="true">Resign/Terminated</option>
-
-                    </select>
-
-                  </div>
-
-                      <div class="col-sm-4">
-
-                        <label>Password</label>
-
-                        <input type="password" class="form-control" name="password" id="password" placeholder="Password" />
-
-                      </div>
-
-                      <div class="col-sm-4">
-
-                        <label>Confirm Password</label>
-
-                        <input type="password" class="form-control" name="cPassword" id="cPassword" placeholder="Confirm Password" />
-
-                      </div>
-
-                    <div class="col-sm-1">
-
-                </div>
+                </div> -->
 
               </div>
 
@@ -318,7 +277,7 @@
 
             <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Close</button>
 
-            <button type="submit" class="btn btn-primary">Add User</button>
+            <button type="submit" class="btn btn-primary">Add Student</button>
 
           </div>
 
@@ -329,7 +288,6 @@
   </div>
 
 </div>
-
 
 
                   <div class="form-group row">
@@ -474,31 +432,6 @@
 
 ?>
 
-<script type="text/javascript">
-
-  $(function(){
-
-    $("#deleteTable").DataTable();
-
-  })
-
-  function editStudent(idx){
-
-    let url = "editStudentModal.php";
-
-    $.post(url,{id:idx},function(result){
-
-      $("#modal-danger").html(result);
-
-      $("#modal-danger").modal('show');
-
-    });
-
-  }
-
-</script>
-
-
 
 <script type="text/javascript">
 
@@ -522,6 +455,10 @@
 
   }
 
+  function addStudent(){
+    window.location.href='addStudent.php';
+  }
+
 </script>
 
 
@@ -538,4 +475,28 @@
 
 } );
 
+</script> -->
+<script src="../assets/plugins/jquery-form/jquery-form.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+   $('#addUser').ajaxForm({
+      dataType: 'json',
+      success: (o) => {
+        console.log(o),
+        alert(json.message)
+      },
+      beforeSubmit: (o) => {
+        alert('Submit?')
+        console.log(`Submit?`)
+      }
+    })
+  });
+
+  // function generateAge() {
+  //   var birthDate = document.getElementById('birthDate').value;
+  //   birthDate = new Date(birthDate);
+  //   var today = new Date();
+  //   var ageApplicant = Math.floor((today - birthDate)/(365.25 * 24 * 60 * 60 *1000));
+  //   document.getElementById('age').value = ageApplicant;
+  // }
 </script>

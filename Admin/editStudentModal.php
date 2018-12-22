@@ -60,7 +60,7 @@
 
 
 
-          <form  method="post" action="editSubjectAPI.php" id="updateSubjects">
+          <form  method="post" action="editStudentAPI.php" id="updateStudent">
 
               <div class="form-group row">
 
@@ -88,15 +88,23 @@
 
                 </div>
 
-                <div class="col-sm-2">
+                <div class="col-sm-3">
 
                   <label>Sex</label>
 
-                  <input type="text" class="form-control" name="sexStudent" id="sexStudent" placeholder="N/A" value="<?php echo $userStudent['fld_sex']; ?>" />
+                <select name="sexStudent" id="sexStudent" class='form-control'>
+                  <?php if($userStudent['fld_sex'] == 'M'){ ?>
+                  <option class="form-control" value="M">Male</option>
+                  <option class="form-control" value="F">Female</option>
+                  <?php } else { ?>
+                  <option class="form-control" value="F">Female</option>
+                  <option class="form-control" value="M">Male</option>
+                  <?php } ?>
+                </select>
 
                 </div>
 
-                <div class="col-sm-10">
+                <div class="col-sm-9">
 
                   <label>Home Address</label>
 
@@ -156,7 +164,17 @@
 
                   <label>Academic Status</label>
 
-                  <input type="text" class="form-control" name="academicStatus" id="academicStatus" placeholder="N/A" value="<?php echo $userStudent['fld_academicStatus']; ?>" />
+                  <select name="academicStatus"  class='form-control' id="academicStatus">
+                    <?php if($userStudent['fld_academicStatus'] == 'Irregular') { ?>
+                    <option value="Irregular">Irregular</option>
+                    <option value="Regular">Regular</option>
+                    <?php } else { ?>
+                    <option value="Regular">Regular</option> 
+                    <option value="Irregular">Irregular</option>
+                    <?php } ?>
+                  </select>
+
+                  <!-- <input type="text" class="form-control" name="academicStatus" id="academicStatus" placeholder="N/A" value="<?php echo $userStudent['fld_academicStatus']; ?>" /> -->
 
                 </div>
 
@@ -166,7 +184,11 @@
 
                   <div hidden>
 
-                    <input type="text" class="form-control" name="staffId" id="staffId" placeholder="Subject Name" value="<?php echo $user['staffId']; ?>">
+                    <input type="text" class="form-control" name="staffId" id="staffId" placeholder="Student Number" value="<?php echo $userStudent['fld_studentNo']; ?>">
+
+                    <input type="text" class="form-control" name="propectusName" id="propectusName" placeholder="N/A" value="<?php echo $userStudent['fld_prospectusName']; ?>" />
+
+                    <input type="text" class="form-control" name="status" id="status" placeholder="N/A" value="<?php echo $userStudent['fld_status']; ?>" />
 
                   </div>
 
@@ -238,30 +260,37 @@
 
     var staffId = document.getElementById("staffId").value;
 
-    var userName = document.getElementById("userName").value;
-
-    var accessType = $("#accessType").val();
-
-    var statusUser = $("#statusUser").val();
-
-
-
     var firstName = document.getElementById("firstName").value;
 
     var middleName = document.getElementById("middleName").value;
 
     var lastName = document.getElementById("lastName").value;
 
-    var emailAddress = document.getElementById("emailAddress").value;
+    var sexStudent = $("#sexStudent").val();
 
-    // var employmentType = document.getElementById("employmentType").value;
+    var homeAddress = document.getElementById("homeAddress").value;
 
-    var employmentType = $("#employmentType").val();
+    var guardianName = document.getElementById("guardianName").value;
 
-    var maxUnits = document.getElementById("maxUnits").value;
+    var mobileNo = document.getElementById("mobileNo").value;
 
-    var schedule = document.getElementById("schedule").value;
+    var yearLevel = document.getElementById("yearLevel").value;
 
+    var course = document.getElementById("course").value;
+
+    var section = document.getElementById("section").value;
+
+    var admissionStatus = document.getElementById("admissionStatus").value;
+
+    var academicStatus = $("#academicStatus").val();
+
+    var userName = document.getElementById("userName").value;
+
+    var prospectusName = document.getElementById("propectusName").value;
+
+    var status = document.getElementById("status").value;
+
+    var statusUser = $("#statusUser").val();
     
 
     $(function(){
@@ -272,11 +301,11 @@
 
         method: "POST",
 
-        data:{ staffId:staffId, firstName:firstName, middleName:middleName, lastName:lastName, emailAddress:emailAddress, employmentType:employmentType, maxUnits:maxUnits, schedule:schedule, userName:userName, accessType:accessType, statusUser:statusUser},
+        data:{ staffId:staffId, firstName:firstName, middleName:middleName, lastName:lastName, sexStudent:sexStudent, homeAddress:homeAddress, guardianName:guardianName, mobileNo:mobileNo, yearLevel:yearLevel, course:course, section:section, admissionStatus:admissionStatus, academicStatus:academicStatus, userName:userName, statusUser:statusUser, prospectusName:prospectusName, status:status},
 
         success:function(data){
 
-              alert('Successfully updated '+userName);
+              alert('Successfully updated '+firstName+ ' ' +middleName+ ' '+lastName);
 
               window.location.href = "students.php";
 
