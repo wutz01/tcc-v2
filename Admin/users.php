@@ -242,9 +242,14 @@
 
                 <div class="col-sm-4">
 
-                  <label>Schedule</label>
+                  <label>Schedule</label><br>
 
-                  <input type="text" class="form-control" name="schedule" id="schedule" placeholder="MTWHFS" />
+                  <input type="checkbox" name="schedule[]" value="M"> M<br>
+                  <input type="checkbox" name="schedule[]" value="T"> T<br>
+                  <input type="checkbox" name="schedule[]" value="W"> W<br>
+                  <input type="checkbox" name="schedule[]" value="Th"> Th<br>
+                  <input type="checkbox" name="schedule[]" value="F"> F<br>
+                  <input type="checkbox" name="schedule[]" value="S"> S<br>
 
                 </div>
 
