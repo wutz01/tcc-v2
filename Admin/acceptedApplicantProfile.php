@@ -52,6 +52,31 @@
 	        </ol>
 
 	    </div>
+<div class="card-body">
+
+    <?php if (isset($_SESSION['msgExist'])): ?>
+
+        <div class="notif">
+
+          <div class="alert alert-danger alert-dismissable show">
+
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+
+              <?php 
+
+                echo $_SESSION['msgExist'];
+
+                unset($_SESSION['msgExist']);
+
+              ?>
+
+          </div>
+
+        </div>
+
+    <?php endif ?>
+
+</div>
 
    <div class="page-content">
 
@@ -74,12 +99,10 @@
 	}
 
 </style>
-<!-- <div class="clearfix">
-	<ul class="nav nav-tabs c-font-sbold pull-left"> -->
+
 		<button class="btn btn-info" onclick="hideTableInfo()">Information</button> 
 		<button class="btn btn-primary" onclick="hideTableGrade()">Grades</button>
-<!-- 	</ul>
-</div> -->
+
 <table class="table table-striped" id="infoApplicant">
 
 	<tbody>
@@ -98,7 +121,7 @@
 
 				<?php } else { ?>
 
-				<form class="well form-horizontal" id="personalInfo">
+				<form class="well form-horizontal" id="personalInfo" action="../api/enrollNow.php">
 
 					<h2>Personal Information</h2><br>
 
@@ -1126,6 +1149,141 @@
 
 </table>
 
+<div class="modal fade" id="enrollNow" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+  <div class="modal-dialog" role="document">
+
+    <div class="modal-content">
+
+      <div class="modal-header">
+
+        <h4 class="modal-title" id="exampleModalLabel">Add User</h4>
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+
+          <span aria-hidden="true">&times;</span>
+
+        </button>
+
+      </div>
+
+      <div class="modal-body">
+
+        <div class="tab-pane active" id="subject" role="tabpanel">
+
+
+
+          <form action="../api/enrollNow.php" method="post">
+
+              <div class="form-group row">
+              	<!-- <?php echo $user['fld_applicantID'] ?> -->
+
+                <div class="col-sm-12">
+
+                  <label>Student Number</label>
+
+                  <input type="text" class="form-control" name="studentNo" id="studentNo" placeholder="Student Number" required />
+
+                </div>
+
+                <div class="col-sm-12" hidden>
+
+                  <label>Firstname</label>
+
+                  <input type="text" class="form-control" name="firstName" id="firstName" placeholder="Firstname" value="<?php echo $user['fld_firstName'] ?>" />
+
+                </div>
+
+                <div class="col-sm-4" hidden>
+
+                  <label>Middlename</label>
+
+                  <input type="text" class="form-control" name="middleName" id="Middlename" placeholder="Middlename" value="<?php echo $user['fld_middleName'] ?>" />
+
+                </div>
+
+                <div class="col-sm-4" hidden>
+
+                  <label>Lastname</label>
+
+                  <input type="text" class="form-control" name="lastName" id="Lastname" placeholder="Lastname" value="<?php echo $user['fld_lastName'] ?>" />
+
+                </div>
+
+                <div class="col-sm-4" hidden>
+
+                  <label>Sex</label>
+
+                  <input type="text" class="form-control" name="sexApplicant" id="sexApplicant" placeholder="Lastname" value="<?php echo $user['fld_sex'] ?>" />
+
+                </div>
+
+                <div class="col-sm-4" hidden>
+
+                  <label>Home Address</label>
+
+                  <input type="text" class="form-control" name="homeAddress" id="homeAddress" placeholder="Lastname" value="<?php echo $user['fld_homeAddress'] ?>" />
+
+                </div>
+
+                <div class="col-sm-4" hidden>
+
+                  <label>Guardian Name</label>
+
+                  <input type="text" class="form-control" name="guardianName" id="guardianName" placeholder="Lastname" value="<?php echo $user['fld_guardianName'] ?>" />
+
+                </div>
+
+                <div class="col-sm-4" hidden>
+
+                  <label>Mobile Number</label>
+
+                  <input type="text" class="form-control" name="mobileNo" id="mobileNo" placeholder="Lastname" value="<?php echo $user['fld_mobilePhoneNo'] ?>" />
+
+                </div>
+
+                <div class="col-sm-4" hidden>
+
+                  <label>Applicant ID</label>
+
+                  <input type="text" class="form-control" name="applicantId" id="applicantId" placeholder="applicantId" value="<?php echo $user['fld_applicantID'] ?>" />
+
+                </div>
+
+                <div class="col-sm-4" hidden>
+
+                  <label>Applicant ID</label>
+
+                  <input type="text" class="form-control" name="birthDate" id="birthDate" placeholder="applicantId" value="<?php echo $user['fld_birthDate'] ?>" />
+
+                </div>
+
+                    <div class="col-sm-1">
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="modal-footer">
+
+            <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Close</button>
+
+            <button type="submit" class="btn btn-primary" onclick="enrollNow()">Enroll Now</button>
+
+          </div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</div>
+
 <table class="table table-striped" id="gradeApplicant" style="display: none">
 
 	<tbody>
@@ -1191,20 +1349,19 @@
 	</tbody>
 
 </table>
+					<div style="float: right;">
+	                <?php if($userAve['average'] >= '75'){ ?>
+	                	<button class="btn btn-success" style="display: none" id="pass" type="submit" data-toggle="modal" data-target="#enrollNow">Enroll Now!</button>
+	               	<?php } else { ?>
+	               		<button class="btn btn-danger" style="display: none" id="fail" type="button">Failed</button>
+	               	<?php } ?>
+	                	<a href="../Admin/acceptedApplicant.php"><button class="btn btn-primary">View more applicant</button></a>
+	                </div>
 
 	              		</div>
 
 	                </div>
-
-	                <div style="float: right;">
-	                <?php if($userAve['average'] >= '75'){ ?>
-	                	<button class="btn btn-success" style="display: none" id="pass">Enroll Now!</button>
-	               	<?php } else { ?>
-	               		<button class="btn btn-danger" style="display: none" id="fail">Failed</button>
-	               	<?php } ?>
-	                	<a href="../Admin/acceptedApplicant.php"><button class="btn btn-primary">View more applicant</button></a>
-
-	                </div>
+					
 
 	            </div>
 
@@ -1215,7 +1372,6 @@
 	</div>
 
 </div>
-
 
 
 <?php
@@ -1238,6 +1394,22 @@
 	  $('#gradeApplicant').show();
 	  $('#pass').show();
 	  $('#fail').show();
+	}
+	function enrollNow() {
+		$(document).ready(function(){
+			$('#personalInfo').ajaxForm({
+				dataType: 'json',
+				success: (o) => {
+					console.log(o),
+					alert(json.message),
+					alert($_SESSION['msgUpdate'])
+				},
+				beforeSubmit: (o) => {
+					alert('Submit?')
+					console.log(`Submit?`)
+				}
+			})
+		});
 	}
 </script>
 <link rel="stylesheet" type="text/css" href="../assets/js/datatables.min.css"/> 
