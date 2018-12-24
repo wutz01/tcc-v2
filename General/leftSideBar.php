@@ -72,7 +72,7 @@
 
                     <i class="site-menu-icon wb-book" aria-hidden="true"></i>
 
-                    <span class="site-menu-title">Subjects</span>
+                    <span class="site-menu-title">Applicant Exams</span>
 
                   </a>
 
@@ -112,21 +112,21 @@
 
               </ul>
 
-              <!-- <ul class="site-menu-sub">
+              <ul class="site-menu-sub">
 
                 <li class="site-menu-item">
 
-                  <a class="animsition-link" href="../Admin/departments.php" data-slug="Assign Access Type">
+                  <a class="animsition-link" href="../Admin/subjectSchedule.php" data-slug="Assign Access Type">
 
-                    <i class="site-menu-icon wb-home" aria-hidden="true"></i>
+                    <i class="site-menu-icon wb-time" aria-hidden="true"></i>
 
-                    <span class="site-menu-title">Departments</span>
+                    <span class="site-menu-title">Subject Scheduling</span>
 
                   </a>
 
                 </li>
 
-              </ul> -->
+              </ul>
 
             </li>
 
@@ -142,17 +142,7 @@
 
             </li>
 
-            <li class="site-menu-item">
-
-              <a class="animsition-link" href="../Admin/subjectSchedule.php" data-slug="Assign Access Type">
-
-                <i class="site-menu-icon wb-time" aria-hidden="true"></i>
-
-                <span class="site-menu-title">Subject Scheduling</span>
-
-              </a>
-
-            </li>
+            
 
             <li class="site-menu-item">
 
