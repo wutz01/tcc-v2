@@ -56,7 +56,7 @@
       </div>
 
       <div class="form-group">
-        <label  class="col-md-2 control-label">Sex</label>
+        <label  class="col-md-2 control-label">Sex<span style="color:red; font-size: 18px;">*</span></label>
         <div class="col-md-3">
           <label class="radio-inline">
             <input type="radio" name="sexApplicant" id="sexApplicant"  value="Male">Male
@@ -66,7 +66,7 @@
           </label>
         </div>
 
-        <label for="gender" class="col-md-1 control-label">Gender</label>
+        <label for="gender" class="col-md-1 control-label">Gender<span style="color:red; font-size: 18px;">*</span></label>
         <div class="col-md-2">
           <select class="form-control c-square c-theme" id="gender" name="gender">
             <option value="Not Specified">Not Specified</option>

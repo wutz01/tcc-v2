@@ -63,6 +63,7 @@
       $(`a[href="#tab_2_${step}_content"]`).tab('show')
     } else {
       $myForm.find(':submit').click();
+      console.log(`failed`)
     }
   }
   function prevStep () {
