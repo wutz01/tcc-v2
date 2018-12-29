@@ -298,11 +298,9 @@
 
                               <tr class="listApply">
 
-                                 <th>Staff ID</th>
+                                 <th>Student Number</th>
 
-                                 <th>Username</th>
-
-                                 <th>Access Type</th>
+                                 <th>Fullname</th>
 
                                  <th>Status</th>
 
@@ -336,9 +334,7 @@
 
                                  <?php } ?>
 
-                                 <td><?php echo $Username; ?></td>
-
-                                 <td><?php echo $accessType; ?></td>
+                                 <td><?php echo $fld_lastName; ?>, <?php echo $fld_firstName; ?> <?php echo $fld_middleName; ?></td>
 
                                  <?php if($status == 'active'){ ?>
 
@@ -378,9 +374,7 @@
 
                               <tr class="listApply">
 
-                                 <th>Staff ID</th>
-
-                                 <th>Username</th>
+                                 <th>Student Number</th>
 
                                  <th>Access Type</th>
 

@@ -387,7 +387,7 @@ class Admin
 
     public function getStudentList()
     {
-        $query = "SELECT * FROM tbl_users WHERE accesstype = 'Student'";
+        $query = "SELECT fld_firstName, fld_middleName, fld_lastName, Username, staffId, status FROM tbl_users LEFT JOIN tbl_student ON tbl_users.staffId = tbl_student.fld_studentNo WHERE accesstype = 'Student'";
         
         $stmt = $this->importConn->prepare($query);
         
@@ -395,6 +395,9 @@ class Admin
         
         return $stmt;
     }
+// SELECT column_name(s)
+// FROM table1
+// LEFT JOIN table2 ON table1.column_name = table2.column_name;
 
     public function getApplicantSubjectDefault()
     {
