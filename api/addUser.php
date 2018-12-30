@@ -48,6 +48,7 @@
 	mysqli_close($conn);
 
 	echo json_encode($json, 200);
+	
 	exit();
 	
 

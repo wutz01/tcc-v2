@@ -1,4 +1,5 @@
 <?php
+session_start();
 	include '../Database/database2.php';
 	// print_r($_POST);
 	// die();
@@ -61,7 +62,7 @@
 
 	if($stmt->execute()){
 
-		$_SESSION['msgUpdate'] = 'Successfully enrolled student!';
+		$_SESSION['msgEnrolled'] = 'Successfully enrolled '.$lastName.', '.$firstName. ' '.$middleName;
 
 		header('Location: ../Admin/acceptedApplicant.php');
 
