@@ -206,7 +206,7 @@
 
                   <label>Middlename</label>
 
-                  <input type="text" class="form-control" name="middleName" id="middleName" placeholder="Middlename" required/>
+                  <input type="text" class="form-control" name="middleName" id="middleName" placeholder="Middlename"/>
 
                 </div>
 
@@ -479,7 +479,7 @@
           alert(o.message)
           location.reload();
         } else {
-          alert('error')
+          alert(o.message)
         }
       },
       beforeSubmit: (o) => {

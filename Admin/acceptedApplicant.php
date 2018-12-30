@@ -76,6 +76,50 @@
 
     <?php endif ?>
 
+    <?php if (isset($_SESSION['msgEnrolled'])): ?>
+
+        <div class="notif">
+
+          <div class="alert alert-success alert-dismissable show">
+
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+
+              <?php 
+
+                echo $_SESSION['msgEnrolled'];
+
+                unset($_SESSION['msgEnrolled']);
+
+              ?>
+
+          </div>
+
+        </div>
+
+    <?php endif ?>
+
+    <?php if (isset($_SESSION['msgExist'])): ?>
+
+        <div class="notif">
+
+          <div class="alert alert-danger alert-dismissable show">
+
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+
+              <?php 
+
+                echo $_SESSION['msgExist'];
+
+                unset($_SESSION['msgExist']);
+
+              ?>
+
+          </div>
+
+        </div>
+
+    <?php endif ?>
+
 </div>
 
 <style type="text/css">
