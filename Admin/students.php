@@ -376,7 +376,7 @@
 
                                  <th>Student Number</th>
 
-                                 <th>Access Type</th>
+                                 <th>Fullname</th>
 
                                  <th>Status</th>
 
