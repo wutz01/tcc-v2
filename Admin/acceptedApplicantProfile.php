@@ -1545,7 +1545,7 @@
 				success: (o) => {
 					console.log(o),
 					alert(json.message),
-					alert($_SESSION['msgUpdate'])
+					alert("Successfully enrolled student")
 				},
 				beforeSubmit: (o) => {
 					alert('Submit?')

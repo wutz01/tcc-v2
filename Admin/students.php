@@ -436,7 +436,7 @@
 
   function deleteUser(idx){
 
-    let url = "deleteUserModal.php";
+    let url = "deleteStudentModal.php";
 
     $.post(url,{id:idx},function(result){
 
@@ -471,25 +471,20 @@
 </script> -->
 <script src="../assets/plugins/jquery-form/jquery-form.min.js"></script>
 <script type="text/javascript">
-  $(document).ready(function(){
-   $('#addUser').ajaxForm({
+  $(function () {
+    $('#addUser').ajaxForm({
       dataType: 'json',
       success: (o) => {
-        console.log(o),
-        alert(json.message)
+        if(o.success){
+          alert(o.message)
+          location.reload();
+        } else {
+          alert('error')
+        }
       },
       beforeSubmit: (o) => {
-        alert('Submit?')
-        console.log(`Submit?`)
+        alert('Do you want to save?');
       }
-    })
-  });
-
-  // function generateAge() {
-  //   var birthDate = document.getElementById('birthDate').value;
-  //   birthDate = new Date(birthDate);
-  //   var today = new Date();
-  //   var ageApplicant = Math.floor((today - birthDate)/(365.25 * 24 * 60 * 60 *1000));
-  //   document.getElementById('age').value = ageApplicant;
-  // }
+    });
+  })
 </script>

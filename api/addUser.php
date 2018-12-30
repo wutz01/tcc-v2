@@ -41,16 +41,14 @@
 	$queryUser = "INSERT INTO tbl_users(Username, passwordPlain, passwordSalt, staffId, accessType, status) VALUES('$studentNo', '$password', '$salt', '$studentNo', '$accessType', '$status')";
 	$stmt3 = mysqli_query($conn, $queryUser);
 
-	$json['message'] = "Student successfully added!";
+	$json['success'] = true;
 
-	$json['is_successful'] = true;
+	$json['message'] = "Student successfully added!";
 
 	mysqli_close($conn);
 
 	echo json_encode($json, 200);
-	// header("Location: ../students.php");dd
-
-	die();
+	exit();
 	
 
 ?>
