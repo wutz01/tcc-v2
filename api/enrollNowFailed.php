@@ -1,4 +1,5 @@
 <?php
+session_start();
 	include '../Database/database2.php';
 	// print_r($_POST);
 	// die();
@@ -16,9 +17,6 @@
 
 	$remarks = $_POST['remarks'];
 
-	// print_r($remarks);
-	// die();
-
 	$cost = 10;
 	$enc = strtr(base64_encode(mcrypt_create_iv(16, MCRYPT_DEV_URANDOM)), '+', '.');
 	$salt = sprintf("$2a$%02d$", $cost) . $enc;
@@ -34,7 +32,7 @@
 	$resCheckExist = mysqli_query($conn, $checkExist);
 	$stmtCheckExist = mysqli_fetch_assoc($resCheckExist);
 
-	$checkExist1 = "SELECT * FROM tbl_users WHERE Username = '$studentNo'";
+	$checkExist1 = "SELECT * FROM tbl_users WHERE staffId = '$studentNo'";
 	$resCheckExist1 = mysqli_query($conn, $checkExist1);
 	$stmtCheckExist1 = mysqli_fetch_assoc($resCheckExist1);
 
@@ -66,7 +64,7 @@
 
 	if($stmt->execute()){
 
-		$_SESSION['msgUpdate'] = 'Successfully enrolled student!';
+		$_SESSION['msgEnrolled'] = 'Successfully enrolled '.$lastName.', '.$firstName. ' '.$middleName;
 
 		header('Location: ../Admin/acceptedApplicant.php');
 

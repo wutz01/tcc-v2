@@ -1,4 +1,5 @@
 <?php
+session_start();
 	include '../Database/database2.php';
 	// print_r($_POST);
 	// die();
@@ -50,7 +51,7 @@
 	$resUpdate = mysqli_query($conn, $queryUpdateApplicant);
 	$stmtUpdate = mysqli_fetch_assoc($resUpdate);
 
-	$queryUpdate = "UPDATE tbl_applicant SET fld_statusApplicant = '$statusApplicant' WHERE fld_applicantID = '$applicantID'";
+	$queryUpdate = "UPDATE tbl_applicant SET fld_statusApplicant = '$statusApplicant', fld_studentNo = '$studentNo' WHERE fld_applicantID = '$applicantID'";
 	$stmt = $conn->prepare($queryUpdate);
 
 	$queryStudent = "INSERT INTO tbl_student(fld_studentNo, fld_firstName, fld_middleName, fld_lastName, fld_sex, fld_homeAddress, fld_guardianName, fld_mobilePhoneNo) VALUES('$studentNo', '$firstName', '$middleName', '$lastName', '$sexApplicant', 'homeAddress', 'guardianName', '$mobileNo')";
@@ -61,7 +62,7 @@
 
 	if($stmt->execute()){
 
-		$_SESSION['msgUpdate'] = 'Successfully enrolled student!';
+		$_SESSION['msgEnrolled'] = 'Successfully enrolled '.$lastName.', '.$firstName. ' '.$middleName;
 
 		header('Location: ../Admin/acceptedApplicant.php');
 

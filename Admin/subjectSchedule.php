@@ -11,6 +11,32 @@
          <li class="active">Subject Scheduling</li>
       </ol>
    </div>
+<div class="card-body">
+
+  <?php if (isset($_SESSION['msgAddSubject'])): ?>
+
+      <div class="notif">
+
+        <div class="alert alert-success alert-dismissable show">
+
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+
+            <?php 
+
+              echo $_SESSION['msgAddSubject'];
+
+              unset($_SESSION['msgAddSubject']);
+
+            ?>
+
+        </div>
+
+      </div>
+
+  <?php endif ?>
+
+</div>
+<div class="modal fade" id="modal-danger" tabindex="-1" role="dialog" aria-labelledby="deleteUserModal" aria-hidden="true"></div>
    <div class="page-content">
       <div class="panel">
          <div class="panel-body container-fluid">
@@ -136,14 +162,101 @@
                                                       </a>
                                                    </td>
                                                 </tr>
+                                                <tr>
+                                                  <td>
+                                                  <h3>Import File</h3>
+                                                  <form id="upload_csv" method="post" enctype="multipart/form-data">  
+                                                    <input type="file" id="subjectScheduleFile" name="subjectScheduleFile"><br>
+                                                    <button type="submit" id="btnAddProspectus" class="btn btn-primary" >Upload</button>
+                                                  </form>
+                                                  </td>
+                                                </tr>
+                                                </div>
                                              </table>
                                              <hr>
-                                             <h3>Import File</h3>
-                                             <form id="upload_csv" method="post" enctype="multipart/form-data">  
-                                                <input type="file" id="subjectScheduleFile" name="subjectScheduleFile"><br>
-                                                <button type="submit" id="btnAddProspectus" class="btn btn-primary" >Upload</button>
-                                             </form>
+                                        <div class="example-wrap">
+                                          <h4 class="example-title">Manage Subject</h4>
+                                            <!-- <div class="panel-body"> -->
+                                              <div class="tab-content">
+                                            <form id="addSubjectStudent"  method="POST" action="../api/addSubjectStudent.php">
+                                              <div class="form-group row">
+                                                <div class="form-group row">
+                                                    <div class="col-sm-4">
+                                                    <label>Subject Code</label>
+                                                      <input type="text" name="subjectCode" placeholder="Subject Code" class="form-control">
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                    <label>Subject Description</label>
+                                                      <input type="text" name="subjectDesc" placeholder="Subject Description" class="form-control">
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                    <label>Units</label>
+                                                      <input type="number" name="subjectUnits" placeholder="Units" class="form-control">
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                    <label>Lecture Hours</label>
+                                                      <input type="number" name="subjectLecHrs" placeholder="Hours" class="form-control">
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                    <label>Lab Hours</label>
+                                                      <input type="number" name="subjectLabHrs" placeholder="Hours" class="form-control">
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                    <label>Pre-Requisite</label>
+                                                      <input type="text" name="subjectPreReq" placeholder="Pre-Requisite" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <button class="btn btn-primary pull-right" type="submit">Add Subject</button>
+                                              </div>
+                                            </form>
+                                              <!-- </div> -->
+                                            </div>
                                           </div>
+                                          <hr>
+<div class="form-group row">
+  <table class="table table-striped width-full" id="tableSubjectList">
+    <thead>
+       <tr>
+          <th style="width: 5%;">Subject Code</th>
+          <th style="width: 10%;">Subject Description</th>
+          <th style="width: 3%;">Units</th>
+          <th style="width: 3%;">Lab Hours</th>
+          <th style="width: 3%;">Lecture Hours</th>
+          <th style="width: 10%;">Pre-Requisite</th>
+          <th style="width: 10%;">Action</th>
+       </tr>
+    </thead>
+    <tbody>
+  <?php include '../Database/database2.php';
+    $querySubject = "SELECT * FROM tbl_subject";
+    $resSubject = mysqli_query($conn, $querySubject);
+    while($stmt = mysqli_fetch_assoc($resSubject)){
+  ?>
+      <tr>
+        <td><?php echo $stmt['fld_subCode'] ?></td>
+        <td><?php echo $stmt['fld_description'] ?></td>
+        <td><?php echo $stmt['fld_units'] ?></td>
+        <td><?php echo $stmt['fld_labHrs'] ?></td>
+        <td><?php echo $stmt['fld_lecHrs'] ?></td>
+        <td><?php echo $stmt['fld_preReq'] ?></td>
+        <td><button class="btn btn-primary" type="button" onclick="editSubject('<?php echo $stmt['fld_subjectID']; ?>')">Edit</button>
+        <button class="btn btn-danger" type="button" onclick="deleteSubject('<?php echo $stmt['fld_subjectID']; ?>')">Delete</button></td>
+      </tr>
+  <?php } ?>
+    </tbody>
+    <tfoot>
+       <tr>
+          <th style="width: 5%;">Subject Code</th>
+          <th style="width: 10%;">Subject Description</th>
+          <th style="width: 3%;">Units</th>
+          <th style="width: 3%;">Lab Hours</th>
+          <th style="width: 3%;">Lecture Hours</th>
+          <th style="width: 10%;">Pre-Requisite</th>
+          <th style="width: 10%;">Action</th>
+       </tr>
+    </tfoot>
+  </table>
+</div>
                                        </div>
                                     </div>
                                  </div>
@@ -161,7 +274,27 @@
 <!-- End Page -->
 <?php
    include_once "../General/footer.php";
-   ?>
+?>
+<script src="../assets/plugins/jquery-form/jquery-form.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../assets/js/datatables.min.css"/> 
+<script type="text/javascript">
+  $(function () {
+    $('#addSubjectStudent').ajaxForm({
+      dataType: 'json',
+      success: (o) => {
+        if(o.success){
+          alert(o.message)
+          location.reload();
+        } else {
+          alert(o.message)
+        }
+      },
+      beforeSubmit: (o) => {
+        alert('Do you want to save?');
+      }
+    });
+  })
+</script>
 <script type="text/javascript">
    $(document).ready(function(){
     populateSubject();
@@ -691,4 +824,65 @@
              } 
           }); 
     }
+</script>
+
+<script type="text/javascript" src="../assets/js/datatables.min.js"></script>
+
+<script type="text/javascript">
+
+  $(document).ready( function () {
+
+    $('#tableSchedule').DataTable();
+    $('#tableSubjectList').DataTable();
+
+} );
+
+</script>
+
+<script type="text/javascript">
+
+  $(function(){
+
+    $("#deleteUserModal").DataTable();
+
+  })
+
+  function deleteSubject(idx){
+
+    let url = "deleteSubjectModal.php";
+
+    $.post(url,{id:idx},function(result){
+
+      $("#modal-danger").html(result);
+
+      $("#modal-danger").modal('show');
+
+    });
+
+  }
+
+</script>
+
+<script type="text/javascript">
+
+  $(function(){
+
+    $("#deleteUserModal").DataTable();
+
+  })
+
+  function editSubject(idx){
+
+    let url = "editSubjectModal.php";
+
+    $.post(url,{id:idx},function(result){
+
+      $("#modal-danger").html(result);
+
+      $("#modal-danger").modal('show');
+
+    });
+
+  }
+
 </script>

@@ -76,6 +76,28 @@
 
     <?php endif ?>
 
+    <?php if (isset($_SESSION['msgEnrolled'])): ?>
+
+        <div class="notif">
+
+          <div class="alert alert-danger alert-dismissable show">
+
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+
+              <?php 
+
+                echo $_SESSION['msgEnrolled'];
+
+                unset($_SESSION['msgEnrolled']);
+
+              ?>
+
+          </div>
+
+        </div>
+
+    <?php endif ?>
+
 </div>
 
    <div class="page-content">
@@ -1157,7 +1179,7 @@
 
       <div class="modal-header">
 
-        <h4 class="modal-title" id="exampleModalLabel">Add User</h4>
+        <h4 class="modal-title" id="exampleModalLabel">Enroll Student</h4>
 
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 
@@ -1292,7 +1314,7 @@
 
       <div class="modal-header">
 
-        <h4 class="modal-title" id="exampleModalLabel">Add User</h4>
+        <h4 class="modal-title" id="exampleModalLabel">Enroll Student</h4>
 
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 
@@ -1545,7 +1567,7 @@
 				success: (o) => {
 					console.log(o),
 					alert(json.message),
-					alert($_SESSION['msgUpdate'])
+					alert("Successfully enrolled student")
 				},
 				beforeSubmit: (o) => {
 					alert('Submit?')
