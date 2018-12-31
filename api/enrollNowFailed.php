@@ -30,45 +30,57 @@ session_start();
 
 	$checkExist = "SELECT * FROM tbl_student WHERE fld_studentNo = '$studentNo'";
 	$resCheckExist = mysqli_query($conn, $checkExist);
-	$stmtCheckExist = mysqli_fetch_assoc($resCheckExist);
+	// $stmtCheckExist = mysqli_fetch_assoc($resCheckExist);
 
 	$checkExist1 = "SELECT * FROM tbl_users WHERE staffId = '$studentNo'";
 	$resCheckExist1 = mysqli_query($conn, $checkExist1);
-	$stmtCheckExist1 = mysqli_fetch_assoc($resCheckExist1);
+	// $stmtCheckExist1 = mysqli_fetch_assoc($resCheckExist1);
 
-	if (mysqli_num_rows($stmtCheckExist) > 0) {
-		$_SESSION['msgExist'] = 'Student already exist!';
-		header("Location: ../Admin/acceptedApplicantProfile.php");
-		die();
-	} 
-	if (mysqli_num_rows($stmtCheckExist1) > 0) {
-		$_SESSION['msgExist'] = 'Student already exist!';
-		header("Location: ../Admin/acceptedApplicantProfile.php");
+	// print($stmtCheckExist);
+	// die();
+	if (!isset($studentNo) || $studentNo === "") {
+		$_SESSION['msgExist'] = 'Enter student number';
 		die();
 	}
-	$queryUpdateApplicant = "SELECT * FROM tbl_applicant WHERE fld_applicantID = '$applicantId'";
-	$resUpdate = mysqli_query($conn, $queryUpdateApplicant);
-	$stmtUpdate = mysqli_fetch_assoc($resUpdate);
 
-	$queryUpdate = "UPDATE tbl_applicant SET fld_statusApplicant = '$statusApplicant', fld_studentNo = '$studentNo' WHERE fld_applicantID = '$applicantID'";
-	$stmt = $conn->prepare($queryUpdate);
-
-	$queryStudent = "INSERT INTO tbl_student(fld_studentNo, fld_firstName, fld_middleName, fld_lastName, fld_sex, fld_homeAddress, fld_guardianName, fld_mobilePhoneNo) VALUES('$studentNo', '$firstName', '$middleName', '$lastName', '$sexApplicant', 'homeAddress', 'guardianName', '$mobileNo')";
-	$stmt2 = mysqli_query($conn, $queryStudent);
-
-	$queryUser = "INSERT INTO tbl_users(Username, passwordPlain, passwordSalt, staffId, accessType, status) VALUES('$studentNo', '$password', '$salt', '$studentNo', '$accessType', '$status')";
-	$stmt3 = mysqli_query($conn, $queryUser);
-
-	$queryFailed = "INSERT INTO tbl_students_remarks(student_Id, remarks) VALUES('$studentNo', '$remarks')";
-	$stmt4 = mysqli_query($conn, $queryFailed);
-
-	if($stmt->execute()){
-
-		$_SESSION['msgEnrolled'] = 'Successfully enrolled '.$lastName.', '.$firstName. ' '.$middleName;
-
-		header('Location: ../Admin/acceptedApplicant.php');
-
+	if (!isset($remarks) || $remarks === "") {
+		$_SESSION['msgExist'] = 'Enter remarks';
 		die();
+	}
 
+	if (mysqli_num_rows($resCheckExist) > 0) {
+		$_SESSION['msgExist'] = $studentNo.' already exist!';
+		header("Location: ../Admin/acceptedApplicant.php");
+		die();
+	} elseif (mysqli_num_rows($resCheckExist1) > 0) {
+		$_SESSION['msgExist'] = $studentNo.' already exist!';
+		header("Location: ../Admin/acceptedApplicant.php");
+		die();
+	} else {
+		$queryUpdateApplicant = "SELECT * FROM tbl_applicant WHERE fld_applicantID = '$applicantId'";
+		$resUpdate = mysqli_query($conn, $queryUpdateApplicant);
+		$stmtUpdate = mysqli_fetch_assoc($resUpdate);
+
+		$queryUpdate = "UPDATE tbl_applicant SET fld_statusApplicant = '$statusApplicant', fld_studentNo = '$studentNo' WHERE fld_applicantID = '$applicantID'";
+		$stmt = $conn->prepare($queryUpdate);
+
+		$queryStudent = "INSERT INTO tbl_student(fld_studentNo, fld_firstName, fld_middleName, fld_lastName, fld_sex, fld_homeAddress, fld_guardianName, fld_mobilePhoneNo) VALUES('$studentNo', '$firstName', '$middleName', '$lastName', '$sexApplicant', 'homeAddress', 'guardianName', '$mobileNo')";
+		$stmt2 = mysqli_query($conn, $queryStudent);
+
+		$queryUser = "INSERT INTO tbl_users(Username, passwordPlain, passwordSalt, staffId, accessType, status) VALUES('$studentNo', '$password', '$salt', '$studentNo', '$accessType', '$status')";
+		$stmt3 = mysqli_query($conn, $queryUser);
+
+		$queryFailed = "INSERT INTO tbl_students_remarks(student_Id, remarks) VALUES('$studentNo', '$remarks')";
+		$stmt4 = mysqli_query($conn, $queryFailed);
+
+		if($stmt->execute()){
+
+			$_SESSION['msgEnrolled'] = 'Successfully enrolled '.$lastName.', '.$firstName. ' '.$middleName;
+
+			header('Location: ../Admin/acceptedApplicant.php');
+
+			die();
+
+		}
 	}
 ?>

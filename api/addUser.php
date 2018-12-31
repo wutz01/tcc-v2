@@ -32,24 +32,72 @@
 	// print_r($salt);
 	// die();
 
-	$queryApplicant = "INSERT INTO tbl_applicant(fld_applicationDate, fld_studentNo, fld_firstName, fld_middleName, fld_lastName, fld_sex, fld_gender, fld_ageApplicant, fld_birthDate, fld_birthPlace, fld_statusApplicant) VALUES('$dateAdd','$studentNo', '$firstName', '$middleName', '$lastName', '$sexStudent', '$genderStudent', '$dateOfBirth', '$statusAdd')";
-	$stmt1 = mysqli_query($conn, $queryApplicant);
+	if (!isset($studentNo) || $studentNo === "") {
+		$_SESSION['msgExist'] = 'Enter required field';
+		die();
+	}
+	if (!isset($firstName) || $firstName === "") {
+		$_SESSION['msgExist'] = 'Enter firstname';
+		die();
+	}
+	if (!isset($lastName) || $lastName === "") {
+		$_SESSION['msgExist'] = 'Enter lastname';
+		die();
+	}
+	if (!isset($dateOfBirth) || $dateOfBirth === "") {
+		$_SESSION['msgExist'] = 'Choose birthdate';
+		die();
+	}
+	// $age = $_POST['age'];
+	$checkExist = "SELECT * FROM tbl_student WHERE fld_studentNo = '$studentNo'";
+	$resCheckExist = mysqli_query($conn, $checkExist);
 
-	$queryStudent = "INSERT INTO tbl_student(fld_studentNo, fld_firstName, fld_middleName, fld_lastName, fld_sex) VALUES('$studentNo', '$firstName', '$middleName', '$lastName', '$sexStudent')";
-	$stmt2 = mysqli_query($conn, $queryStudent);
+	$checkExist1 = "SELECT * FROM tbl_users WHERE staffId = '$studentNo'";
+	$resCheckExist1 = mysqli_query($conn, $checkExist1);
 
-	$queryUser = "INSERT INTO tbl_users(Username, passwordPlain, passwordSalt, staffId, accessType, status) VALUES('$studentNo', '$password', '$salt', '$studentNo', '$accessType', '$status')";
-	$stmt3 = mysqli_query($conn, $queryUser);
+	if (mysqli_num_rows($resCheckExist) > 0) {
 
-	$json['success'] = true;
+		$json['success'] = false;
 
-	$json['message'] = "Student successfully added!";
+		$json['message'] = $studentNo. " already exist!";
 
-	mysqli_close($conn);
+		mysqli_close($conn);
 
-	echo json_encode($json, 200);
-	
-	exit();
-	
+		echo json_encode($json, 200);
+		
+		exit();
+
+	} elseif (mysqli_num_rows($resCheckExist1) > 0) {
+		$json['success'] = false;
+
+		$json['message'] = $studentNo. " already exist!";
+
+		mysqli_close($conn);
+
+		echo json_encode($json, 200);
+		
+		exit();
+	} else {
+
+		$queryApplicant = "INSERT INTO tbl_applicant(fld_applicationDate, fld_studentNo, fld_firstName, fld_middleName, fld_lastName, fld_sex, fld_gender, fld_ageApplicant, fld_birthDate, fld_birthPlace, fld_statusApplicant) VALUES('$dateAdd','$studentNo', '$firstName', '$middleName', '$lastName', '$sexStudent', '$genderStudent', '$dateOfBirth', '$statusAdd')";
+		$stmt1 = mysqli_query($conn, $queryApplicant);
+
+		$queryStudent = "INSERT INTO tbl_student(fld_studentNo, fld_firstName, fld_middleName, fld_lastName, fld_sex) VALUES('$studentNo', '$firstName', '$middleName', '$lastName', '$sexStudent')";
+		$stmt2 = mysqli_query($conn, $queryStudent);
+
+		$queryUser = "INSERT INTO tbl_users(Username, passwordPlain, passwordSalt, staffId, accessType, status) VALUES('$studentNo', '$password', '$salt', '$studentNo', '$accessType', '$status')";
+		$stmt3 = mysqli_query($conn, $queryUser);
+
+		$json['success'] = true;
+
+		$json['message'] = "Student successfully added!";
+
+		mysqli_close($conn);
+
+		echo json_encode($json, 200);
+		
+		exit();
+
+	}
 
 ?>

@@ -206,7 +206,7 @@
 
                   <label>Middlename</label>
 
-                  <input type="text" class="form-control" name="middleName" id="middleName" placeholder="Middlename" required/>
+                  <input type="text" class="form-control" name="middleName" id="middleName" placeholder="Middlename"/>
 
                 </div>
 
@@ -376,7 +376,7 @@
 
                                  <th>Student Number</th>
 
-                                 <th>Access Type</th>
+                                 <th>Fullname</th>
 
                                  <th>Status</th>
 
@@ -479,7 +479,7 @@
           alert(o.message)
           location.reload();
         } else {
-          alert('error')
+          alert(o.message)
         }
       },
       beforeSubmit: (o) => {
