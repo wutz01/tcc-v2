@@ -58,13 +58,15 @@
   function nextStep () {
     console.log(`valid?`, $('#apply-frm')[0].checkValidity())
     let $myForm = $('#apply-frm');
-    if ($myForm[0].checkValidity()) {
-      step++
-      $(`a[href="#tab_2_${step}_content"]`).tab('show')
-    } else {
-      $myForm.find(':submit').click();
-      console.log(`failed`)
-    }
+    step++
+    $(`a[href="#tab_2_${step}_content"]`).tab('show')
+    // if ($myForm[0].checkValidity()) {
+    //   step++
+    //   $(`a[href="#tab_2_${step}_content"]`).tab('show')
+    // } else {
+    //   $myForm.find(':submit').click();
+    //   console.log(`failed`)
+    // }
   }
   function prevStep () {
     step--
