@@ -277,6 +277,7 @@
 ?>
 <script src="../assets/plugins/jquery-form/jquery-form.min.js"></script>
 <link rel="stylesheet" type="text/css" href="../assets/js/datatables.min.css"/> 
+<script type="text/javascript" src="../assets/js/datatables.min.js"></script>
 <script type="text/javascript">
   $(function () {
     $('#addSubjectStudent').ajaxForm({
@@ -825,8 +826,6 @@
           }); 
     }
 </script>
-
-<script type="text/javascript" src="../assets/js/datatables.min.js"></script>
 
 <script type="text/javascript">
 

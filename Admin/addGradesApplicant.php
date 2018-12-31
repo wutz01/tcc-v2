@@ -98,10 +98,9 @@
 <?php
    include_once "../General/footer.php";
 ?>
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> -->
 <script src="../OSPI/assets/js/jquery.form.min.js"></script>
-<!-- <script src="../OSPI/assets/js/jquery-3.1.1.min.js"></script> -->
-
+<link rel="stylesheet" type="text/css" href="../assets/js/datatables.min.css"/> 
+<script type="text/javascript" src="../assets/js/datatables.min.js"></script>
 <script>
   function addRow() {
     let subject = $("#subjectNameSelect").val();
@@ -134,8 +133,7 @@
     });
   })
 </script>
-<link rel="stylesheet" type="text/css" href="../assets/js/datatables.min.css"/> 
-<script type="text/javascript" src="../assets/js/datatables.min.js"></script>
+
 <script type="text/javascript">
   $(document).ready( function () {
     $('#example').DataTable();

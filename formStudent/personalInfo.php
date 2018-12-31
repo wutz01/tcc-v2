@@ -9,7 +9,7 @@
       <div class="form-group">
           <label for="Name" class="col-md-2 control-label">Name of Applicant<span style="color:red; font-size: 18px;">*</span></label>
           <div class="col-md-3">
-            <input type="text" class="form-control c-square c-theme" id="firstName" placeholder="Firstname" name="firstName" value="<?php echo $user['fld_firstName'] ?>" required>
+            <input type="text" class="form-control c-square c-theme" id="firstName" placeholder="Firstname" name="firstName" value="<?php echo $user['fld_firstName'] ?>" value="<?php echo $user['fld_firstName'] ?>">
           </div>
           <div class="col-md-3">
             <input type="text" class="form-control c-square c-theme" id="middleName" placeholder="Middlename" name="middleName" required>

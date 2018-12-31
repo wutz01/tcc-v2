@@ -1522,7 +1522,8 @@
    include_once "../General/footer.php";
 
 ?>
-
+<link rel="stylesheet" type="text/css" href="../assets/js/datatables.min.css"/> 
+<script type="text/javascript" src="../assets/js/datatables.min.js"></script>
 <script type="text/javascript">
 	function hideTableInfo() {
 	  var x = document.getElementById("infoApplicant");
@@ -1555,8 +1556,7 @@
 		});
 	}
 </script>
-<link rel="stylesheet" type="text/css" href="../assets/js/datatables.min.css"/> 
-<script type="text/javascript" src="../assets/js/datatables.min.js"></script>
+
 <script type="text/javascript">
   $(document).ready( function () {
     $('#exampleGrade').DataTable();

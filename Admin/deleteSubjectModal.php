@@ -134,7 +134,7 @@
 
 </div>
 
-
+<script src="../assets/plugins/jquery-form/jquery-form.min.js"></script>
 
 <script type="text/javascript">
 
@@ -185,8 +185,6 @@
   }
 
 </script>
-
-<script src="../assets/plugins/jquery-form/jquery-form.min.js"></script>
 
 <script type="text/javascript">
   $(function () {

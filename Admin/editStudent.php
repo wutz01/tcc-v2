@@ -2,29 +2,27 @@
 
 	require '../Database/database2.php';
 
- // 	include_once "../General/header.php";
+ 	include_once "../General/header.php";
 
- // 	include_once "../General/topBar.php";
+ 	include_once "../General/topBar.php";
 
- // 	include_once "../General/leftSideBar.php";
+ 	include_once "../General/leftSideBar.php";
 
 
 
 	if(isset($_GET["id"])) {
+    
+    $id = $_GET["id"];
 
-		$id = $_GET["id"];
+    $query = "SELECT * FROM tbl_applicant WHERE fld_studentNo = '$id'";
 
-		$query = "SELECT * FROM tbl_applicant WHERE fld_studentNo = '$id'";
+    $res = mysqli_query($conn, $query);
 
-		$res = mysqli_query($conn, $query);
-print($res);
-die();
-		$user = mysqli_fetch_assoc($res);
+    $user = mysqli_fetch_assoc($res);
 
-	}
+  }
 
 ?>
-
 <div class="page animsition">
 
     <div class="page-header">
@@ -117,7 +115,7 @@ die();
    include_once "../General/footer.php";
 
 ?>
-
+<script src="../assets/plugins/jquery-form/jquery-form.min.js"></script>
 <!-- <script type="text/javascript">
   var step = 1
 
@@ -416,4 +414,3 @@ die();
     document.getElementById('childrenAge').value = ageChildren;
   }
 </script>
-<script src="../assets/plugins/jquery-form/jquery-form.min.js"></script>

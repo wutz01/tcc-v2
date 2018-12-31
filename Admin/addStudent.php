@@ -118,7 +118,7 @@
    include_once "../General/footer.php";
 
 ?>
-
+<script src="../assets/plugins/jquery-form/jquery-form.min.js"></script>
 <script type="text/javascript">
   var step = 1
 
@@ -265,4 +265,3 @@
   }
 </script>
 
-<script src="../assets/plugins/jquery-form/jquery-form.min.js"></script>

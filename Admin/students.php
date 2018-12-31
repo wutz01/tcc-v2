@@ -424,6 +424,11 @@
    include_once "../General/footer.php";
 
 ?>
+<link rel="stylesheet" type="text/css" href="../assets/js/datatables.min.css"/> 
+
+<script type="text/javascript" src="../assets/js/datatables.min.js"></script>
+
+<script src="../assets/plugins/jquery-form/jquery-form.min.js"></script>
 
 <script type="text/javascript">
 
@@ -453,12 +458,6 @@
 
 </script>
 
-
-
-<link rel="stylesheet" type="text/css" href="../assets/js/datatables.min.css"/> 
-
-<script type="text/javascript" src="../assets/js/datatables.min.js"></script>
-
 <script type="text/javascript">
 
   $(document).ready( function () {
@@ -468,7 +467,7 @@
 } );
 
 </script> -->
-<script src="../assets/plugins/jquery-form/jquery-form.min.js"></script>
+
 <script type="text/javascript">
   $(function () {
     $('#addUser').ajaxForm({
