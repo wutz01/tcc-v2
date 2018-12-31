@@ -355,8 +355,7 @@
                                 <?php } ?>
 
                                  <td>
-
-                                <button class="btn btn-info" type="button" onclick="editStudent('<?php echo $row['staffId']; ?>')">Edit</button></button>
+                                <a href="editStudent.php?id=<?php echo $staffId; ?>"><button class="btn btn-info" type="button">Edit</button></a>
 
                                 <button class="btn btn-danger" type="button" onclick="deleteUser('<?php echo $row['staffId']; ?>')">Delete</button></button></td>
 

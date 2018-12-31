@@ -139,9 +139,6 @@ $applicantNumber = "APPL-" . str_pad($nextId, 5, "0",STR_PAD_LEFT);
   	$shsTrackStrand = '';
   }
 
-  // print_r($request);
-  // die();
-
 $query = "INSERT INTO tbl_applicant (
 	fld_applicationDate,
 	fld_firstName,
@@ -385,8 +382,17 @@ $query = "INSERT INTO tbl_applicant (
 
 
 $res = mysqli_query($conn, $query);
-$json['success'] = true;
-$json['message'] = "Applied successfully.";
-echo json_encode($json, 200);
-exit();
+
+if($res->execute()){
+
+	$json['message'] = "Applied successfull!";
+
+	$json['success'] = true;
+
+	mysqli_close($conn);
+
+	echo json_encode($json, 200);
+
+	die();
+}
 ?>

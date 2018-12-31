@@ -41,7 +41,7 @@
       						</div>
       					</div>
       				</div>
-						</form>
+				</form>
 					</div>
 				</div>
       </div>
@@ -79,8 +79,12 @@
     $('#apply-frm').ajaxForm({
       dataType: 'json',
       success: (o) => {
-        console.log(o),
-        alert(json.message)
+        if(o.success){
+          alert(o.message)
+          location.reload();
+        } else {
+          alert('Apply error')
+        }
       },
       beforeSubmit: (o) => {
         // notify('sending data...', 'info')
@@ -89,6 +93,7 @@
         //     $(`a[href="#tab_2_${i}_content"]`).tab('show')
         //   }, 500)
         // }
+        alert('Apply Now?'),
         console.log(`trying to submit`)
       }
     })
