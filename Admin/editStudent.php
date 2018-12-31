@@ -1,28 +1,16 @@
 <?php
-
 	require '../Database/database2.php';
-
  // 	include_once "../General/header.php";
-
  // 	include_once "../General/topBar.php";
-
  // 	include_once "../General/leftSideBar.php";
-
-
-
 	if(isset($_GET["id"])) {
-
 		$id = $_GET["id"];
-
 		$query = "SELECT * FROM tbl_applicant WHERE fld_studentNo = '$id'";
-
 		$res = mysqli_query($conn, $query);
-print($res);
-die();
 		$user = mysqli_fetch_assoc($res);
-
+		print_r($user);
+		die();
 	}
-
 ?>
 
 <div class="page animsition">
