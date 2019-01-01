@@ -126,26 +126,43 @@ $applicantNumber = "APPL-" . str_pad($nextId, 5, "0",STR_PAD_LEFT);
   $elementaryRegion = $request['elementaryRegion'];
   $elementaryYearGrad = $request['elementaryYearGrad'];
 
-  $secondarySchoolName = $request['secondarySchoolName'];
-  $secondarySchoolType = $request['secondarySchoolType'];
-  $secondaryAward = $request['secondaryAward'];
-  $secondaryAddress = $request['secondaryAddress'];
-  $secondaryRegion = $request['secondaryRegion'];
-  $secondaryYearGrad = $request['secondaryYearGrad'];
+	$secondarySchoolName = $request['secondarySchoolName'];
+	$secondarySchoolType = $request['secondarySchoolType'];
+	$secondaryAward = $request['secondaryAward'];
+	$secondaryAddress = $request['secondaryAddress'];
+	$secondaryRegion = $request['secondaryRegion'];
+	$secondaryYearGrad = $request['secondaryYearGrad'];
 
   $collegeSchoolName = $request['collegeSchoolName'];
-  $collegeSchoolType = $request['collegeSchoolType'];
-  $collegeAward = $request['collegeAward'];
-  $collegeAddress = $request['collegeAddress'];
-  $collegeRegion = $request['collegeRegion'];
-  $collegeYearGrad = $request['collegeYearGrad'];
+  if($collegeSchoolName == ''){
+	$collegeSchoolType = '';
+	$collegeAward = '';
+	$collegeAddress = '';
+	$collegeRegion = '';
+	$collegeYearGrad = '';
+  } else {
+  	$collegeSchoolType = $request['collegeSchoolType'];
+	$collegeAward = $request['collegeAward'];
+	$collegeAddress = $request['collegeAddress'];
+	$collegeRegion = $request['collegeRegion'];
+	$collegeYearGrad = $request['collegeYearGrad'];
+  }
 
   $vocationalSchoolName = $request['vocationalSchoolName'];
-  $vocationalSchoolType = $request['vocationalSchoolType'];
-  $vocationalAward = $request['vocationalAward'];
-  $vocationalAddress = $request['vocationalAddress'];
-  $vocationalRegion = $request['vocationalRegion'];
-  $vocationalYearGrad = $request['vocationalYearGrad'];
+  if($vocationalSchoolName == ''){
+	$vocationalSchoolType = '';
+	$vocationalAward = '';
+	$vocationalAddress = '';
+	$vocationalRegion = '';
+	$vocationalYearGrad = '';
+  } else {
+	$vocationalSchoolType = $request['vocationalSchoolType'];
+	$vocationalAward = $request['vocationalAward'];
+	$vocationalAddress = $request['vocationalAddress'];
+	$vocationalRegion = $request['vocationalRegion'];
+	$vocationalYearGrad = $request['vocationalYearGrad'];
+  }
+  
 
   $learnersData = $request['learnersData'];
   $shsTrack = $request['shsTrack'];
@@ -406,16 +423,13 @@ $query = "INSERT INTO tbl_applicant (
 
 $res = mysqli_query($conn, $query);
 
-if($res->execute()){
+$json['message'] = "Applied successfull!";
 
-	$json['message'] = "Applied successfull!";
+$json['success'] = true;
 
-	$json['success'] = true;
+mysqli_close($conn);
 
-	mysqli_close($conn);
+echo json_encode($json, 200);
 
-	echo json_encode($json, 200);
-
-	die();
-}
+die();
 ?>

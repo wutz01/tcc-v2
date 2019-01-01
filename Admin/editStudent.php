@@ -65,7 +65,7 @@
 	<div class="col-md-12">
 		<div class="c-content-panel">
 			<div class="c-body">
-          		<form class="form-horizontal" method="POST" action="../api/editStudent.php" id="apply-frm">
+          		<form class="form-horizontal" method="POST" action="../api/editStudent.php" id="apply-frms">
             <!-- page 1 -->
     				<div class="c-content-tab-1 c-theme c-margin-t-30">
     					<div class="clearfix">
@@ -346,7 +346,7 @@
     $(".all-nav").removeClass('c-active')
     $(".apply-nav").addClass('c-active')
 
-    $('#apply-frm').ajaxForm({
+    $('#apply-frms').ajaxForm({
       dataType: 'json',
       success: (o) => {
         if(o.success){
