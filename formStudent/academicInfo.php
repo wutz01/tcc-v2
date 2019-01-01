@@ -13,7 +13,7 @@
 <div class="form-group">
   <label for="elementarySchoolName" class="col-md-2 control-label">Name<span style="color:red; font-size: 18px;">*</span></label>
   <div class="col-md-3">
-    <input type="text" class="form-control c-square c-theme" id="elementarySchoolName" placeholder="School Name" name="elementarySchoolName" required>
+    <input type="text" class="form-control c-square c-theme" id="elementarySchoolName" placeholder="School Name" name="elementarySchoolName" required value="<?php echo $fld_elementaryName ?>">
   </div>
 
   <div class="col-md-1">
@@ -25,14 +25,14 @@
 
   <label for="elementaryAward" class="col-md-2 control-label">Award</label>
   <div class="col-md-3">
-    <input type="text" class="form-control c-square c-theme" id="elementaryAward" placeholder="Award" name="elementaryAward">
+    <input type="text" class="form-control c-square c-theme" id="elementaryAward" placeholder="Award" name="elementaryAward" value="<?php echo $fld_elementaryAward ?>">
   </div>
 </div>
 
 <div class="form-group">
   <label for="elementaryAddress" class="col-md-2 control-label">Address</label>
   <div class="col-md-3">
-    <input type="text" class="form-control c-square c-theme" id="elementaryAddress" placeholder="Address" name="elementaryAddress">
+    <input type="text" class="form-control c-square c-theme" id="elementaryAddress" placeholder="Address" name="elementaryAddress" value="<?php echo $fld_elementaryAddress ?>">
   </div>
 
   <label for="elementaryRegion" class="col-md-1 control-label">Region</label>
@@ -41,26 +41,26 @@
 	    <option value="ARMM">ARMM (Autonomous Region in Muslim Mindanao)</option>
 	    <option value="CAR">CAR (Cordillera Administrative Region)</option>
 	    <option value="NCR">NCR (National Capital Region)</option>
-	    <option value="Region 1">Region 1 (Ilocos Region)</option>
-	    <option value="Region 2">Region 2 (Cagayan Valley)</option>
-	    <option value="Region 3">Region 3 (Central Luzon)</option>
-	    <option value="Region 4A">Region 4A (CALABARZON)</option>
-	    <option value="Region 4B">Region 4B (MIMAROPA)</option>
-	    <option value="Region 5">Region 5 (Bicol Region)</option>
-	    <option value="Region 6">Region 6 (Western Visayas)</option>
-	    <option value="Region 7">Region 7 (Central Visayas)</option>
-	    <option value="Region 8">Region 8 (Eastern Visayas)</option>
-	    <option value="Region 9">Region 9 (Zamboanga Peninsula)</option>
-	    <option value="Region 10">Region 10 (Northern Mindanao)</option>
-	    <option value="Region 11">Region 11 (Davao Region)</option>
-	    <option value="Region 12">Region 12 (SOCCSKSARGEN)</option>
-	    <option value="Region 13">Region 13 (Caraga Region)</option>
+	    <option value="Region1">Region 1 (Ilocos Region)</option>
+	    <option value="Region2">Region 2 (Cagayan Valley)</option>
+	    <option value="Region3">Region 3 (Central Luzon)</option>
+	    <option value="Region4A">Region 4A (CALABARZON)</option>
+	    <option value="Region4B">Region 4B (MIMAROPA)</option>
+	    <option value="Region5">Region 5 (Bicol Region)</option>
+	    <option value="Region6">Region 6 (Western Visayas)</option>
+	    <option value="Region7">Region 7 (Central Visayas)</option>
+	    <option value="Region8">Region 8 (Eastern Visayas)</option>
+	    <option value="Region9">Region 9 (Zamboanga Peninsula)</option>
+	    <option value="Region10">Region 10 (Northern Mindanao)</option>
+	    <option value="Region11">Region 11 (Davao Region)</option>
+	    <option value="Region12">Region 12 (SOCCSKSARGEN)</option>
+	    <option value="Region13">Region 13 (Caraga Region)</option>
 	  </select>
 	</div>
 
   <label for="elementaryYearGrad" class="col-md-1 control-label">Year Graduated<span style="color:red; font-size: 18px;">*</span></label>
   <div class="col-md-2">
-    <input type="number" class="form-control c-square c-theme" id="elementaryYearGrad" placeholder="Year Graduated" name="elementaryYearGrad" required>
+    <input type="number" class="form-control c-square c-theme" id="elementaryYearGrad" placeholder="Year Graduated" name="elementaryYearGrad" required value="<?php echo $fld_elementaryGraduated ?>">
   </div>
 </div>
 
@@ -73,7 +73,7 @@
 <div class="form-group">
   <label for="secondarySchoolName" class="col-md-2 control-label">Name<span style="color:red; font-size: 18px;">*</span></label>
   <div class="col-md-3">
-    <input type="text" class="form-control c-square c-theme" id="secondarySchoolName" placeholder="School Name" name="secondarySchoolName" required>
+    <input type="text" class="form-control c-square c-theme" id="secondarySchoolName" placeholder="School Name" name="secondarySchoolName" required value="<?php echo $fld_secondaryName ?>">
   </div>
 
   <div class="col-md-1">
@@ -85,14 +85,14 @@
 
   <label for="secondaryAward" class="col-md-2 control-label">Award</label>
   <div class="col-md-3">
-    <input type="text" class="form-control c-square c-theme" id="secondaryAward" placeholder="Award" name="secondaryAward">
+    <input type="text" class="form-control c-square c-theme" id="secondaryAward" placeholder="Award" name="secondaryAward" value="<?php echo $fld_secondaryAward ?>">
   </div>
 </div>
 
 <div class="form-group">
   <label for="secondaryAddress" class="col-md-2 control-label">Address</label>
   <div class="col-md-3">
-    <input type="text" class="form-control c-square c-theme" id="secondaryAddress" placeholder="Address" name="secondaryAddress">
+    <input type="text" class="form-control c-square c-theme" id="secondaryAddress" placeholder="Address" name="secondaryAddress" value="<?php echo $fld_secondaryAddress ?>">
   </div>
 
   <label for="secondaryRegion" class="col-md-1 control-label">Region</label>
@@ -101,26 +101,26 @@
 	    <option value="ARMM">ARMM (Autonomous Region in Muslim Mindanao)</option>
 	    <option value="CAR">CAR (Cordillera Administrative Region)</option>
 	    <option value="NCR">NCR (National Capital Region)</option>
-	    <option value="Region 1">Region 1 (Ilocos Region)</option>
-	    <option value="Region 2">Region 2 (Cagayan Valley)</option>
-	    <option value="Region 3">Region 3 (Central Luzon)</option>
-	    <option value="Region 4A">Region 4A (CALABARZON)</option>
-	    <option value="Region 4B">Region 4B (MIMAROPA)</option>
-	    <option value="Region 5">Region 5 (Bicol Region)</option>
-	    <option value="Region 6">Region 6 (Western Visayas)</option>
-	    <option value="Region 7">Region 7 (Central Visayas)</option>
-	    <option value="Region 8">Region 8 (Eastern Visayas)</option>
-	    <option value="Region 9">Region 9 (Zamboanga Peninsula)</option>
-	    <option value="Region 10">Region 10 (Northern Mindanao)</option>
-	    <option value="Region 11">Region 11 (Davao Region)</option>
-	    <option value="Region 12">Region 12 (SOCCSKSARGEN)</option>
-	    <option value="Region 13">Region 13 (Caraga Region)</option>
+	    <option value="Region1">Region 1 (Ilocos Region)</option>
+	    <option value="Region2">Region 2 (Cagayan Valley)</option>
+	    <option value="Region3">Region 3 (Central Luzon)</option>
+	    <option value="Region4A">Region 4A (CALABARZON)</option>
+	    <option value="Region4B">Region 4B (MIMAROPA)</option>
+	    <option value="Region5">Region 5 (Bicol Region)</option>
+	    <option value="Region6">Region 6 (Western Visayas)</option>
+	    <option value="Region7">Region 7 (Central Visayas)</option>
+	    <option value="Region8">Region 8 (Eastern Visayas)</option>
+	    <option value="Region9">Region 9 (Zamboanga Peninsula)</option>
+	    <option value="Region10">Region 10 (Northern Mindanao)</option>
+	    <option value="Region11">Region 11 (Davao Region)</option>
+	    <option value="Region12">Region 12 (SOCCSKSARGEN)</option>
+	    <option value="Region13">Region 13 (Caraga Region)</option>
 	  </select>
 	</div>
 
   <label for="secondaryYearGrad" class="col-md-1 control-label">Year Graduated<span style="color:red; font-size: 18px;">*</span></label>
   <div class="col-md-2">
-    <input type="number" class="form-control c-square c-theme" id="secondaryYearGrad" placeholder="Year Graduated" name="secondaryYearGrad" required>
+    <input type="number" class="form-control c-square c-theme" id="secondaryYearGrad" placeholder="Year Graduated" name="secondaryYearGrad" required value="<?php echo $fld_secondaryGraduated ?>">
   </div>
 </div>
 
@@ -133,7 +133,7 @@
 <div class="form-group">
   <label for="collegeSchoolName" class="col-md-2 control-label">Name</label>
   <div class="col-md-3">
-    <input type="text" class="form-control c-square c-theme" id="collegeSchoolName" placeholder="School Name" name="collegeSchoolName">
+    <input type="text" class="form-control c-square c-theme" id="collegeSchoolName" placeholder="School Name" name="collegeSchoolName" value="<?php echo $fld_collegeName ?>">
   </div>
 
   <div class="col-md-1">
@@ -145,14 +145,14 @@
 
   <label for="collegeAward" class="col-md-2 control-label">Award</label>
   <div class="col-md-3">
-    <input type="text" class="form-control c-square c-theme" id="collegeAward" placeholder="Award" name="collegeAward">
+    <input type="text" class="form-control c-square c-theme" id="collegeAward" placeholder="Award" name="collegeAward" value="<?php echo $fld_collegeAward ?>">
   </div>
 </div>
 
 <div class="form-group">
   <label for="collegeAddress" class="col-md-2 control-label">Address</label>
   <div class="col-md-3">
-    <input type="text" class="form-control c-square c-theme" id="collegeAddress" placeholder="Address" name="collegeAddress">
+    <input type="text" class="form-control c-square c-theme" id="collegeAddress" placeholder="Address" name="collegeAddress" value="<?php echo $fld_collegeAddress ?>">
   </div>
 
   <label for="collegeRegion" class="col-md-1 control-label">Region</label>
@@ -161,26 +161,26 @@
 	    <option value="ARMM">ARMM (Autonomous Region in Muslim Mindanao)</option>
 	    <option value="CAR">CAR (Cordillera Administrative Region)</option>
 	    <option value="NCR">NCR (National Capital Region)</option>
-	    <option value="Region 1">Region 1 (Ilocos Region)</option>
-	    <option value="Region 2">Region 2 (Cagayan Valley)</option>
-	    <option value="Region 3">Region 3 (Central Luzon)</option>
-	    <option value="Region 4A">Region 4A (CALABARZON)</option>
-	    <option value="Region 4B">Region 4B (MIMAROPA)</option>
-	    <option value="Region 5">Region 5 (Bicol Region)</option>
-	    <option value="Region 6">Region 6 (Western Visayas)</option>
-	    <option value="Region 7">Region 7 (Central Visayas)</option>
-	    <option value="Region 8">Region 8 (Eastern Visayas)</option>
-	    <option value="Region 9">Region 9 (Zamboanga Peninsula)</option>
-	    <option value="Region 10">Region 10 (Northern Mindanao)</option>
-	    <option value="Region 11">Region 11 (Davao Region)</option>
-	    <option value="Region 12">Region 12 (SOCCSKSARGEN)</option>
-	    <option value="Region 13">Region 13 (Caraga Region)</option>
+	    <option value="Region1">Region 1 (Ilocos Region)</option>
+	    <option value="Region2">Region 2 (Cagayan Valley)</option>
+	    <option value="Region3">Region 3 (Central Luzon)</option>
+	    <option value="Region4A">Region 4A (CALABARZON)</option>
+	    <option value="Region4B">Region 4B (MIMAROPA)</option>
+	    <option value="Region5">Region 5 (Bicol Region)</option>
+	    <option value="Region6">Region 6 (Western Visayas)</option>
+	    <option value="Region7">Region 7 (Central Visayas)</option>
+	    <option value="Region8">Region 8 (Eastern Visayas)</option>
+	    <option value="Region9">Region 9 (Zamboanga Peninsula)</option>
+	    <option value="Region10">Region 10 (Northern Mindanao)</option>
+	    <option value="Region11">Region 11 (Davao Region)</option>
+	    <option value="Region12">Region 12 (SOCCSKSARGEN)</option>
+	    <option value="Region13">Region 13 (Caraga Region)</option>
 	  </select>
 	</div>
 
   <label for="collegeYearGrad" class="col-md-1 control-label">Year Graduated</label>
   <div class="col-md-2">
-    <input type="number" class="form-control c-square c-theme" id="collegeYearGrad" placeholder="Year Graduated" name="collegeYearGrad">
+    <input type="number" class="form-control c-square c-theme" id="collegeYearGrad" placeholder="Year Graduated" name="collegeYearGrad" value="<?php echo $fld_collegeGraduated ?>">
   </div>
 </div>
 
@@ -193,7 +193,7 @@
 <div class="form-group">
   <label for="vocationalSchoolName" class="col-md-2 control-label">Name</label>
   <div class="col-md-3">
-    <input type="text" class="form-control c-square c-theme" id="vocationalSchoolName" placeholder="School Name" name="vocationalSchoolName">
+    <input type="text" class="form-control c-square c-theme" id="vocationalSchoolName" placeholder="School Name" name="vocationalSchoolName" value="<?php echo $fld_vocationalName ?>">
   </div>
 
   <div class="col-md-1">
@@ -205,14 +205,14 @@
 
   <label for="vocationalAward" class="col-md-2 control-label">Award</label>
   <div class="col-md-3">
-    <input type="text" class="form-control c-square c-theme" id="vocationalAward" placeholder="Award" name="vocationalAward">
+    <input type="text" class="form-control c-square c-theme" id="vocationalAward" placeholder="Award" name="vocationalAward" value="<?php echo $fld_vocationalAward ?>">
   </div>
 </div>
 
 <div class="form-group">
   <label for="vocationalAddress" class="col-md-2 control-label">Address</label>
   <div class="col-md-3">
-    <input type="text" class="form-control c-square c-theme" id="vocationalAddress" placeholder="Address" name="vocationalAddress">
+    <input type="text" class="form-control c-square c-theme" id="vocationalAddress" placeholder="Address" name="vocationalAddress" value="<?php echo $fld_vocationalAddress ?>">
   </div>
 
   <label for="vocationalRegion" class="col-md-1 control-label">Region</label>
@@ -221,26 +221,26 @@
 	    <option value="ARMM">ARMM (Autonomous Region in Muslim Mindanao)</option>
 	    <option value="CAR">CAR (Cordillera Administrative Region)</option>
 	    <option value="NCR">NCR (National Capital Region)</option>
-	    <option value="Region 1">Region 1 (Ilocos Region)</option>
-	    <option value="Region 2">Region 2 (Cagayan Valley)</option>
-	    <option value="Region 3">Region 3 (Central Luzon)</option>
-	    <option value="Region 4A">Region 4A (CALABARZON)</option>
-	    <option value="Region 4B">Region 4B (MIMAROPA)</option>
-	    <option value="Region 5">Region 5 (Bicol Region)</option>
-	    <option value="Region 6">Region 6 (Western Visayas)</option>
-	    <option value="Region 7">Region 7 (Central Visayas)</option>
-	    <option value="Region 8">Region 8 (Eastern Visayas)</option>
-	    <option value="Region 9">Region 9 (Zamboanga Peninsula)</option>
-	    <option value="Region 10">Region 10 (Northern Mindanao)</option>
-	    <option value="Region 11">Region 11 (Davao Region)</option>
-	    <option value="Region 12">Region 12 (SOCCSKSARGEN)</option>
-	    <option value="Region 13">Region 13 (Caraga Region)</option>
+	    <option value="Region1">Region 1 (Ilocos Region)</option>
+	    <option value="Region2">Region 2 (Cagayan Valley)</option>
+	    <option value="Region3">Region 3 (Central Luzon)</option>
+	    <option value="Region4A">Region 4A (CALABARZON)</option>
+	    <option value="Region4B">Region 4B (MIMAROPA)</option>
+	    <option value="Region5">Region 5 (Bicol Region)</option>
+	    <option value="Region6">Region 6 (Western Visayas)</option>
+	    <option value="Region7">Region 7 (Central Visayas)</option>
+	    <option value="Region8">Region 8 (Eastern Visayas)</option>
+	    <option value="Region9">Region 9 (Zamboanga Peninsula)</option>
+	    <option value="Region10">Region 10 (Northern Mindanao)</option>
+	    <option value="Region11">Region 11 (Davao Region)</option>
+	    <option value="Region12">Region 12 (SOCCSKSARGEN)</option>
+	    <option value="Region13">Region 13 (Caraga Region)</option>
 	  </select>
 	</div>
 
 <label for="vocationalYearGrad" class="col-md-1 control-label">Year Graduated</label>
 	<div class="col-md-2">
-	<input type="number" class="form-control c-square c-theme" id="vocationalYearGrad" placeholder="Year Graduated" name="vocationalYearGrad">
+	<input type="number" class="form-control c-square c-theme" id="vocationalYearGrad" placeholder="Year Graduated" name="vocationalYearGrad" value="<?php echo $fld_vocationalGraduated ?>">
 	</div>
 </div>
 
@@ -320,7 +320,7 @@
 	</div>
 
 	<div class="col-md-4">
-		<input type="text" class="form-control c-square c-theme" id="reasonEntryTCCOther" placeholder="Other Reason" name="reasonEntryTCCOther" style="display: none">
+		<input type="text" class="form-control c-square c-theme" id="reasonEntryTCCOther" placeholder="Other Reason" name="reasonEntryTCCOther" style="display: none" value="<?php echo $fld_reasonEntryTCCOther ?>">
 	</div>
 </div>
 
@@ -333,7 +333,7 @@
 <div class="form-group">
 	<label for="gwAverage" class="col-md-2 control-label"></label>
 	<div class="col-md-3">
-		<input type="number" class="form-control c-square c-theme" id="gwAverage" placeholder="General Average" name="gwAverage" required>
+		<input type="number" class="form-control c-square c-theme" id="gwAverage" placeholder="General Average" name="gwAverage" required value="<?php echo $fld_gwAverage ?>">
 	</div>
 </div>
 
@@ -356,11 +356,25 @@
 	</div>
 
 	<div class="col-md-4">
-		<input type="text" class="form-control c-square c-theme" id="knowAboutCollegeOther" placeholder="Other reason." name="knowAboutCollegeOther"  style="display: none">
+		<input type="text" class="form-control c-square c-theme" id="knowAboutCollegeOther" placeholder="Other reason." name="knowAboutCollegeOther"  style="display: none" value="<?php echo $fld_knowAboutCollegeOther ?>">
 	</div>
 
 </div>
+<input type="text" id="elementaryStatus" value="<?php echo $fld_elementaryType ?>" hidden>
+<input type="text" id="secondaryStatus" value="<?php echo $fld_secondaryType ?>" hidden>
+<input type="text" id="collegeStatus" value="<?php echo $fld_collegeType ?>" hidden>
+<input type="text" id="vocationalStatus" value="<?php echo $fld_vocationalType ?>" hidden>
+<input type="text" id="elementaryStatusRegion" value="<?php echo $fld_elementaryRegion ?>" hidden>
+<input type="text" id="secondaryStatusRegion" value="<?php echo $fld_secondaryRegion ?>" hidden>
+<input type="text" id="collegeStatusRegion" value="<?php echo $fld_collegeRegion ?>" hidden>
+<input type="text" id="vocationalStatusRegion" value="<?php echo $fld_vocationalRegion ?>" hidden>
 
+<input type="text" id="learnersDataInfo" value="<?php echo $fld_learnersData ?>" hidden>
+<input type="text" id="shsTrackInfo" value="<?php echo $fld_shsTrack ?>" hidden>
+<input type="text" id="reasonEntryTCCInfo" value="<?php echo $fld_reasonEntryTCC ?>" hidden>
+<input type="text" id="knowAboutCollegeInfo" value="<?php echo $fld_knowAboutCollege ?>" hidden>
+<input type="text" id="shsTrackAcademicInfo" value="<?php echo $fld_shsTrackStrand ?>" hidden>
+<input type="text" id="shsTrackTVLInfo" value="<?php echo $fld_shsTrackStrand ?>" hidden>
 <div class="row">
 	<div class="col-md-12">
 	  <div class="form-group c-margin-t-40">

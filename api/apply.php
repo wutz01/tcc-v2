@@ -49,37 +49,60 @@ $applicantNumber = "APPL-" . str_pad($nextId, 5, "0",STR_PAD_LEFT);
   $motherEducationalAttainment = $request['motherEducationalAttainment'];
 
 //additionalQuestions
-  $spouseName = $request['spouseName'];
-  $marriedStatus = $request['marriedStatus'];
-  $spouseAddress = $request['spouseAddress'];
-  $employerSpouseContact = $request['employerSpouseContact'];
-  $employerSpouseOccupation = $request['employerSpouseOccupation'];
-  $employerSpouseEmployer = $request['employerSpouseEmployer'];
-  $employerApplicantAddress = $request['employerApplicantAddress'];
-  $localAbroadSpouse = $request['localAbroadSpouse'];
+	if ($civilStatus == 'Married') {
+		$spouseName = $request['spouseName'];
+		$marriedStatus = $request['marriedStatus'];
+		$spouseAddress = $request['spouseAddress'];
+		$employerSpouseContact = $request['employerSpouseContact'];
+		$employerSpouseOccupation = $request['employerSpouseOccupation'];
+		$employerSpouseEmployer = $request['employerSpouseEmployer'];
+		$employerApplicantAddress = $request['employerApplicantAddress'];
+		$localAbroadSpouse = $request['localAbroadSpouse'];
 
-  $childrenName1 = $request['childrenName'];
-  $childrenName=  implode(", ", $childrenName1);
+		$childrenName1 = $request['childrenName'];
+		$childrenName=  implode(", ", $childrenName1);
 
-  $childSex1 = $request['childrenSex'];
-  $childSex =  implode(", ", $childSex1);
+		$childSex1 = $request['childrenSex'];
+		$childSex =  implode(", ", $childSex1);
 
-  $childrenAge1 = $request['childrenAge'];
-  $childrenAge=  implode(", ", $childrenAge1);
+		$childrenAge1 = $request['childrenAge'];
+		$childrenAge=  implode(", ", $childrenAge1);
 
-  $childrenBirthDate1 = $request['childrenBirthDate'];
-  $childrenBirthDate=  implode(", ", $childrenBirthDate1);
+		$childrenBirthDate1 = $request['childrenBirthDate'];
+		$childrenBirthDate=  implode(", ", $childrenBirthDate1);
 
-  $childrenBirthPlace1 = $request['childrenBirthPlace'];
-  $childrenBirthPlace=  implode(", ", $childrenBirthPlace1);
+		$childrenBirthPlace1 = $request['childrenBirthPlace'];
+		$childrenBirthPlace=  implode(", ", $childrenBirthPlace1);
 
-  $childrenEducationalAttainment1 = $request['childrenEducationalAttainment'];
-  $childrenEducationalAttainment=  implode(",", $childrenEducationalAttainment1);
+		$childrenEducationalAttainment1 = $request['childrenEducationalAttainment'];
+		$childrenEducationalAttainment=  implode(",", $childrenEducationalAttainment1);
+	} else {
+		$spouseName = '';
+		$marriedStatus = '';
+		$spouseAddress = '';
+		$employerSpouseContact = '';
+		$employerSpouseOccupation = '';
+		$employerSpouseEmployer = '';
+		$employerApplicantAddress = '';
+		$localAbroadSpouse = '';
+		$childrenName = '';
+		$childSex = '';
+		$childrenAge =  '';
+		$childrenBirthDate = '';
+		$childrenBirthPlace = '';
+		$childrenEducationalAttainment = '';
+	}
 
-  $occupationApplicant = $request['occupationApplicant'];
-  $employerApplicant = $request['employerApplicant'];
-  $employerApplicantAddresss = $request['employerApplicantAddresss'];
-  $localAbroadApplicant = $request['localAbroadApplicant'];
+	$occupationApplicant = $request['occupationApplicant'];
+	if($occupationApplicant == ''){
+		$employerApplicant = '';
+		$employerApplicantAddresss = '';
+		$localAbroadApplicant = '';
+	} else {
+		$employerApplicant = $request['employerApplicant'];
+		$employerApplicantAddresss = $request['employerApplicantAddresss'];
+		$localAbroadApplicant = $request['localAbroadApplicant'];
+	}
 
   $guardianName = $request['guardianName'];
   $guardianRelation = $request['guardianRelation'];

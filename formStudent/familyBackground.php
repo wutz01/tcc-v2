@@ -40,63 +40,64 @@
 <div class="form-group">
   <label for="fatherName" class="col-md-2 control-label">Name<span style="color:red; font-size: 18px;">*</span></label>
   <div class="col-md-4">
-    <input type="text" class="form-control c-square c-theme" id="fatherName" placeholder="Father Name" name="fatherName" required>
+    <input type="text" class="form-control c-square c-theme" id="fatherName" placeholder="Father Name" name="fatherName" value="<?php echo $fld_fatherName ?>" required>
   </div>
 
   <label for="motherName" class="col-md-2 control-label">Name<span style="color:red; font-size: 18px;">*</span></label>
   <div class="col-md-4">
-    <input type="text" class="form-control c-square c-theme" id="motherName" placeholder="Mother Name" name="motherName" required>
+    <input type="text" class="form-control c-square c-theme" id="motherName" placeholder="Mother Name" name="motherName" value="<?php echo $fld_motherName ?>" required>
   </div>
 </div>
 
 <div class="form-group">
   <label for="fatherAddress" class="col-md-2 control-label">Address</label>
   <div class="col-md-4">
-    <input type="text" class="form-control c-square c-theme" id="fatherAddress" placeholder="Address" name="fatherAddress">
+    <input type="text" class="form-control c-square c-theme" id="fatherAddress" placeholder="Address" value="<?php echo $fld_fatherAddress ?>" name="fatherAddress">
   </div>
 
   <label for="motherAddress" class="col-md-2 control-label">Address</label>
   <div class="col-md-4">
-    <input type="text" class="form-control c-square c-theme" id="motherAddress" placeholder="Address" name="motherAddress">
+    <input type="text" class="form-control c-square c-theme" id="motherAddress" placeholder="Address" value="<?php echo $fld_motherAddress ?>" name="motherAddress">
   </div>
 </div>
 
 <div class="form-group">
   <label for="fatherOccupation" class="col-md-2 control-label">Occupation</label>
   <div class="col-md-4">
-    <input type="text" class="form-control c-square c-theme" id="fatherOccupation" placeholder="Occupation" name="fatherOccupation">
+    <input type="text" class="form-control c-square c-theme" id="fatherOccupation" placeholder="Occupation" value="<?php echo $fld_fatherOccupation ?>" name="fatherOccupation">
   </div>
 
   <label for="motherOccupation" class="col-md-2 control-label">Occupation</label>
   <div class="col-md-4">
-    <input type="text" class="form-control c-square c-theme" id="motherOccupation" placeholder="Occupation" name="motherOccupation">
+    <input type="text" class="form-control c-square c-theme" id="motherOccupation" placeholder="Occupation" value="<?php echo $fld_motherOccupation ?>" name="motherOccupation">
   </div>
 </div>
 
 <div class="form-group">
   <label for="fatherContact" class="col-md-2 control-label">Contact Number</label>
   <div class="col-md-4">
-    <input type="text" class="form-control c-square c-theme" id="fatherContact" placeholder="Contact Number" name="fatherContact">
+    <input type="text" class="form-control c-square c-theme" id="fatherContact" placeholder="Contact Number" value="<?php echo $fld_fatherContactNumber ?>" name="fatherContact">
   </div>
 
   <label for="motherContact" class="col-md-2 control-label">Contact Number</label>
   <div class="col-md-4">
-    <input type="text" class="form-control c-square c-theme" id="motherContact" placeholder="Contact Number" name="motherContact">
+    <input type="text" class="form-control c-square c-theme" id="motherContact" placeholder="Contact Number" value="<?php echo $fld_motherContactNumber ?>" name="motherContact">
   </div>
 </div>
 
 <div class="form-group">
   <label for="fatherEducationalAttainment" class="col-md-2 control-label">Educational Attainment</label>
   <div class="col-md-4">
-    <input type="text" class="form-control c-square c-theme" id="fatherEducationalAttainment" placeholder="Educational Attainment" name="fatherEducationalAttainment">
+    <input type="text" class="form-control c-square c-theme" id="fatherEducationalAttainment" value="<?php echo $fld_fatherEducationalAttainment ?>" placeholder="Educational Attainment" name="fatherEducationalAttainment">
   </div>
 
   <label for="motherEducationalAttainment" class="col-md-2 control-label">Educational Attainment</label>
   <div class="col-md-4">
-    <input type="text" class="form-control c-square c-theme" id="motherEducationalAttainment" placeholder="Educational Attainment" name="motherEducationalAttainment">
+    <input type="text" class="form-control c-square c-theme" id="motherEducationalAttainment" value="<?php echo $fld_motherEducationalAttainment ?>" placeholder="Educational Attainment" name="motherEducationalAttainment">
   </div>
 </div>
-
+<input type="text" id="fatherStatusCheck" value="<?php echo $fld_fatherStatus ?>" hidden>
+<input type="text" id="motherStatusCheck" value="<?php echo $fld_motherStatus ?>" hidden>
 <div class="row">
   <div class="col-md-12">
     <div class="form-group c-margin-t-40">

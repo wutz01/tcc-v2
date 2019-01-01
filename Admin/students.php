@@ -72,7 +72,7 @@
 
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 
-              <?php 
+              <?php
 
                 echo $_SESSION['msgAdd'];
 
@@ -94,7 +94,7 @@
 
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 
-              <?php 
+              <?php
 
                 echo $_SESSION['msgNot'];
 
@@ -116,7 +116,7 @@
 
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 
-              <?php 
+              <?php
 
                 echo $_SESSION['msgError'];
 
@@ -138,7 +138,7 @@
 
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 
-              <?php 
+              <?php
 
                 echo $_SESSION['msgUpdate'];
 
@@ -416,26 +416,25 @@
 </div>
 
 <!-- End Page -->
-
-
-
 <?php
-
    include_once "../General/footer.php";
-
 ?>
+
 <link rel="stylesheet" type="text/css" href="../assets/js/datatables.min.css"/> 
 
 <script type="text/javascript" src="../assets/js/datatables.min.js"></script>
 
 <script src="../assets/plugins/jquery-form/jquery-form.min.js"></script>
 
+
+<link rel="stylesheet" type="text/css" href="../assets/js/datatables.min.css"/>
+<script type="text/javascript" src="../assets/js/datatables.min.js"></script>
+<script src="../assets/plugins/jquery-form/jquery-form.min.js"></script>
+
 <script type="text/javascript">
 
   $(function(){
-
     $("#deleteUserModal").DataTable();
-
   })
 
   function deleteUser(idx){
@@ -466,10 +465,13 @@
 
 } );
 
-</script> -->
+</script>
 
 <script type="text/javascript">
   $(function () {
+
+    $('#tableUsers').DataTable();
+
     $('#addUser').ajaxForm({
       dataType: 'json',
       success: (o) => {
@@ -485,4 +487,17 @@
       }
     });
   })
+
+  function deleteUser(idx){
+
+    let url = "deleteStudentModal.php";
+    $.post(url,{id:idx},function(result){
+      $("#modal-danger").html(result);
+      $("#modal-danger").modal('show');
+    });
+  }
+
+  function addStudent(){
+    window.location.href='addStudent.php';
+  }
 </script>

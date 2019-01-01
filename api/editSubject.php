@@ -40,6 +40,7 @@ $updateSubject = "UPDATE tbl_subject SET fld_subCode = '$subjectCode', fld_descr
 $stmt = $conn->prepare($updateSubject);
 
 if($stmt->execute()){
+
 	$json['message'] = "Subject successfully udpated!";
 
 	$json['success'] = true;
@@ -49,6 +50,7 @@ if($stmt->execute()){
 	echo json_encode($json, 200);
 
 	die();
+
 }
 
 ?>

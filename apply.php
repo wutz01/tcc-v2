@@ -93,7 +93,7 @@
         //     $(`a[href="#tab_2_${i}_content"]`).tab('show')
         //   }, 500)
         // }
-        alert('Apply Now?'),
+        alert('Update Now?'),
         console.log(`trying to submit`)
       }
     })

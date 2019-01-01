@@ -1,5 +1,4 @@
 <?php
-
 	require '../Database/database2.php';
 
  	include_once "../General/header.php";
@@ -19,6 +18,8 @@
     $res = mysqli_query($conn, $query);
 
     $user = mysqli_fetch_assoc($res);
+
+    extract($user);
 
   }
 
@@ -64,7 +65,7 @@
 	<div class="col-md-12">
 		<div class="c-content-panel">
 			<div class="c-body">
-          		<form class="form-horizontal" method="POST" action="api/apply.php" id="apply-frm">
+          		<form class="form-horizontal" method="POST" action="../api/editStudent.php" id="apply-frm">
             <!-- page 1 -->
     				<div class="c-content-tab-1 c-theme c-margin-t-30">
     					<div class="clearfix">
@@ -262,6 +263,66 @@
   }
 </script> -->
 <script type="text/javascript">
+    var sexStatus = document.getElementById('sexStatusCheck').value;
+    var civilStatus = document.getElementById('civilStatusCheck').value;
+    // var spouseStatus = document.getElementById('spouseStatusCheck').value;
+    // var spouseLocationStatusCheck = document.getElementById('spouseLocationStatusCheck').value;
+    var motherStatuses = document.getElementById('motherStatusCheck').value;
+    var fatherStatuses = document.getElementById('fatherStatusCheck').value;
+    // var childrenSex = document.getElementById('childrenSexStatusCheck').value;
+    // var applicantLocation = document.getElementById('applicantLocation').value;
+    var elementaryStatus = document.getElementById('elementaryStatus').value;
+    var secondaryStatus = document.getElementById('secondaryStatus').value;
+    var collegeStatus = document.getElementById('collegeStatus').value;
+    var vocationalStatus = document.getElementById('vocationalStatus').value;
+    var religions = document.getElementById('religionStatus').value;
+    var regions = document.getElementById('regionStatus').value;
+    var genders = document.getElementById('genderApplicant').value;
+
+    var elementaryRegion = document.getElementById('elementaryStatusRegion').value;
+    var secondaryRegion = document.getElementById('secondaryStatusRegion').value;
+    var collegeRegion = document.getElementById('collegeStatusRegion').value;
+    var vocationRegion = document.getElementById('vocationalStatusRegion').value;
+
+    var learnersDataInfo = document.getElementById('learnersDataInfo').value;
+    var shsTrackInfo = document.getElementById('shsTrackInfo').value;
+    var reasonEntryTCCInfo = document.getElementById('reasonEntryTCCInfo').value;
+    var knowAboutCollegeInfo = document.getElementById('knowAboutCollegeInfo').value;
+    var shsTrackAcademicInfo = document.getElementById('shsTrackAcademicInfo').value;
+    var shsTrackTVLInfo = document.getElementById('shsTrackTVLInfo').value;
+    var localAbroadSpouse = document.getElementById('applicantLocation').value;
+
+
+    $("input[name=sexApplicant][value=" + sexStatus + "]").attr('checked', 'checked');
+    $("input[name=civilStatus][value=" + civilStatus + "]").attr('checked', 'checked');
+    // $("input[name=marriedStatus][value=" + spouseStatus + "]").attr('checked', 'checked');
+    // $("input[name=localAbroadSpouse][value=" + spouseLocationStatusCheck + "]").attr('checked', 'checked');
+    $("input[name=motherStatus][value=" + motherStatuses + "]").attr('checked', 'checked');
+    $("input[name=fatherStatus][value=" + fatherStatuses + "]").attr('checked', 'checked');
+    // $("input[name=childrenSex][value=" + childrenSex + "]").attr('checked', 'checked');
+    // $("input[name=localAbroadApplicant][value=" + applicantLocation + "]").attr('checked', 'checked');
+    $("input[name=elementarySchoolType][value=" + elementaryStatus + "]").attr('checked', 'checked');
+    $("input[name=secondarySchoolType][value=" + secondaryStatus + "]").attr('checked', 'checked');
+    $("input[name=collegeSchoolType][value=" + collegeStatus + "]").attr('checked', 'checked');
+    $("input[name=vocationalSchoolType][value=" + vocationalStatus + "]").attr('checked', 'checked');
+    $("input[name=localAbroadApplicant][value=" + localAbroadSpouse + "]").attr('checked', 'checked');
+    $("#religion option[value=" + religions + "]").attr('selected', true);
+    $("#region option[value=" + regions + "]").attr('selected', true);
+    $("#gender option[value=" + genders + "]").attr('selected', true);
+
+    $("#elementaryRegion option[value=" + elementaryRegion + "]").attr('selected', true);
+    $("#secondaryRegion option[value=" + secondaryRegion + "]").attr('selected', true);
+    $("#collegeRegion option[value=" + collegeRegion + "]").attr('selected', true);
+    $("#vocationRegion option[value=" + vocationRegion + "]").attr('selected', true);
+
+    $("#learnersData option[value=" + learnersDataInfo + "]").attr('selected', true);
+    $("#shsTrack option[value=" + shsTrackInfo + "]").attr('selected', true);
+    $("#reasonEntryTCC option[value=" + reasonEntryTCCInfo + "]").attr('selected', true);
+    $("#knowAboutCollege option[value=" + knowAboutCollegeInfo + "]").attr('selected', true);
+    $("#shsTrackAcademic option[value=" + shsTrackAcademicInfo + "]").attr('selected', true);
+    $("#shsTrackTVL option[value=" + shsTrackTVLInfo + "]").attr('selected', true);
+</script>
+<script type="text/javascript">
   var step = 1
 
   function nextStep () {
@@ -290,7 +351,7 @@
       success: (o) => {
         if(o.success){
           alert(o.message)
-          location.reload();
+          location.href = 'students.php';
         } else {
           alert('Apply error')
         }
@@ -309,7 +370,7 @@
 
     // UPDATES ---- BEN
 
-    $('#reasonEntryTCC').change(function() {
+    $('#reasonEntryTCC').ready(function() {
       if ( $("#reasonEntryTCC").val ()  ==  "Others")
       {
           $('#reasonEntryTCCOther').show();
@@ -341,7 +402,7 @@
       }
     });
 
-    $('#reasonEntryTCC').change(function() {
+    $('#reasonEntryTCC').ready(function() {
         if ( $("#reasonEntryTCC").val ()  ==  "Others")
         {
             $('#reasonEntryTCCOther').show();
@@ -350,7 +411,7 @@
             $("#reasonEntryTCCOther").hide();
     });
 
-    $('#knowAboutCollege').change(function() {
+    $('#knowAboutCollege').ready(function() {
         if ( $("#knowAboutCollege").val ()  ==  "Others")
         {
             $('#knowAboutCollegeOther').show();
@@ -369,7 +430,7 @@
       }
     });
 
-    $('#religion').change(function() {
+    $('#religion').ready(function() {
       if ( $("#religion").val ()  ==  "Other")
       {
           $('#otherReligion').show();
