@@ -154,6 +154,10 @@
 	$res = mysqli_query($conn, $query);
 	$stmt = mysqli_fetch_assoc($res);
 
+	$queryStudent = "SELECT * FROM tbl_student WHERE fld_StudentNo = '$studentNo'";
+	$resStudent = mysqli_query($conn, $queryStudent);
+	$stmtStudent = mysqli_fetch_assoc($resStudent);
+
 	$update = "UPDATE tbl_applicant SET
 		fld_firstName = '$firstName',
 		fld_middleName = '$middleName',
@@ -252,9 +256,23 @@
 
 	$stmtUpdate = $conn->prepare($update);
 
+	$queryUpdateStudent = "UPDATE tbl_student SET 
+	fld_firstName = '$firstName',
+	fld_middleName = '$middleName',
+	fld_lastName = '$lastName',
+	fld_sex = '$sexApplicant',
+	fld_homeAddress = '$homeAddress',
+	fld_guardianName = '$guardianName',
+	fld_mobilePhoneNo = '$mobileNo'
+
+	WHERE fld_StudentNo = '$studentNo'";
+
+	$stmtUpdateStudent = $conn->prepare($queryUpdateStudent);
 	// print_r($update);
 	// die();
 	if($stmtUpdate->execute()){
+
+		if($stmtUpdateStudent->execute()){
 
 		$json['message'] = "Updated successfully.";
 
@@ -265,6 +283,8 @@
 		echo json_encode($json, 200);
 
 		die();
+		
+		}	
 
 	}
 

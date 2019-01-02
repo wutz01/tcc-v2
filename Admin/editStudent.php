@@ -326,7 +326,7 @@
   var step = 1
 
   function nextStep () {
-    console.log(`valid?`, $('#apply-frm')[0].checkValidity())
+    console.log(`valid?`, $('#apply-frms')[0].checkValidity())
     let $myForm = $('#apply-frm');
     step++
     $(`a[href="#tab_2_${step}_content"]`).tab('show')
