@@ -392,7 +392,7 @@
 
               <a class="animsition-link" href="../Student/studentEnrollment.php" data-slug="Evaluate Transferee">
 
-                <i class="site-menu-icon " aria-hidden="false"></i>
+                <i class="site-menu-icon wb-plus" aria-hidden="false"></i>
 
                 <span class="site-menu-title">Subject Enrollment</span>
 
@@ -404,7 +404,7 @@
 
               <a class="animsition-link" href="../Student/subjectsTaken.php" data-slug="Subjects Taken">
 
-                <i class="site-menu-icon " aria-hidden="false"></i>
+                <i class="site-menu-icon wb-book" aria-hidden="false"></i>
 
                 <span class="site-menu-title">Subjects Taken</span>
 
@@ -418,7 +418,7 @@
 
               <a class="animsition-link" href="../Student/residency.php" data-slug="Residency">
 
-                <i class="site-menu-icon " aria-hidden="false"></i>
+                <i class="site-menu-icon wb-time" aria-hidden="false"></i>
 
                 <span class="site-menu-title">Residency</span>
 

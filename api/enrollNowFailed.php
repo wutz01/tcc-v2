@@ -26,6 +26,9 @@ session_start();
 	$accessType = 'Student';
 	$status = 'active';
 
+	$prospectusName = $_POST['course'];
+	$yearLevel = $_POST['yearLevel'];
+
 	$statusApplicant = '4';
 
 	$checkExist = "SELECT * FROM tbl_student WHERE fld_studentNo = '$studentNo'";
@@ -57,14 +60,14 @@ session_start();
 		header("Location: ../Admin/acceptedApplicant.php");
 		die();
 	} else {
-		$queryUpdateApplicant = "SELECT * FROM tbl_applicant WHERE fld_applicantID = '$applicantId'";
+		$queryUpdateApplicant = "SELECT * FROM tbl_applicant WHERE fld_applicantID = '$applicantID'";
 		$resUpdate = mysqli_query($conn, $queryUpdateApplicant);
 		$stmtUpdate = mysqli_fetch_assoc($resUpdate);
 
 		$queryUpdate = "UPDATE tbl_applicant SET fld_statusApplicant = '$statusApplicant', fld_studentNo = '$studentNo' WHERE fld_applicantID = '$applicantID'";
 		$stmt = $conn->prepare($queryUpdate);
 
-		$queryStudent = "INSERT INTO tbl_student(fld_studentNo, fld_firstName, fld_middleName, fld_lastName, fld_sex, fld_homeAddress, fld_guardianName, fld_mobilePhoneNo) VALUES('$studentNo', '$firstName', '$middleName', '$lastName', '$sexApplicant', 'homeAddress', 'guardianName', '$mobileNo')";
+		$queryStudent = "INSERT INTO tbl_student(fld_studentNo, fld_firstName, fld_middleName, fld_lastName, fld_sex, fld_homeAddress, fld_guardianName,  fld_mobilePhoneNo, fld_yearLevel, fld_prospectusName) VALUES('$studentNo', '$firstName', '$middleName', '$lastName', '$sexApplicant', '$homeAddress', '$guardianName', '$mobileNo', '$yearLevel', '$prospectusName')";
 		$stmt2 = mysqli_query($conn, $queryStudent);
 
 		$queryUser = "INSERT INTO tbl_users(Username, passwordPlain, passwordSalt, staffId, accessType, status) VALUES('$studentNo', '$password', '$salt', '$studentNo', '$accessType', '$status')";

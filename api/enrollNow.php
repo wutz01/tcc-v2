@@ -15,7 +15,7 @@ session_start();
 	$birthDate = $_POST['birthDate'];
 	$passBirthDate = str_replace("-", "", $birthDate);
 
-	// print_r($passBirthDate);
+	// print_r($guardianName);
 	// die();
 
 	$cost = 10;
@@ -27,6 +27,9 @@ session_start();
 	$accessType = 'Student';
 	$status = 'active';
 
+	$prospectusName = $_POST['course'];
+	$yearLevel = $_POST['yearLevel'];
+
 	$statusApplicant = '4';
 
 	$checkExist = "SELECT * FROM tbl_applicant WHERE fld_studentNo = '$studentNo'";
@@ -37,10 +40,8 @@ session_start();
 	$resCheckExist1 = mysqli_query($conn, $checkExist1);
 	// $stmtCheckExist1 = mysqli_fetch_assoc($resCheckExist1);
 
-	// print_r($resCheckExist);
+	// print_r($sexApplicant);
 	// die();
-
-
 	if (mysqli_num_rows($resCheckExist) > 0) {
 		$_SESSION['msgExist'] = $studentNo.' already exist!';
 		header("Location: ../Admin/acceptedApplicant.php");
@@ -50,18 +51,20 @@ session_start();
 		header("Location: ../Admin/acceptedApplicant.php");
 		die();
 	} else {
-		$queryUpdateApplicant = "SELECT * FROM tbl_applicant WHERE fld_applicantID = '$applicantId'";
+		$queryUpdateApplicant = "SELECT * FROM tbl_applicant WHERE fld_applicantID = '$applicantID'";
 		$resUpdate = mysqli_query($conn, $queryUpdateApplicant);
 		$stmtUpdate = mysqli_fetch_assoc($resUpdate);
 
 		$queryUpdate = "UPDATE tbl_applicant SET fld_statusApplicant = '$statusApplicant', fld_studentNo = '$studentNo' WHERE fld_applicantID = '$applicantID'";
 		$stmt = $conn->prepare($queryUpdate);
 
-		$queryStudent = "INSERT INTO tbl_student(fld_studentNo, fld_firstName, fld_middleName, fld_lastName, fld_sex, fld_homeAddress, fld_guardianName, fld_mobilePhoneNo) VALUES('$studentNo', '$firstName', '$middleName', '$lastName', '$sexApplicant', 'homeAddress', 'guardianName', '$mobileNo')";
+		$queryStudent = "INSERT INTO tbl_student(fld_studentNo, fld_firstName, fld_middleName, fld_lastName, fld_sex, fld_homeAddress, fld_guardianName,  fld_mobilePhoneNo, fld_yearLevel, fld_prospectusName) VALUES('$studentNo', '$firstName', '$middleName', '$lastName', '$sexApplicant', '$homeAddress', '$guardianName', '$mobileNo', '$yearLevel', '$prospectusName')";
 		$stmt2 = mysqli_query($conn, $queryStudent);
-
+		// print_r($queryStudent);
+		// die();
 		$queryUser = "INSERT INTO tbl_users(Username, passwordPlain, passwordSalt, staffId, accessType, status) VALUES('$studentNo', '$password', '$salt', '$studentNo', '$accessType', '$status')";
 		$stmt3 = mysqli_query($conn, $queryUser);
+
 
 		if($stmt->execute()){
 

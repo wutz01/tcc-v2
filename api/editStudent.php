@@ -78,6 +78,35 @@
 	}
 	// print_r($localAbroadSpouse);
 	// die();
+	$collegeSchoolName = $request['collegeSchoolName'];
+	  if($collegeSchoolName == ''){
+		$collegeSchoolType = '';
+		$collegeAward = '';
+		$collegeAddress = '';
+		$collegeRegion = '';
+		$collegeYearGrad = '';
+	  } else {
+	  	$collegeSchoolType = $request['collegeSchoolType'];
+		$collegeAward = $request['collegeAward'];
+		$collegeAddress = $request['collegeAddress'];
+		$collegeRegion = $request['collegeRegion'];
+		$collegeYearGrad = $request['collegeYearGrad'];
+	  }
+
+	$vocationalSchoolName = $request['vocationalSchoolName'];
+	if($vocationalSchoolName === ''){
+		$vocationalSchoolType = '';
+		$vocationalAward = '';
+		$vocationalAddress = '';
+		$vocationalRegion = '';
+		$vocationalYearGrad = '';
+		} else {
+		$vocationalSchoolType = $request['vocationalSchoolType'];
+		$vocationalAward = $request['vocationalAward'];
+		$vocationalAddress = $request['vocationalAddress'];
+		$vocationalRegion = $request['vocationalRegion'];
+		$vocationalYearGrad = $request['vocationalYearGrad'];
+	}
 
 	$fatherStatus = $request['fatherStatus'];
 	$motherStatus = $request['motherStatus'];
@@ -119,20 +148,6 @@
 	$secondaryAddress = $request['secondaryAddress'];
 	$secondaryRegion = $request['secondaryRegion'];
 	$secondaryYearGrad = $request['secondaryYearGrad'];
-
-	$collegeSchoolName = $request['collegeSchoolName'];
-	$collegeSchoolType = $request['collegeSchoolType'];
-	$collegeAward = $request['collegeAward'];
-	$collegeAddress = $request['collegeAddress'];
-	$collegeRegion = $request['collegeRegion'];
-	$collegeYearGrad = $request['collegeYearGrad'];
-
-	$vocationalSchoolName = $request['vocationalSchoolName'];
-	$vocationalSchoolType = $request['vocationalSchoolType'];
-	$vocationalAward = $request['vocationalAward'];
-	$vocationalAddress = $request['vocationalAddress'];
-	$vocationalRegion = $request['vocationalRegion'];
-	$vocationalYearGrad = $request['vocationalYearGrad'];
 
 	$learnersData = $request['learnersData'];
 	$shsTrack = $request['shsTrack'];

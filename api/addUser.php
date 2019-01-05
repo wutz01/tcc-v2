@@ -29,6 +29,9 @@
 
 	$statusAdd = '4';
 
+	$prospectusName = $_POST['course'];
+	$yearLevel = $_POST['yearLevel'];
+
 	// print_r($salt);
 	// die();
 
@@ -70,7 +73,7 @@
 	} elseif (mysqli_num_rows($resCheckExist1) > 0) {
 		$json['success'] = false;
 
-		$json['message'] = $studentNo. " already exist!";
+		$json['message'] = $studentNo. " already apc_exists(keys)!";
 
 		mysqli_close($conn);
 
@@ -79,24 +82,24 @@
 		exit();
 	} else {
 
-		$queryApplicant = "INSERT INTO tbl_applicant(fld_applicationDate, fld_studentNo, fld_firstName, fld_middleName, fld_lastName, fld_sex, fld_gender, fld_ageApplicant, fld_birthDate, fld_birthPlace, fld_statusApplicant) VALUES('$dateAdd','$studentNo', '$firstName', '$middleName', '$lastName', '$sexStudent', '$genderStudent', '$dateOfBirth', '$statusAdd')";
+		$queryApplicant = "INSERT INTO tbl_applicant(fld_applicationDate, fld_studentNo, fld_firstName, fld_middleName, fld_lastName, fld_sex, fld_gender, fld_birthDate, fld_statusApplicant) VALUES('$dateAdd', '$studentNo', '$firstName', '$middleName', '$lastName', '$sexStudent', '$genderStudent', '$dateOfBirth', '$statusAdd')";
 		$stmt1 = mysqli_query($conn, $queryApplicant);
 
-		$queryStudent = "INSERT INTO tbl_student(fld_studentNo, fld_firstName, fld_middleName, fld_lastName, fld_sex) VALUES('$studentNo', '$firstName', '$middleName', '$lastName', '$sexStudent')";
+		$queryStudent = "INSERT INTO tbl_student(fld_studentNo, fld_firstName, fld_middleName, fld_lastName, fld_sex, fld_yearLevel, fld_prospectusName) VALUES('$studentNo', '$firstName', '$middleName', '$lastName', '$sexStudent', '$yearLevel', '$prospectusName')";
 		$stmt2 = mysqli_query($conn, $queryStudent);
 
 		$queryUser = "INSERT INTO tbl_users(Username, passwordPlain, passwordSalt, staffId, accessType, status) VALUES('$studentNo', '$password', '$salt', '$studentNo', '$accessType', '$status')";
 		$stmt3 = mysqli_query($conn, $queryUser);
 
-		$json['success'] = true;
+			$json['success'] = true;
 
-		$json['message'] = "Student successfully added!";
+			$json['message'] = "Student successfully added!";
 
-		mysqli_close($conn);
+			mysqli_close($conn);
 
-		echo json_encode($json, 200);
-		
-		exit();
+			echo json_encode($json, 200);
+			
+			exit();
 
 	}
 

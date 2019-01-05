@@ -149,7 +149,7 @@ $applicantNumber = "APPL-" . str_pad($nextId, 5, "0",STR_PAD_LEFT);
   }
 
   $vocationalSchoolName = $request['vocationalSchoolName'];
-  if($vocationalSchoolName == ''){
+  if($vocationalSchoolName === ''){
 	$vocationalSchoolType = '';
 	$vocationalAward = '';
 	$vocationalAddress = '';
@@ -422,7 +422,8 @@ $query = "INSERT INTO tbl_applicant (
 
 
 $res = mysqli_query($conn, $query);
-
+// print_r($query);
+// die();
 $json['message'] = "Applied successfull!";
 
 $json['success'] = true;

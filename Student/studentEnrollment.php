@@ -7,7 +7,7 @@
    $student = new Student();
    $maxunits = $student->getUnits($_SESSION['yearlevel'],$_SESSION['programID']);
 
-   ?>
+?>
 <!-- Page -->
 <div class="page animsition">
    <div class="page-header">
@@ -151,7 +151,14 @@
 <!-- End Modal -->
 <?php
    include_once "../General/footer.php";
-   ?>
+?>
+<!-- <link rel="stylesheet" type="text/css" href="../assets/js/datatables.min.css"/> 
+<script type="text/javascript" src="../assets/js/datatables.min.js"></script> -->
+<!-- <script type="text/javascript">
+$(document).ready( function () {
+    $('#tablePreEnrollmentForm').DataTable();
+  } );
+</script> -->
 <script type="text/javascript">
 
    var subjtbl = $("#tableAvailableCourses").DataTable({

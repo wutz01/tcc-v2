@@ -1177,12 +1177,43 @@
 
               <div class="form-group row">
               	<!-- <?php echo $user['fld_applicantID'] ?> -->
-
+              	<input type="hidden" class="form-control" name="applicantId" id="applicantId" placeholder="Student Number" value="<?php echo $user['fld_applicantID'] ?>" />
                 <div class="col-sm-12">
 
                   <label>Student Number</label>
 
                   <input type="text" class="form-control" name="studentNo" id="studentNo" placeholder="Student Number" required />
+
+                </div>
+
+                <div class="col-sm-9">
+
+                  <label>Course</label>
+
+                  <select class="form-control" name="course" id="course">
+                  	<?php 
+                  	$queryCourse  = "SELECT * FROM tbl_program";
+                  	$resCourse = mysqli_query($conn, $queryCourse);
+                  	while ($stmtCourse = mysqli_fetch_assoc($resCourse)){
+                  	?>
+                  	<option value="<?php echo $stmtCourse['fld_programCode'] ?> 2016-2017"><?php echo $stmtCourse['fld_programName'] ?></option>
+                  	<?php
+                  		}
+                  	?>
+                  </select>
+
+                </div>
+
+                <div class="col-sm-3">
+
+                  <label>Year Level</label>
+
+                  <select class="form-control" name="yearLevel" id="yearLevel">
+                  	<option value="1st">1st Year</option>
+                  	<option value="2nd">2nd Year</option>
+                  	<option value="3rd">3rd Year</option>
+                  	<option value="4th">4th Year</option>
+                  </select>
 
                 </div>
 
@@ -1312,12 +1343,43 @@
 
               <div class="form-group row">
               	<!-- <?php echo $user['fld_applicantID'] ?> -->
-
+<input type="hidden" class="form-control" name="applicantId" id="applicantId" placeholder="Student Number" value="<?php echo $user['fld_applicantID'] ?>" />
                 <div class="col-sm-12">
 
                   <label>Student Number</label>
 
                   <input type="text" class="form-control" name="studentNo" id="studentNo" placeholder="Student Number" required />
+
+                </div>
+
+                <div class="col-sm-9">
+
+                  <label>Course</label>
+
+                  <select class="form-control" name="course" id="course">
+                  	<?php 
+                  	$queryCourse  = "SELECT * FROM tbl_program";
+                  	$resCourse = mysqli_query($conn, $queryCourse);
+                  	while ($stmtCourse = mysqli_fetch_assoc($resCourse)){
+                  	?>
+                  	<option value="<?php echo $stmtCourse['fld_programCode'] ?> 2016-2017"><?php echo $stmtCourse['fld_programName'] ?></option>
+                  	<?php
+                  		}
+                  	?>
+                  </select>
+
+                </div>
+
+                <div class="col-sm-3">
+
+                  <label>Year Level</label>
+
+                  <select class="form-control" name="yearLevel" id="yearLevel">
+                  	<option value="1st">1st Year</option>
+                  	<option value="2nd">2nd Year</option>
+                  	<option value="3rd">3rd Year</option>
+                  	<option value="4th">4th Year</option>
+                  </select>
 
                 </div>
 

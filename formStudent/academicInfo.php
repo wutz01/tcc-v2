@@ -379,7 +379,7 @@
 	<div class="col-md-12">
 	  <div class="form-group c-margin-t-40">
 	      <div class="col-sm-offset-9 col-md-4">
-	        <button type="submit" class="btn btn-success">Apply</button>
+	        <button type="submit" class="btn btn-success">Update</button>
 	        <button type="button" class="btn btn-danger" onclick="prevStep()">Back</button>
 	      </div>
 	  </div>

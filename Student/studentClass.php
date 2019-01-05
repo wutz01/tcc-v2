@@ -145,8 +145,9 @@ class Student
 
         $stmt->execute();
         $row = $stmt->fetch(PDO::FETCH_OBJ);
-
+        
         return $row->fld_maxUnits;
+
     }
 
     public function screenSubject($courseid,$studentnumber,$startSY,$endSY,$semester,$programid,$yearlevel)

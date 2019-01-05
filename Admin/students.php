@@ -8,6 +8,8 @@
 
    include_once "adminClass.php";
 
+   include '../Database/database2.php';
+
 ?>
 
 <?php
@@ -251,6 +253,37 @@
 
                 </div>
 
+                <div class="col-sm-9">
+
+                  <label>Course</label>
+
+                  <select class="form-control" name="course" id="course">
+                    <?php 
+                    $queryCourse  = "SELECT * FROM tbl_program";
+                    $resCourse = mysqli_query($conn, $queryCourse);
+                    while ($stmtCourse = mysqli_fetch_assoc($resCourse)){
+                    ?>
+                    <option value="<?php echo $stmtCourse['fld_programCode'] ?> 2016-2017"><?php echo $stmtCourse['fld_programName'] ?></option>
+                    <?php
+                      }
+                    ?>
+                  </select>
+
+                </div>
+
+                <div class="col-sm-3">
+
+                  <label>Year Level</label>
+
+                  <select class="form-control" name="yearLevel" id="yearLevel">
+                    <option value="1st">1st Year</option>
+                    <option value="2nd">2nd Year</option>
+                    <option value="3rd">3rd Year</option>
+                    <option value="4th">4th Year</option>
+                  </select>
+
+                </div>
+
                <!--  <div class="col-sm-6">
 
                   <label>Place of Birth</label>
@@ -483,7 +516,7 @@
         }
       },
       beforeSubmit: (o) => {
-        alert('Do you want to save?');
+        alert('Do you want to add student?');
       }
     });
   })
