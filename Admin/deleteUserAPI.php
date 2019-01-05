@@ -36,8 +36,12 @@ $testStaff = mysqli_query($conn, $queryStaff);
 
 $_SESSION['msgDeleteUser'] = "Successfully deleted user";
 
-header("Location: users.php");
+// header("Location: users.php");
+$json['is_successful'] = true;
+$json['message'] = 'Successfully deleted user';
+echo json_encode($json, 200);
+exit();
 
-die();
+// die();
 
 ?>

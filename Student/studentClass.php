@@ -174,7 +174,7 @@ class Student
                 if($subjectexist != 1)
                 {
                     $unitsexceed = $this->checkMaxunits($subjectid,$studentnumber,$startSY,$endSY,$semester,$programid,$yearlevel);
-                    if($unitsexceed != 1)
+                    if($unitsexceed == 1)
                     {
                         return $this->addSubject($courseid,$studentnumber,$startSY,$endSY,$semester);
                     }else{

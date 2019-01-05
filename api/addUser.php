@@ -91,15 +91,15 @@
 		$queryUser = "INSERT INTO tbl_users(Username, passwordPlain, passwordSalt, staffId, accessType, status) VALUES('$studentNo', '$password', '$salt', '$studentNo', '$accessType', '$status')";
 		$stmt3 = mysqli_query($conn, $queryUser);
 
-			$json['success'] = true;
+		$json['success'] = true;
 
-			$json['message'] = "Student successfully added!";
+		$json['message'] = "Student successfully added!";
 
-			mysqli_close($conn);
+		mysqli_close($conn);
 
-			echo json_encode($json, 200);
-			
-			exit();
+		echo json_encode($json, 200);
+		
+		exit();
 
 	}
 

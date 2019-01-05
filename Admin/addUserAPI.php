@@ -23,7 +23,11 @@
 	$maxUnits = $_POST['maxUnits'];
 
 	$schedules = $_POST['schedule'];
-	$schedule = implode("", $schedules);
+	if (!isset($schedules) || $schedules === '') {
+		$schedule = 'NA';
+	} else {
+		$schedule = implode("", $schedules);
+	}
 
 	$userName = $_POST['userName'];
 
@@ -199,12 +203,14 @@
 		$queryStaff = "INSERT INTO tbl_staffs(staffId, firstName, middleName, lastName, emailAddress, employmentType, maxUnits, availableSchedule) VALUES ('$applicantNumber', '$firstName', '$middleName', '$lastName', '$emailAddress', '$employmentType', '$maxUnits', '$schedule')";
 
 		$testStaff = mysqli_query($conn, $queryStaff);
-
-		$_SESSION['msgAdd'] = $userName." successfully Added";
-
-		header("Location: users.php");
-
-		die();
+	// print_r($queryStaff);
+	// die();
+		// if ($testStaff->execute()) {
+		$json['success'] = true;
+		$json['message'] = "Successfully added user.";
+		echo json_encode($json, 200);
+		exit();
+		// }
 
 	}
 

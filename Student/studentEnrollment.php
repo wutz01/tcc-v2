@@ -3,6 +3,7 @@
    include_once "../General/topBar.php";
    include_once "../General/leftSideBar.php";
    include_once "studentClass.php";
+   include '../Database/database2.php';
    
    $student = new Student();
    $maxunits = $student->getUnits($_SESSION['yearlevel'],$_SESSION['programID']);
@@ -126,7 +127,7 @@
                                  </tr>
                               </thead>
                               <tbody>
-                               
+
                               </tbody>
                               <tfoot>
                                  <tr>
@@ -152,8 +153,8 @@
 <?php
    include_once "../General/footer.php";
 ?>
-<!-- <link rel="stylesheet" type="text/css" href="../assets/js/datatables.min.css"/> 
-<script type="text/javascript" src="../assets/js/datatables.min.js"></script> -->
+<link rel="stylesheet" type="text/css" href="../assets/js/datatables.min.css"/> 
+<script type="text/javascript" src="../assets/js/datatables.min.js"></script>
 <!-- <script type="text/javascript">
 $(document).ready( function () {
     $('#tablePreEnrollmentForm').DataTable();

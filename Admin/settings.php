@@ -87,7 +87,7 @@
                                              <input type="text" class="form-control" name="sectionName" id="sectionName" placeholder="Section Name" />
                                           </div>
                                           <div class="col-sm-3">
-                                             <select class='form-control' name='programID' id='programID'>
+                                             <select class='form-control' name='programID' id='programID' data-plugin='selectpicker' data-live-search='true'>
                                                 <option value='' data-hidden="true">Select Program</option>
                                                 <?php
 
@@ -99,7 +99,7 @@
                                              </select>
                                           </div>
                                           <div class="col-sm-3">
-                                             <select class='form-control' name='yearLevel' id='yearLevel'>
+                                             <select class='form-control' name='yearLevel' id='yearLevel' data-plugin='selectpicker' data-live-search='true'>
                                                 <option value='' data-hidden="true">Select Year Level</option>
                                                 <option value='1st'>1st Year</option>
                                                 <option value='2nd'>2nd Year</option>
@@ -138,7 +138,7 @@
                                                    <td><?php echo $fld_yearLevel; ?></td>
                                                    <td><?php echo $fld_maxNoOfStudents; ?></td>
                                                    <td>
-                                                      <select class="form-control" id="selectStaff" data-section="<?php echo $fld_sectionID; ?>">
+                                                      <select class="form-control" id="selectStaff" name="selectStaff" data-section="<?php echo $fld_sectionID; ?>"data-plugin='selectpicker' data-live-search='true'>
                                                         <option value=""></option>
                                                          <?php 
                                                             $getAllStaffs = $admin->readAllStaffs();

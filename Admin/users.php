@@ -182,7 +182,7 @@
 
 
 
-          <form action="addUserAPI.php" method="post">
+          <form action="addUserAPI.php" method="post" id="addUser">
 
               <div class="form-group row">
 
@@ -243,13 +243,12 @@
                 <div class="col-sm-4">
 
                   <label>Schedule</label><br>
-
-                  <input type="checkbox" name="schedule[]" value="M"> M<br>
-                  <input type="checkbox" name="schedule[]" value="T"> T<br>
-                  <input type="checkbox" name="schedule[]" value="W"> W<br>
-                  <input type="checkbox" name="schedule[]" value="Th"> Th<br>
-                  <input type="checkbox" name="schedule[]" value="F"> F<br>
-                  <input type="checkbox" name="schedule[]" value="S"> S<br>
+                  <input type="checkbox" name="schedule[]" value="M">M
+                  <input type="checkbox" name="schedule[]" value="T">T
+                  <input type="checkbox" name="schedule[]" value="W">W
+                  <input type="checkbox" name="schedule[]" value="Th">Th
+                  <input type="checkbox" name="schedule[]" value="F">F
+                  <input type="checkbox" name="schedule[]" value="S">S
 
                 </div>
 
@@ -478,6 +477,27 @@
    include_once "../General/footer.php";
 
 ?>
+<script src="../assets/plugins/jquery-form/jquery-form.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+      $('#addUser').ajaxForm({
+        dataType: 'json',
+        success: (o) => {
+          if(o.success){
+          alert(o.message)
+          location.reload();
+          } else {
+            alert(o.message)
+          }
+        },
+        beforeSubmit: (o) => {
+          alert('Add user?')
+          console.log(`Submit?`)
+        }
+      })
+    });
+</script>
 
 <script type="text/javascript">
 
@@ -502,7 +522,6 @@
   }
 
 </script>
-
 
 
 <script type="text/javascript">
