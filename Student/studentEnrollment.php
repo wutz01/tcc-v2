@@ -65,7 +65,7 @@
                               <tfoot>
                                  <tr>
                                     <th></th>
-                                    <th><span class="pull-right" id="totalunit">Total Units:</span></th>
+                                    <th><span class="pull-right" id="totalunit">Total Units: </span></th>
                                     <th><label class="control-label" name="totalUnits" id="totalUnits"></label></th>
                                     <th></th>
                                     <th></th>

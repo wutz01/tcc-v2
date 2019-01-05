@@ -62,7 +62,7 @@ class Student
                                               WHERE tbl_creditedsubjects.fld_subjectID = '$subjID')");
             // bind values
             // $stmt2->bindParam(1, $subjID);
-         
+
             $stmt2->execute();
             if($stmt2->rowCount() > 0){
                 $row2 = $stmt2->fetch(PDO::FETCH_ASSOC);
@@ -150,6 +150,7 @@ class Student
 
     }
 
+
     public function screenSubject($courseid,$studentnumber,$startSY,$endSY,$semester,$programid,$yearlevel)
     {
         $query     = "SELECT * FROM tbl_availablecourse
@@ -174,7 +175,7 @@ class Student
                 if($subjectexist != 1)
                 {
                     $unitsexceed = $this->checkMaxunits($subjectid,$studentnumber,$startSY,$endSY,$semester,$programid,$yearlevel);
-                    if($unitsexceed == 1)
+                    if($unitsexceed != 0)
                     {
                         return $this->addSubject($courseid,$studentnumber,$startSY,$endSY,$semester);
                     }else{

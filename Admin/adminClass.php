@@ -960,15 +960,17 @@ class Admin
     {
         
         $query = "UPDATE tbl_section 
-                  SET fld_staffId = :fld_staffId
-                  WHERE fld_sectionID = :fld_sectionID";
-        print_r($query);
-        die();
+                  SET fld_staffId = '$staffID'
+                  WHERE fld_sectionID = '$sectionID'";
+
         $stmt = $this->importConn->prepare($query);
         
         // bind parameters
-        $stmt->bindParam(':fld_staffId', $staffID);
-        $stmt->bindParam(':fld_sectionID', $sectionID);
+        $stmt->bindParam(1, $staffID);
+        $stmt->bindParam(2, $sectionID);
+
+        // print_r($staffID);
+        // die();
         
 
         if (!$stmt->execute()) {
