@@ -360,7 +360,7 @@
 </style>
                               <tr class="listApply">
 
-                                  <td><a href="viewSubjectStudent.php?id=<?php echo $staffId ?>"><?php echo $staffId; ?></a></td>
+                                  <td><a href="editStudent.php?id=<?php echo $staffId ?>"><?php echo $staffId; ?></a></td>
 
                                  <td><?php echo $fld_lastName; ?>, <?php echo $fld_firstName; ?> <?php echo $fld_middleName; ?></td>
 
@@ -369,7 +369,9 @@
                                  <td>
                                 <a href="editStudent.php?id=<?php echo $staffId; ?>"><button class="btn btn-info button1" type="button">Edit</button></a>
 
-                                <button class="btn btn-danger button1" type="button" onclick="deleteUser('<?php echo $row['staffId']; ?>')">Delete</button></button></td>
+                                <button class="btn btn-danger button1" type="button" onclick="deleteUser('<?php echo $row['staffId']; ?>')">Delete</button>
+
+                                <button class="btn btn-success button1" type="button" onclick="viewSubjectStudent('<?php echo $row['staffId']; ?>')">View subject</button></td>
 
                               </tr>
 
@@ -452,6 +454,20 @@
   function deleteUser(idx){
 
     let url = "deleteStudentModal.php";
+
+    $.post(url,{id:idx},function(result){
+
+      $("#modal-danger").html(result);
+
+      $("#modal-danger").modal('show');
+
+    });
+
+  }
+
+  function viewSubjectStudent(idx){
+
+    let url = "viewSubjectStudentModal.php";
 
     $.post(url,{id:idx},function(result){
 

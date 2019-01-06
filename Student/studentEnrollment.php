@@ -114,34 +114,34 @@
               </div> -->
             </div>
             <div class="form-group" id="refreshCourse">
-                           <table class="tableAvailableCourses table table-striped width-full" id="tableAvailableCourses">
-                              <thead>
-                                 <tr>
-                                    <th>Subject&nbsp;Code</th>
-                                    <th>Description</th>
-                                    <th>Units</th>
-                                    <th>Day</th>
-                                    <th>Start Time</th>
-                                    <th>End Time</th>
-                                    <th>Section</th>
-                                 </tr>
-                              </thead>
-                              <tbody>
+               <table class="tableAvailableCourses table table-striped width-full" id="tableAvailableCourses">
+                  <thead>
+                     <tr>
+                        <th>Subject&nbsp;Code</th>
+                        <th>Description</th>
+                        <th>Units</th>
+                        <th>Day</th>
+                        <th>Start Time</th>
+                        <th>End Time</th>
+                        <th>Section</th>
+                     </tr>
+                  </thead>
+                  <tbody>
 
-                              </tbody>
-                              <tfoot>
-                                 <tr>
-                                    <th>Subject&nbsp;Code</th>
-                                    <th>Description</th>
-                                    <th>Units</th>
-                                    <th>Day</th>
-                                    <th>Start Time</th>
-                                    <th>End Time</th>
-                                    <th>Section</th>
-                                 </tr>
-                              </tfoot>
-                           </table>
-                        </div>
+                  </tbody>
+                  <tfoot>
+                     <tr>
+                        <th>Subject&nbsp;Code</th>
+                        <th>Description</th>
+                        <th>Units</th>
+                        <th>Day</th>
+                        <th>Start Time</th>
+                        <th>End Time</th>
+                        <th>Section</th>
+                     </tr>
+                  </tfoot>
+               </table>
+            </div>
          </div>
          <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
