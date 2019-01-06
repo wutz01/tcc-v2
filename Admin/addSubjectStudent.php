@@ -29,6 +29,10 @@
 
   $userSem = mysqli_fetch_assoc($resQuery);
 
+  $queryYear = "SELECT * FROM tbl_activatorsy WHERE fld_status = 'ACTIVATED'";
+  $resYear = mysqli_query($conn, $queryYear);
+  $userYear = mysqli_fetch_assoc($resYear);
+
 ?>
 
   <div class="modal-dialog" style="width: 90%">
@@ -135,10 +139,10 @@
       var courseID        = id; 
       var applicantID     = "";
       var getfunctionName = "addsubject";
-      var studentNumber   = "<?php echo $userSem['fld_studentNo']; ?>";
-      var startsy = "<?php echo $userSem['fld_startSY']; ?>";
-      var endsy   = "<?php echo $userSem['fld_endSY']; ?>";
-      var semester = "<?php echo $userSem['fld_semester']; ?>";
+      var studentNumber   = "<?php echo $id; ?>";
+      var startsy = "<?php echo $userYear['fld_startSY']; ?>";
+      var endsy   = "<?php echo $userYear['fld_endSY']; ?>";
+      var semester = "<?php echo $userYear['fld_semester']; ?>";
       var programID = "<?php echo $res['fld_prospectusName']; ?>";
       var yearlevel = "<?php echo $res['fld_yearLevel']; ?>";
 

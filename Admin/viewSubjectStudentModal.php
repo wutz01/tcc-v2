@@ -39,6 +39,10 @@
 
   $userSem = mysqli_fetch_assoc($resQuery);
 
+  $queryYear = "SELECT * FROM tbl_activatorsy WHERE fld_status = 'ACTIVATED'";
+  $resYear = mysqli_query($conn, $queryYear);
+  $userYear = mysqli_fetch_assoc($resYear);
+
   mysqli_close($conn);
 
 ?>
@@ -129,10 +133,10 @@ var pretbl = $("#tablePreEnrollmentForm").DataTable({
     "dataSrc":"",
     "data":function(d){
       d.getfunctionName = "getsubjects",
-      d.studentNumber = "<?php echo $userSem['fld_studentNo']; ?>",
-      d.startsy = "<?php echo $userSem['fld_startSY']; ?>",
-      d.endsy   = "<?php echo $userSem['fld_endSY']; ?>",
-      d.semester = "<?php echo $userSem['fld_semester']; ?>"
+      d.studentNumber = "<?php echo $id ?>",
+      d.startsy = "<?php echo $userYear['fld_startSY']; ?>",
+      d.endsy   = "<?php echo $userYear['fld_endSY']; ?>",
+      d.semester = "<?php echo $userYear['fld_semester']; ?>"
     }
   },
   "columns":[
