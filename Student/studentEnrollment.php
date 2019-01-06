@@ -99,19 +99,19 @@
          </div>
          <div class="modal-body">
             <div class="form-group row">
-              <div class="col-sm-3"> 
+              <!-- <div class="col-sm-3"> 
                 <input type="text" class="form-control" name="code" id="code">
-              </div> 
-              <div class="col-sm-3">
+              </div> --> 
+              <!-- <div class="col-sm-3">
                 <select class='form-control' name='selectType' id='selectType' data-plugin='selectpicker' data-live-search='true'>
                   <option value='Course Code'>Course Code</option>
                   <option value='Course Description'>Course Description</option>
                   <option value='Section'>Section</option>
                 </select>
-              </div>
-              <div class="col-sm-6">
+              </div> -->
+              <!-- <div class="col-sm-6">
                 <button type="button" id="" class="btn btn-primary">Search</button>
-              </div>
+              </div> -->
             </div>
             <div class="form-group" id="refreshCourse">
                            <table class="tableAvailableCourses table table-striped width-full" id="tableAvailableCourses">
@@ -161,10 +161,9 @@ $(document).ready( function () {
   } );
 </script> -->
 <script type="text/javascript">
-
    var subjtbl = $("#tableAvailableCourses").DataTable({
     "processing": true,
-    "serverSide": true,
+    "serverSide": false,
     "ajax":{
     "method":"POST",
     "url":"ajaxRequest.php",
@@ -195,7 +194,7 @@ $(document).ready( function () {
 
    var pretbl = $("#tablePreEnrollmentForm").DataTable({
     "processing": true,
-    "serverSide": true,
+    "serverSide": false,
     "ajax":{
     "method":"POST",
     "url":"../Student/ajaxRequest.php",

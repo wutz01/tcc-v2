@@ -47,7 +47,7 @@ class Student
             }
         }
         $list = explode(",", $subjectList); 
-      
+        
         $list2 = array();
         foreach($list as $subjID){
 
@@ -69,7 +69,6 @@ class Student
                 array_push($list2, $row2);
             }
         }
-  
         return $list2;
     }
 
