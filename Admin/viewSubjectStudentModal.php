@@ -42,6 +42,7 @@
   mysqli_close($conn);
 
 ?>
+<div class="modal fade" id="modal-danger" tabindex="-1" role="dialog" aria-labelledby="deleteUserModal" aria-hidden="true"></div>
 
   <div class="modal-dialog" style="width: 90%">
 
@@ -61,8 +62,7 @@
 
         <div class="tab-pane active" id="subject" role="tabpanel">
 
-          <form  method="post" action="editStudentAPI.php" id="updateStudent">
-
+<input type="hidden" name="studentNo" id="studentNo" value="<?php echo $id ?>">
               <div class="form-group row">
 
                 <div class="form-group" id="refreshCourse">
@@ -76,6 +76,7 @@
                         <th>Start Time</th>
                         <th>End Time</th>
                         <th>Section</th>
+                        <th>Action</th>
                      </tr>
                   </thead>
                   <tbody>
@@ -90,6 +91,7 @@
                         <th>Start Time</th>
                         <th>End Time</th>
                         <th>Section</th>
+                        <th>Action</th>
                      </tr>
                   </tfoot>
                </table>
@@ -100,12 +102,10 @@
       <div class="modal-footer">
 
         <button type="button" class="btn btn-danger pull-left" data-dismiss="modal" onclick="cancel()">Cancel</button>
-
-        <button type="button" class="btn btn-info">Add Subject</button></a>
+        <a href="#" id="btnPrintPEF" class="btn btn-primary">Print PEF</a>
+        <button type="button" class="btn btn-info" onclick="enrollSubject('<?php echo $id; ?>')">Add Subject</button></a>
 
       </div>
-
-      </form>
 
     </div>
 
@@ -142,12 +142,86 @@ var pretbl = $("#tablePreEnrollmentForm").DataTable({
     {"data":"fld_day"},
     {"data":"fld_startTime"},
     {"data":"fld_endTime"},
-    {"data":"fld_sectionName"}
+    {"data":"fld_sectionName"},
+    {"data":"fld_availableCourseID"}
   ],
+  "columnDefs": [
+            {
+            "render": function (data, type, row) {
+              return "<a href='#' onclick='removeSubj("+ data +")'>Remove</a>";
+            },
+            "targets": 7
+        },
+  ]
 });
+
+  function removeSubj(id)
+     {
+        var courseID        = id;
+        var getfunctionName = 'removesubject';
+        var studentNumber   = "<?php echo $id; ?>";
+        $.ajax({
+              url: "../Student/ajaxRequest.php",
+              method: "POST",
+              data: {getfunctionName:getfunctionName,courseID:courseID,studentNumber:studentNumber},
+              success: function(data) {
+                    if(data == 1)
+                    {
+                      swal({
+                           title: "Success",
+                           text: "Successfully remove subject",
+                           type: "success",
+                      });
+                      pretbl.ajax.reload();
+                    }else{
+                      swal({
+                           title: "Error!",
+                           text: "Please try again!",
+                           type: "error",
+                      });
+                    }
+              },
+              error : function(XMLHttpRequest, textstatus, error) { 
+                    console.log(error);
+              } 
+           }); 
+     }
 </script>
 
 <script type="text/javascript">
+
+  $(function(){
+
+    $("#deleteTable").DataTable();
+
+  })
+
+  function enrollSubject(idx){
+
+    let url = "addSubjectStudent.php";
+
+    $.post(url,{id:idx},function(result){
+
+      $("#modal-danger").html(result);
+
+      $("#modal-danger").modal('show');
+
+    });
+
+  }
+
+</script>
+
+<script type="text/javascript">
+      $(document).on('click', '#btnPrintPEF', function(){
+        var studentNo = $("#studentNo").val();
+        if(studentNo != ""){
+         window.location = '../Student/exportpdf.php?studentNo=' + btoa(studentNo);       
+        }
+      });
+</script>
+
+<!-- <script type="text/javascript">
 
   function cancel() {
 
@@ -155,4 +229,4 @@ var pretbl = $("#tablePreEnrollmentForm").DataTable({
 
   }
 
-</script>
+</script> -->

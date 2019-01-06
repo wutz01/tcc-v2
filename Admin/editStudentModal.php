@@ -25,13 +25,11 @@
   $user = mysqli_fetch_assoc($res);
 
 
-
   $queryStudent = "SELECT * FROM tbl_student WHERE fld_studentNo = '$id'";
 
   $resStudent = mysqli_query($conn, $queryStudent);
 
   $userStudent = mysqli_fetch_assoc($resStudent);
-
 
 
   mysqli_close($conn);

@@ -228,51 +228,54 @@ $(document).ready( function () {
 });
 
 
-     function addCourse(id){
-            var courseID        = id; 
-            var applicantID     = "";
-            var getfunctionName = "addsubject";
-            var studentNumber   = "<?php echo $_SESSION['studentNumber']; ?>";
-            var startsy = "<?php echo $_SESSION['startSY']; ?>";
-            var endsy   = "<?php echo $_SESSION['endSY']; ?>";
-            var semester = "<?php echo $_SESSION['semester']; ?>";
-            var programID = "<?php echo $_SESSION['programID']; ?>";
-            var yearlevel = "<?php echo $_SESSION['yearlevel']; ?>";
+        function addCourse(id){
+              var courseID        = id; 
+              var applicantID     = "";
+              var getfunctionName = "addsubject";
+              var studentNumber   = "<?php echo $_SESSION['studentNumber']; ?>";
+              var startsy = "<?php echo $_SESSION['startSY']; ?>";
+              var endsy   = "<?php echo $_SESSION['endSY']; ?>";
+              var semester = "<?php echo $_SESSION['semester']; ?>";
+              var programID = "<?php echo $_SESSION['programID']; ?>";
+              var yearlevel = "<?php echo $_SESSION['yearlevel']; ?>";
 
-            $.ajax({
-              url: "../Student/ajaxRequest.php",
-              method: "POST",
-              data: {
-                getfunctionName: getfunctionName,
-                courseID: courseID,
-                studentNumber: studentNumber,
-                programID: programID,
-                startsy: startsy,
-                endsy: endsy,
-                semester: semester,
-                yearlevel: yearlevel,
-                applicantID: applicantID
-              },
-              success: function(data) {
-                    if(data == 1)
-                    {
-                      pretbl.ajax.reload();
-                      $('#addCourseModal').modal('toggle');
-                    }else{
-                      swal({
-                           title: "Error!",
-                           text: data,
-                           type: "error",
-                      });
-                    }
-              },
-              error : function(XMLHttpRequest, textstatus, error) { 
-                    console.log(error);
-              } 
-           }); 
-
-             
-        };
+              $.ajax({
+                url: "../Student/ajaxRequest.php",
+                method: "POST",
+                data: {
+                  getfunctionName: getfunctionName,
+                  courseID: courseID,
+                  studentNumber: studentNumber,
+                  programID: programID,
+                  startsy: startsy,
+                  endsy: endsy,
+                  semester: semester,
+                  yearlevel: yearlevel,
+                  applicantID: applicantID
+                },
+                success: function(data) {
+                      if(data == 1)
+                      {
+                        swal({
+                           title: "Success",
+                           text: "Successfully added subject",
+                           type: "success",
+                        }); 
+                        pretbl.ajax.reload();
+                      }else{
+                        swal({
+                             title: "Error!",
+                             text: data,
+                             type: "error",
+                        });
+                      }
+                },
+                error : function(XMLHttpRequest, textstatus, error) { 
+                      console.log(error);
+                } 
+             }); 
+               
+          };
 
      function removeSubj(id)
      {
@@ -286,6 +289,11 @@ $(document).ready( function () {
               success: function(data) {
                     if(data == 1)
                     {
+                      swal({
+                           title: "Success",
+                           text: "Successfully remove subject!",
+                           type: "success",
+                      });
                       pretbl.ajax.reload();
                     }else{
                       swal({
@@ -305,12 +313,12 @@ $(document).ready( function () {
 
 </script>
 
-  <script type="text/javascript">
-        $(document).on('click', '#btnPrintPEF', function(){
-               var studentNo = $("#studentNo").val();
-               if(studentNo != ""){
-               window.location = 'exportpdf.php?studentNo=' + btoa(studentNo);       
-             }
-        });
+<script type="text/javascript">
+      $(document).on('click', '#btnPrintPEF', function(){
+             var studentNo = $("#studentNo").val();
+             if(studentNo != ""){
+             window.location = 'exportpdf.php?studentNo=' + btoa(studentNo);       
+           }
+      });
 
-  </script>
+</script>
