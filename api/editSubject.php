@@ -41,7 +41,7 @@ $stmt = $conn->prepare($updateSubject);
 
 if($stmt->execute()){
 
-	$json['message'] = "Subject successfully udpated!";
+	$json['message'] = "Subject successfully updated!";
 
 	$json['success'] = true;
 

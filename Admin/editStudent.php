@@ -14,12 +14,23 @@
     $id = $_GET["id"];
 
     $query = "SELECT * FROM tbl_applicant WHERE fld_studentNo = '$id'";
+    $stmt = mysqli_query($conn, $query);
+    if(mysqli_num_rows($stmt) > 0){
 
-    $res = mysqli_query($conn, $query);
+      $query = "SELECT * FROM tbl_applicant WHERE fld_studentNo = '$id'";
 
-    $user = mysqli_fetch_assoc($res);
+      $res = mysqli_query($conn, $query);
 
-    extract($user);
+      $user = mysqli_fetch_assoc($res);
+
+      extract($user);
+    } else {
+      $query = "SELECT * FROM tbl_applicant WHERE fld_studentNo = '$id'";
+
+      $res = mysqli_query($conn, $query);
+
+      $user = mysqli_fetch_assoc($res);
+    }
 
   }
 
@@ -65,7 +76,7 @@
 	<div class="col-md-12">
 		<div class="c-content-panel">
 			<div class="c-body">
-          		<form class="form-horizontal" method="POST" action="../api/editStudent.php" id="apply-frms">
+          	<form class="form-horizontal" method="POST" action="../api/editStudent.php" id="apply-frms">
             <!-- page 1 -->
     				<div class="c-content-tab-1 c-theme c-margin-t-30">
     					<div class="clearfix">
@@ -473,5 +484,10 @@
     var today = new Date();
     var ageChildren = Math.floor((today - childrenBirthDate)/(365.25 * 24 * 60 * 60 *1000));
     document.getElementById('childrenAge').value = ageChildren;
+  }
+</script>
+<script type="text/javascript">
+  function cancel() {
+    location.href = 'students.php';
   }
 </script>

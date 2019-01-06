@@ -38,7 +38,7 @@
 
 ?>
 
-  <div class="modal-dialog">
+  <div class="modal-dialog"  style="width: 60%">
 
     <div class="modal-content">
 
@@ -102,27 +102,9 @@
 
                   <select class='form-control' name='employmentType' id='employmentType'>
 
-                    <?php if($userStaff['employmentType'] == '1') { ?>
-
                     <option value='1' data-hidden="true">Part Time</option>
 
                     <option value='2' data-hidden="true">Full Time</option>
-
-                    <?php } elseif($userStaff['employmentType'] == '2') { ?>
-
-                    <option value='2' data-hidden="true">Full Time</option>
-
-                    <option value='1' data-hidden="true">Part Time</option>
-
-                    <?php } else { ?>
-
-                    <option value='NA' data-hidden="true">NA</option>
-
-                    <option value='1' data-hidden="true">Part Time</option>
-
-                    <option value='2' data-hidden="true">Full Time</option>
-
-                    <?php } ?>
 
                   </select>
 
@@ -166,31 +148,11 @@
 
                       <select class='form-control' name='accessType' id='accessType'>
 
-                        <?php if ($user['accessType'] == 'Admin') { ?>
-
                           <option value='Admin' data-hidden="true">ADMIN</option>
-
-                          <option value='inactive' data-hidden="true">FACULTY</option>
-
-                          <option value='Registrar4old' data-hidden="true">REGISTRAR4OLD</option>
-
-                        <?php } elseif($user['accessType'] == 'Registrar4old') { ?>
-
-                          <option value='Registrar4old' data-hidden="true">REGISTRAR4OLD</option>
 
                           <option value='Faculty' data-hidden="true">FACULTY</option>
 
-                          <option value='Admin' data-hidden="true">ADMIN</option>
-
-                        <?php } else {?>
-
-                          <option value='Faculty' data-hidden="true">FACULTY</option>
-
-                          <option value='Admin' data-hidden="true">ADMIN</option>
-
                           <option value='Registrar4old' data-hidden="true">REGISTRAR4OLD</option>
-
-                        <?php } ?>
 
                      </select>
 
@@ -202,31 +164,11 @@
 
                       <select class='form-control' name='statusUser' id='statusUser'>
 
-                        <?php if ($user['status'] == 'active') { ?>
-
                           <option value='active' data-hidden="true">ACTIVE</option>
 
                           <option value='inactive' data-hidden="true">INACTIVE</option>
 
                           <option value='resignedTerminated' data-hidden="true">Resign/Terminated</option>
-
-                        <?php } elseif($user['status'] == 'inactive') { ?>
-
-                          <option value='INACTIVE' data-hidden="true">INACTIVE</option>
-
-                          <option value='active' data-hidden="true">ACTIVE</option>
-
-                          <option value='resignedTerminated' data-hidden="true">Resign/Terminated</option>
-
-                        <?php } else {  ?>
-
-                          <option value='resignedTerminated' data-hidden="true">Resign/Terminated</option>
-
-                          <option value='active' data-hidden="true">ACTIVE</option>
-
-                          <option value='inactive' data-hidden="true">INACTIVE</option>
-
-                        <?php } ?>
 
                      </select>
 
@@ -253,7 +195,9 @@
       </div>
 
   </form>
-
+<input type="hidden" name="employment" id="employment" value="<?php echo $userStaff['employmentType'] ?>">
+<input type="hidden" name="access" id="access" value="<?php echo $user['accessType'] ?>">
+<input type="hidden" name="status" id="status" value="<?php echo $user['status'] ?>">
     </div>
 
     <!-- /.modal-content -->
@@ -264,7 +208,16 @@
 
 </div>
 
+<script type="text/javascript">
+  var employment = document.getElementById('employment').value;
+  var access = document.getElementById('access').value;
+  var status = document.getElementById('status').value;
 
+
+  $("#employmentType option[value=" + employment + "]").attr('selected', true);
+  $("#accessType option[value=" + access + "]").attr('selected', true);
+  $("#statusUser option[value=" + status + "]").attr('selected', true);
+</script>
 
 <script type="text/javascript">
 

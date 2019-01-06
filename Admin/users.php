@@ -160,7 +160,7 @@
 
 <div class="modal fade" id="addSubject" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog" role="document" style="width: 60%">
 
     <div class="modal-content">
 
@@ -243,12 +243,12 @@
                 <div class="col-sm-4">
 
                   <label>Schedule</label><br>
-                  <input type="checkbox" name="schedule[]" value="M">M
-                  <input type="checkbox" name="schedule[]" value="T">T
-                  <input type="checkbox" name="schedule[]" value="W">W
-                  <input type="checkbox" name="schedule[]" value="Th">Th
-                  <input type="checkbox" name="schedule[]" value="F">F
-                  <input type="checkbox" name="schedule[]" value="S">S
+                  <input type="checkbox" name="schedule[]" value="M"> M
+                  <input type="checkbox" name="schedule[]" value="T"> T
+                  <input type="checkbox" name="schedule[]" value="W"> W
+                  <input type="checkbox" name="schedule[]" value="Th"> Th
+                  <input type="checkbox" name="schedule[]" value="F"> F
+                  <input type="checkbox" name="schedule[]" value="S"> S
 
                 </div>
 

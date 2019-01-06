@@ -322,7 +322,6 @@
 
 </div>
 
-
                   <div class="form-group row">
 
                           <table id=tableUsers class="display" style="width:100%">
@@ -335,7 +334,7 @@
 
                                  <th>Fullname</th>
 
-                                 <th>Status</th>
+                                 <th>Year Level</th>
 
                                  <th>Action</th>
 
@@ -354,43 +353,23 @@
                               extract($row);
 
                             ?>
+<style type="text/css">
 
+  .button1 {font-size: 8px;}
+
+</style>
                               <tr class="listApply">
 
-                                <?php if($staffId == '1' || $staffId == '0'){ ?>
-
-                                 <td>-</td>
-
-                                 <?php }  else { ?>
-
-                                  <td><?php echo $staffId; ?></td>
-
-                                 <?php } ?>
+                                  <td><a href="viewSubjectStudent.php?id=<?php echo $staffId ?>"><?php echo $staffId; ?></a></td>
 
                                  <td><?php echo $fld_lastName; ?>, <?php echo $fld_firstName; ?> <?php echo $fld_middleName; ?></td>
 
-                                 <?php if($status == 'active'){ ?>
-
-                                 <td>Active</td>
-
-                                 <?php }  elseif($status == 'inactive') { ?>
-
-                                  <td>Inactive</td>
-
-                                 <?php } elseif($status == 'resignedTerminated') {?>
-
-                                 <td>Resign/Terminated</td>
-
-                                <?php } else { ?>
-
-                                  <td><?php echo $status; ?></td>
-
-                                <?php } ?>
+                                  <td><?php echo $fld_yearLevel; ?> year</td>
 
                                  <td>
-                                <a href="editStudent.php?id=<?php echo $staffId; ?>"><button class="btn btn-info" type="button">Edit</button></a>
+                                <a href="editStudent.php?id=<?php echo $staffId; ?>"><button class="btn btn-info button1" type="button">Edit</button></a>
 
-                                <button class="btn btn-danger" type="button" onclick="deleteUser('<?php echo $row['staffId']; ?>')">Delete</button></button></td>
+                                <button class="btn btn-danger button1" type="button" onclick="deleteUser('<?php echo $row['staffId']; ?>')">Delete</button></button></td>
 
                               </tr>
 
@@ -410,7 +389,7 @@
 
                                  <th>Fullname</th>
 
-                                 <th>Status</th>
+                                 <th>Year Level</th>
 
                                  <th>Action</th>
 
@@ -533,4 +512,9 @@
   function addStudent(){
     window.location.href='addStudent.php';
   }
+</script>
+<script type="text/javascript">
+  $(document).ready( function () {
+    $('#viewSubjectStudent').DataTable();
+} );
 </script>

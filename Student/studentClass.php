@@ -34,7 +34,7 @@ class Student
         $stmt->execute();
         $list = array();
         $row = $stmt->fetchAll(PDO::FETCH_BOTH);
-
+        
         $subjectList='';
         foreach($row as $record){
 

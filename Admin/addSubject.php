@@ -377,7 +377,11 @@
 </div>
 
 </div>
+<?php
 
+   include_once "../General/footer.php";
+
+?>
 <!-- End Page -->
 <link rel="stylesheet" type="text/css" href="../assets/js/datatables.min.css"/> 
 
@@ -393,7 +397,7 @@
 
   function updateSubject(idx){
 
-    let url = "editSubjectModal.php";
+    let url = "editSubjectApplicantModal.php";
 
     $.post(url,{id:idx},function(result){
 
@@ -407,12 +411,6 @@
 
 </script>
 
-<?php
-
-   include_once "../General/footer.php";
-
-?>
-
 <script type="text/javascript">
 
   $(document).ready( function () {
@@ -422,4 +420,3 @@
 } );
 
 </script>
-
