@@ -259,11 +259,14 @@
 
                   <select class="form-control" name="course" id="course">
                     <?php 
-                    $queryCourse  = "SELECT * FROM tbl_program";
+                    $queryCourse  = "SELECT prospectus.fld_prospectusID, prospectus.fld_prospectusName, prospectus.fld_programID, program.fld_programName, prospectus.fld_status
+                  FROM tbl_prospectus as prospectus
+                  JOIN tbl_program as program on (program.fld_programID = prospectus.fld_programID)
+                  GROUP BY prospectus.fld_prospectusName";
                     $resCourse = mysqli_query($conn, $queryCourse);
                     while ($stmtCourse = mysqli_fetch_assoc($resCourse)){
                     ?>
-                    <option value="<?php echo $stmtCourse['fld_programCode'] ?> 2016-2017"><?php echo $stmtCourse['fld_programName'] ?></option>
+                    <option value="<?php echo $stmtCourse['fld_prospectusName'] ?>"><?php echo $stmtCourse['fld_programName'] ?></option>
                     <?php
                       }
                     ?>

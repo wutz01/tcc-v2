@@ -518,7 +518,9 @@
             alert(getData);
             if (getData == "success") {
                 // swal("ERROR IN DATABASE", "Database not executed! Please ask the administrator for assisstance.", "error");
-                $("#tableSection").load(" #tableSection");
+                // swal("ADDING DATA", "Data successfully added in database.", "success");  
+                // $("#tableSection").load(" #tableSection");
+                location.reload();
             } else {
                 // swal("ADDING DATA", "Data successfully added in database.", "success");  
             }
