@@ -333,13 +333,15 @@
 
                               <tr class="listApply">
 
-                                 <th>Student Number</th>
+                                 <th style="width: 5%">Student Number</th>
 
-                                 <th>Fullname</th>
+                                 <th style="width: 10%">Fullname</th>
 
-                                 <th>Year Level</th>
+                                 <th style="width: 10%">Course</th>
 
-                                 <th>Action</th>
+                                 <th style="width: 3%">Year Level</th>
+
+                                 <th style="width: 10%">Action</th>
 
                               </tr>
 
@@ -363,11 +365,13 @@
 </style>
                               <tr class="listApply">
 
-                                  <td><a href="editStudent.php?id=<?php echo $staffId ?>"><?php echo $staffId; ?></a></td>
+                                <td><a href="editStudent.php?id=<?php echo $staffId ?>"><?php echo $staffId; ?></a></td>
 
-                                 <td><?php echo $fld_lastName; ?>, <?php echo $fld_firstName; ?> <?php echo $fld_middleName; ?></td>
+                                <td><?php echo $fld_lastName; ?>, <?php echo $fld_firstName; ?> <?php echo $fld_middleName; ?></td>
 
-                                  <td><?php echo $fld_yearLevel; ?> year</td>
+                                <td><?php echo $fld_prospectusName; ?></td>
+
+                                <td><?php echo $fld_yearLevel; ?> year</td>
 
                                  <td>
                                 <a href="editStudent.php?id=<?php echo $staffId; ?>"><button class="btn btn-info button1" type="button">Edit</button></a>
@@ -390,13 +394,15 @@
 
                               <tr class="listApply">
 
-                                 <th>Student Number</th>
+                                 <th style="width: 5%">Student Number</th>
 
-                                 <th>Fullname</th>
+                                 <th style="width: 10%">Fullname</th>
 
-                                 <th>Year Level</th>
+                                 <th style="width: 10%">Course</th>
 
-                                 <th>Action</th>
+                                 <th style="width: 3%">Year Level</th>
+
+                                 <th style="width: 10%">Action</th>
 
                               </tr>
 

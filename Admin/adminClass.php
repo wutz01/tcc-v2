@@ -387,8 +387,10 @@ class Admin
 
     public function getStudentList()
     {
-        $query = "SELECT fld_firstName, fld_middleName, fld_lastName, Username, staffId, status, fld_yearLevel FROM tbl_users LEFT JOIN tbl_student ON tbl_users.staffId = tbl_student.fld_studentNo WHERE accesstype = 'Student'";
+        // $query = "SELECT fld_firstName, fld_middleName, fld_lastName, Username, staffId, status, fld_yearLevel FROM tbl_users LEFT JOIN tbl_student ON tbl_users.staffId = tbl_student.fld_studentNo WHERE accesstype = 'Student'";
         
+        $query = "SELECT * FROM tbl_users LEFT JOIN tbl_student ON tbl_users.staffId = tbl_student.fld_studentNo WHERE accesstype = 'Student'";
+
         $stmt = $this->importConn->prepare($query);
         
         $stmt->execute();
