@@ -53,81 +53,37 @@
             </li>
 
             <li class="site-menu-item has-sub">
-
-                <a href="javascript:void(0)" data-slug="layout">
-
-                  <i class="site-menu-icon wb-grid-4" aria-hidden="true"></i>
-
-                  <span class="site-menu-title">Management</span>
-
-                  <span class="site-menu-arrow"></span>
-
-                </a>
-
+              <a href="javascript:void(0)" data-slug="layout">
+                <i class="site-menu-icon wb-grid-4" aria-hidden="true"></i>
+                <span class="site-menu-title">Management</span>
+                <span class="site-menu-arrow"></span>
+              </a>
               <ul class="site-menu-sub">
-
                 <li class="site-menu-item">
-
                   <a class="animsition-link" href="../Admin/addSubject.php" data-slug="Assign Access Type">
-
                     <i class="site-menu-icon wb-book" aria-hidden="true"></i>
-
                     <span class="site-menu-title">Applicant Exams</span>
-
                   </a>
-
                 </li>
-
-              </ul>
-
-              <ul class="site-menu-sub">
-
                 <li class="site-menu-item">
-
                   <a class="animsition-link" href="../Admin/users.php" data-slug="Assign Access Type">
-
                     <i class="site-menu-icon wb-users" aria-hidden="true"></i>
-
                     <span class="site-menu-title">Users</span>
-
                   </a>
-
                 </li>
-
-              </ul>
-
-              <ul class="site-menu-sub">
-
                 <li class="site-menu-item">
-
                   <a class="animsition-link" href="../Admin/students.php" data-slug="Assign Access Type">
-
                     <i class="site-menu-icon wb-user-circle" aria-hidden="true"></i>
-
                     <span class="site-menu-title">Students</span>
-
                   </a>
-
                 </li>
-
-              </ul>
-
-              <ul class="site-menu-sub">
-
                 <li class="site-menu-item">
-
                   <a class="animsition-link" href="../Admin/subjectSchedule.php" data-slug="Assign Access Type">
-
                     <i class="site-menu-icon wb-time" aria-hidden="true"></i>
-
                     <span class="site-menu-title">Subject Scheduling</span>
-
                   </a>
-
                 </li>
-
               </ul>
-
             </li>
 
             <li class="site-menu-item">
@@ -142,7 +98,7 @@
 
             </li>
 
-            
+
 
             <li class="site-menu-item">
 
@@ -284,7 +240,7 @@
 
               </a>
 
-            </li> 
+            </li>
 
             <li class="site-menu-item">
 
@@ -529,4 +485,3 @@
 
 
   </div>
-
