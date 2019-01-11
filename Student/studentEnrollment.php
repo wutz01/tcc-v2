@@ -117,6 +117,7 @@
                <table class="tableAvailableCourses table table-striped width-full" id="tableAvailableCourses">
                   <thead>
                      <tr>
+                        <th><input type="checkbox" id="getCheck"></th>
                         <th>Subject&nbsp;Code</th>
                         <th>Description</th>
                         <th>Units</th>
@@ -131,6 +132,7 @@
                   </tbody>
                   <tfoot>
                      <tr>
+                        <th></th>
                         <th>Subject&nbsp;Code</th>
                         <th>Description</th>
                         <th>Units</th>
@@ -175,6 +177,7 @@ $(document).ready( function () {
   },
   "columns":[
     {"data":"fld_subCode"},
+    {"data":"fld_subCode"},
     {"data":"fld_description"},
     {"data":"fld_units"},
     {"data":"fld_day"},
@@ -187,9 +190,21 @@ $(document).ready( function () {
             "render": function (data, type, row) {
               return "<button style='border:none; background-color: Transparent; color: blue;'  onclick='addCourse("+row.fld_availableCourseID+")'>"+data+"</button>";
             },
+            "targets": 1
+        },
+  ],
+  "columnDefs": [
+            {
+            "render": function (data, type, row) {
+              return "<input type='checkbox' name='getId' id='getId' value="+row.fld_availableCourseID+">";
+            },
             "targets": 0
         },
   ]
+});
+
+$("#getCheck").click(function(){
+    $('input:checkbox').not(this).prop('checked', this.checked);
 });
 
    var pretbl = $("#tablePreEnrollmentForm").DataTable({
