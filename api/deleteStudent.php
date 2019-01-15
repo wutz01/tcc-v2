@@ -27,6 +27,15 @@ $query = "DELETE FROM tbl_users WHERE Username = '$id'";
 
 $res = mysqli_query($conn,$query);
 
+$queryRemark = "DELETE FROM tbl_students_remarks WHERE student_Id = '$id'";
+
+$resRemark = mysqli_query($conn,$queryRemark);
+
+$querySubject = "DELETE FROM tbl_enrolledsubjects WHERE fld_studentNo = '$id'";
+
+$resSubject = mysqli_query($conn,$querySubject);
+// print_r($queryRemark);
+// die();
 $queryStaff = "DELETE FROM tbl_student WHERE fld_studentNo = '$id'";
 
 $result = mysqli_query($conn,$queryStaff);
