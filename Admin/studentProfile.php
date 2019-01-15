@@ -9,11 +9,12 @@
    	include_once "../General/leftSideBar.php";
 
 
+
 	if(isset($_GET["id"])) {
 
 		$id = $_GET["id"];
 
-		$query = "SELECT * FROM tbl_applicant WHERE fld_applicantID = '$id'";
+		$query = "SELECT * FROM tbl_applicant WHERE fld_studentNo = '$id'";
 
 		$res = mysqli_query($conn, $query);
 
@@ -21,9 +22,34 @@
 
 	}
 
-	$queryAve = "SELECT AVG(fld_grade) AS average FROM tbl_grades_applicant WHERE fld_applicantID = '$id'";
-	$resAve = mysqli_query($conn, $queryAve);
-	$userAve = mysqli_fetch_assoc($resAve);
+  $query = "SELECT * FROM tbl_users WHERE staffId = '$id'";
+
+  $resUser = mysqli_query($conn, $query);
+
+  $userStmt = mysqli_fetch_assoc($resUser);
+
+
+  $queryStudent = "SELECT * FROM tbl_student WHERE fld_studentNo = '$id'";
+
+  $resStudent = mysqli_query($conn, $queryStudent);
+
+  $userStudent = mysqli_fetch_assoc($resStudent);
+
+
+  $querySem = "SELECT * FROM tbl_enrolledsubjects WHERE fld_studentNo = '$id'";
+  
+  $resQuery = mysqli_query($conn, $querySem);
+
+  $userSem = mysqli_fetch_assoc($resQuery);
+
+
+  $queryYear = "SELECT * FROM tbl_activatorsy WHERE fld_status = 'ACTIVATED'";
+
+  $resYear = mysqli_query($conn, $queryYear);
+  
+  $userYear = mysqli_fetch_assoc($resYear);
+
+  mysqli_close($conn);
 ?>
 
 
@@ -39,14 +65,6 @@
 	            <li><a href="../General/dashboard.php">Home</a></li>
 
 	        	<li class="active">Applicant Profile</li>
-
-	        	<?php if($id != $user['fld_applicantID']){ ?>
-
-	        	<?php } else { ?>
-
-	        	<a href="addGradesApplicant.php?id=<?php echo $id ?>"><button class="btn btn-primary pull-right">Add Grades</button></a>
-
-	        <?php } ?>
 
 	        </ol>
 
@@ -76,7 +94,7 @@
     <?php endif ?>
 
 </div>
-
+<div class="modal fade" id="modal-danger" tabindex="-1" role="dialog" aria-labelledby="deleteUserModal" aria-hidden="true"></div>
    <div class="page-content">
 
 	    <div class="panel">
@@ -100,7 +118,7 @@
 </style>
 
 		<button class="btn btn-info" onclick="hideTableInfo()">Information</button> 
-		<button class="btn btn-primary" onclick="hideTableGrade()">Grades</button>
+		<button class="btn btn-primary" onclick="hideTableSubject()">View subject</button>
 
 <table class="table table-striped" id="infoApplicant">
 
@@ -110,11 +128,11 @@
 
 			<td colspan="1">
 
-				<?php if($id != $user['fld_applicantID']){ ?>
+				<?php if($id != $user['fld_studentNo']){ ?>
 
 					<form class="well form-horizontal" id="personalInfo">
 
-					<h2>Applicant not found</h2><br>
+					<h2>Student not found</h2><br>
 
 				</form>
 
@@ -1148,346 +1166,6 @@
 
 </table>
 
-<div class="modal fade" id="enrollNow" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-
-  <div class="modal-dialog" role="document">
-
-    <div class="modal-content">
-
-      <div class="modal-header">
-
-        <h4 class="modal-title" id="exampleModalLabel">Enroll Student</h4>
-
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-
-          <span aria-hidden="true">&times;</span>
-
-        </button>
-
-      </div>
-
-      <div class="modal-body">
-
-        <div class="tab-pane active" id="subject" role="tabpanel">
-
-
-
-          <form action="../api/enrollNow.php" method="post">
-
-              <div class="form-group row">
-              	<!-- <?php echo $user['fld_applicantID'] ?> -->
-              	<input type="hidden" class="form-control" name="applicantId" id="applicantId" placeholder="Student Number" value="<?php echo $user['fld_applicantID'] ?>" />
-                <div class="col-sm-12">
-
-                  <label>Student Number</label>
-
-                  <input type="text" class="form-control" name="studentNo" id="studentNo" placeholder="Student Number" required />
-
-                </div>
-
-                <div class="col-sm-9">
-
-                  <label>Course</label>
-
-                  <select class="form-control" name="course" id="course">
-                  	<?php 
-                  	$queryCourse  = "SELECT * FROM tbl_program";
-                  	$resCourse = mysqli_query($conn, $queryCourse);
-                  	while ($stmtCourse = mysqli_fetch_assoc($resCourse)){
-                  	?>
-                  	<option value="<?php echo $stmtCourse['fld_programCode'] ?> 2016-2017"><?php echo $stmtCourse['fld_programName'] ?></option>
-                  	<?php
-                  		}
-                  	?>
-                  </select>
-
-                </div>
-
-                <div class="col-sm-3">
-
-                  <label>Year Level</label>
-
-                  <select class="form-control" name="yearLevel" id="yearLevel">
-                  	<option value="1st">1st Year</option>
-                  	<option value="2nd">2nd Year</option>
-                  	<option value="3rd">3rd Year</option>
-                  	<option value="4th">4th Year</option>
-                  </select>
-
-                </div>
-
-                <div class="col-sm-12" hidden>
-
-                  <label>Firstname</label>
-
-                  <input type="text" class="form-control" name="firstName" id="firstName" placeholder="Firstname" value="<?php echo $user['fld_firstName'] ?>" />
-
-                </div>
-
-                <div class="col-sm-4" hidden>
-
-                  <label>Middlename</label>
-
-                  <input type="text" class="form-control" name="middleName" id="Middlename" placeholder="Middlename" value="<?php echo $user['fld_middleName'] ?>" />
-
-                </div>
-
-                <div class="col-sm-4" hidden>
-
-                  <label>Lastname</label>
-
-                  <input type="text" class="form-control" name="lastName" id="Lastname" placeholder="Lastname" value="<?php echo $user['fld_lastName'] ?>" />
-
-                </div>
-
-                <div class="col-sm-4" hidden>
-
-                  <label>Sex</label>
-
-                  <input type="text" class="form-control" name="sexApplicant" id="sexApplicant" placeholder="Lastname" value="<?php echo $user['fld_sex'] ?>" />
-
-                </div>
-
-                <div class="col-sm-4" hidden>
-
-                  <label>Home Address</label>
-
-                  <input type="text" class="form-control" name="homeAddress" id="homeAddress" placeholder="Lastname" value="<?php echo $user['fld_homeAddress'] ?>" />
-
-                </div>
-
-                <div class="col-sm-4" hidden>
-
-                  <label>Guardian Name</label>
-
-                  <input type="text" class="form-control" name="guardianName" id="guardianName" placeholder="Lastname" value="<?php echo $user['fld_guardianName'] ?>" />
-
-                </div>
-
-                <div class="col-sm-4" hidden>
-
-                  <label>Mobile Number</label>
-
-                  <input type="text" class="form-control" name="mobileNo" id="mobileNo" placeholder="Lastname" value="<?php echo $user['fld_mobilePhoneNo'] ?>" />
-
-                </div>
-
-                <div class="col-sm-4" hidden>
-
-                  <label>Applicant ID</label>
-
-                  <input type="text" class="form-control" name="applicantId" id="applicantId" placeholder="applicantId" value="<?php echo $user['fld_applicantID'] ?>" />
-
-                </div>
-
-                <div class="col-sm-4" hidden>
-
-                  <label>Applicant ID</label>
-
-                  <input type="text" class="form-control" name="birthDate" id="birthDate" placeholder="applicantId" value="<?php echo $user['fld_birthDate'] ?>" />
-
-                </div>
-
-                    <div class="col-sm-1">
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="modal-footer">
-
-            <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Close</button>
-
-            <button type="submit" class="btn btn-primary" onclick="enrollNow()">Enroll Now</button>
-
-          </div>
-
-      </form>
-
-    </div>
-
-  </div>
-
-</div>
-
-<div class="modal fade" id="enrollNowFailed" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-
-  <div class="modal-dialog" role="document">
-
-    <div class="modal-content">
-
-      <div class="modal-header">
-
-        <h4 class="modal-title" id="exampleModalLabel">Enroll Student</h4>
-
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-
-          <span aria-hidden="true">&times;</span>
-
-        </button>
-
-      </div>
-
-      <div class="modal-body">
-
-        <div class="tab-pane active" id="subject" role="tabpanel">
-
-
-
-          <form action="../api/enrollNowFailed.php" method="post">
-
-              <div class="form-group row">
-              	<!-- <?php echo $user['fld_applicantID'] ?> -->
-<input type="hidden" class="form-control" name="applicantId" id="applicantId" placeholder="Student Number" value="<?php echo $user['fld_applicantID'] ?>" />
-                <div class="col-sm-12">
-
-                  <label>Student Number</label>
-
-                  <input type="text" class="form-control" name="studentNo" id="studentNo" placeholder="Student Number" required />
-
-                </div>
-
-                <div class="col-sm-9">
-
-                  <label>Course</label>
-
-                  <select class="form-control" name="course" id="course">
-                  	<?php 
-                  	$queryCourse  = "SELECT * FROM tbl_program";
-                  	$resCourse = mysqli_query($conn, $queryCourse);
-                  	while ($stmtCourse = mysqli_fetch_assoc($resCourse)){
-                  	?>
-                  	<option value="<?php echo $stmtCourse['fld_programCode'] ?> 2016-2017"><?php echo $stmtCourse['fld_programName'] ?></option>
-                  	<?php
-                  		}
-                  	?>
-                  </select>
-
-                </div>
-
-                <div class="col-sm-3">
-
-                  <label>Year Level</label>
-
-                  <select class="form-control" name="yearLevel" id="yearLevel">
-                  	<option value="1st">1st Year</option>
-                  	<option value="2nd">2nd Year</option>
-                  	<option value="3rd">3rd Year</option>
-                  	<option value="4th">4th Year</option>
-                  </select>
-
-                </div>
-
-                <div class="col-sm-12">
-
-                  <label>Remarks</label>
-
-                  <textarea rows="4" cols="50" class="form-control" name="remarks" id="remarks" placeholder="Remarks"></textarea>
-
-                </div>
-
-                <div class="col-sm-12" hidden>
-
-                  <label>Firstname</label>
-
-                  <input type="text" class="form-control" name="firstName" id="firstName" placeholder="Firstname" value="<?php echo $user['fld_firstName'] ?>" />
-
-                </div>
-
-                <div class="col-sm-4" hidden>
-
-                  <label>Middlename</label>
-
-                  <input type="text" class="form-control" name="middleName" id="Middlename" placeholder="Middlename" value="<?php echo $user['fld_middleName'] ?>" />
-
-                </div>
-
-                <div class="col-sm-4" hidden>
-
-                  <label>Lastname</label>
-
-                  <input type="text" class="form-control" name="lastName" id="Lastname" placeholder="Lastname" value="<?php echo $user['fld_lastName'] ?>" />
-
-                </div>
-
-                <div class="col-sm-4" hidden>
-
-                  <label>Sex</label>
-
-                  <input type="text" class="form-control" name="sexApplicant" id="sexApplicant" placeholder="Lastname" value="<?php echo $user['fld_sex'] ?>" />
-
-                </div>
-
-                <div class="col-sm-4" hidden>
-
-                  <label>Home Address</label>
-
-                  <input type="text" class="form-control" name="homeAddress" id="homeAddress" placeholder="Lastname" value="<?php echo $user['fld_homeAddress'] ?>" />
-
-                </div>
-
-                <div class="col-sm-4" hidden>
-
-                  <label>Guardian Name</label>
-
-                  <input type="text" class="form-control" name="guardianName" id="guardianName" placeholder="Lastname" value="<?php echo $user['fld_guardianName'] ?>" />
-
-                </div>
-
-                <div class="col-sm-4" hidden>
-
-                  <label>Mobile Number</label>
-
-                  <input type="text" class="form-control" name="mobileNo" id="mobileNo" placeholder="Lastname" value="<?php echo $user['fld_mobilePhoneNo'] ?>" />
-
-                </div>
-
-                <div class="col-sm-4" hidden>
-
-                  <label>Applicant ID</label>
-
-                  <input type="text" class="form-control" name="applicantId" id="applicantId" placeholder="applicantId" value="<?php echo $user['fld_applicantID'] ?>" />
-
-                </div>
-
-                <div class="col-sm-4" hidden>
-
-                  <label>Applicant ID</label>
-
-                  <input type="text" class="form-control" name="birthDate" id="birthDate" placeholder="applicantId" value="<?php echo $user['fld_birthDate'] ?>" />
-
-                </div>
-
-                    <div class="col-sm-1">
-
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="modal-footer">
-
-            <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Close</button>
-
-            <button type="submit" class="btn btn-primary" onclick="enrollNow()">Enroll Now</button>
-
-          </div>
-
-      </form>
-
-    </div>
-
-  </div>
-
-</div>
-
 <table class="table table-striped" id="gradeApplicant" style="display: none">
 
 	<tbody>
@@ -1505,38 +1183,41 @@
               <div class="example-wrap">
               <h1><?php echo $user['fld_lastName'] ?>, <?php echo $user['fld_firstName'] ?> <?php echo $user['fld_middleName'] ?></h1>
                 <div class="example">
-                  <div class="form-group row">
-                    <form method="post" id="gradeApplicantSubmit" action="addGradesApplicantAPI.php">
-                    <div class="table-responsive">
-                      <center><table id="exampleGrade" style="width: 50%" class="table-bordered">
-                            <tr>
-                               <th>Subject</th>
-                               <th>Grade</th>
-                            </tr>
-                            <?php
-								$querySubjects = "SELECT fld_subject, fld_grade FROM tbl_grades_applicant LEFT JOIN tbl_subjects_applicant ON tbl_grades_applicant.fld_subjectID = tbl_subjects_applicant.id WHERE fld_applicantID = $id";
-								$resultGrade = mysqli_query($conn, $querySubjects);
-								while($gradeSubject = mysqli_fetch_array($resultGrade)){
-							?>
-							        <tr>
-							            <td class="col-sm-4"><?php echo $gradeSubject['fld_subject']; ?></td>
-							            <td class="col-sm-1"><?php echo $gradeSubject['fld_grade'] ?></td>
-							        </tr>
-							<?php } ?>
-							<tr>
-								<td><h4>Average:</h4></td>
-								<?php if($userAve['average'] >= '75'){ ?>
-								<td><h4><?php echo number_format((float)$userAve['average'], 2) ?></h4></td>
-								<?php } else { ?>
-								<td><h4 style="color: red"><?php echo number_format((float)$userAve['average'], 2) ?></h4></td>
-								<?php } ?>
-							</tr>
-                      </table>
-                  	</div>
-                      </center>
-                      </form>
-                    </div>
+<input type="hidden" name="studentNo" id="studentNo" value="<?php echo $id ?>">
+                  <div class="form-group" id="refreshCourse">
+               <table class="tableAvailableCourses table table-striped width-full" id="tablePreEnrollmentForm">
+                  <thead>
+                     <tr>
+                        <th>Subject&nbsp;Code</th>
+                        <th>Description</th>
+                        <th>Units</th>
+                        <th>Day</th>
+                        <th>Start Time</th>
+                        <th>End Time</th>
+                        <th>Section</th>
+                        <th>Action</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+
+                  </tbody>
+                  <tfoot>
+                     <tr>
+                        <th>Subject&nbsp;Code</th>
+                        <th>Description</th>
+                        <th>Units</th>
+                        <th>Day</th>
+                        <th>Start Time</th>
+                        <th>End Time</th>
+                        <th>Section</th>
+                        <th>Action</th>
+                     </tr>
+                  </tfoot>
+               </table>
+            </div>
                   </div>
+<a href="#" id="btnPrintPEF"><button class="btn btn-primary">Print PEF</button></a>
+<button type="button" class="btn btn-info pull-right" onclick="enrollSubject('<?php echo $id; ?>')">Add Subject</button></a>
                 </div>
               </div>
             </div>
@@ -1553,22 +1234,15 @@
 	</tbody>
 
 </table>
-					<div style="float: right;">
-	                <?php if($userAve['average'] >= '75'){ ?>
-	                	<button class="btn btn-success" style="display: none" id="pass" type="submit" data-toggle="modal" data-target="#enrollNow">Proceed to Enrollment</button>
-	               	<?php } else { ?>
-	               		<button class="btn btn-danger" style="display: none" id="fail" type="button" data-toggle="modal" data-target="#enrollNowFailed">Proceed to Enrollment</button>
-	               	<?php } ?>
-	                	<a href="../Admin/acceptedApplicant.php"><button class="btn btn-primary">View more applicant</button></a>
-	                </div>
-
+<a href="editStudent.php?id=<?php echo $id; ?>"><button class="btn btn-primary pull-right" id="editStudent">Edit</button></a>
+<button class="btn btn-danger pull-right" onclick="deleteUser('<?php echo $id; ?>')" id="deleteStudent">Delete</button>
+<a href="students.php"><button class="btn btn-info" id="viewMore">View more students</button></a>
 	              		</div>
 
 	                </div>
-					
 
 	            </div>
-
+ 	
 	        </div>
 
 	    </div>
@@ -1583,43 +1257,156 @@
    include_once "../General/footer.php";
 
 ?>
-<link rel="stylesheet" type="text/css" href="../assets/js/datatables.min.css"/> 
+
+<link rel="stylesheet" type="text/css" href="../assets/js/datatables.min.css"/>
 <script type="text/javascript" src="../assets/js/datatables.min.js"></script>
+<script src="../assets/plugins/jquery-form/jquery-form.min.js"></script>
+
+<script type="text/javascript">
+var pretbl = $("#tablePreEnrollmentForm").DataTable({
+    "processing": true,
+    "serverSide": false,
+    "ajax":{
+    "method":"POST",
+    "url":"../Student/ajaxRequest.php",
+    "dataSrc":"",
+    "data":function(d){
+      d.getfunctionName = "getsubjects",
+      d.studentNumber = "<?php echo $id ?>",
+      d.startsy = "<?php echo $userYear['fld_startSY']; ?>",
+      d.endsy   = "<?php echo $userYear['fld_endSY']; ?>",
+      d.semester = "<?php echo $userYear['fld_semester']; ?>"
+    }
+  },
+  "columns":[
+    {"data":"fld_subCode"},
+    {"data":"fld_description"},
+    {"data":"fld_units"},
+    {"data":"fld_day"},
+    {"data":"fld_startTime"},
+    {"data":"fld_endTime"},
+    {"data":"fld_sectionName"},
+    {"data":"fld_availableCourseID"}
+  ],
+  "columnDefs": [
+            {
+            "render": function (data, type, row) {
+              return "<a href='#' onclick='removeSubj("+ data +")'>Remove</a>";
+            },
+            "targets": 7
+        },
+  ]
+});
+
+  function removeSubj(id)
+     {
+        var courseID        = id;
+        var getfunctionName = 'removesubject';
+        var studentNumber   = "<?php echo $id; ?>";
+        $.ajax({
+              url: "../Student/ajaxRequest.php",
+              method: "POST",
+              data: {getfunctionName:getfunctionName,courseID:courseID,studentNumber:studentNumber},
+              success: function(data) {
+                    if(data == 1)
+                    {
+                      swal({
+                           title: "Success",
+                           text: "Successfully remove subject",
+                           type: "success",
+                      });
+                      pretbl.ajax.reload();
+                    }else{
+                      swal({
+                           title: "Error!",
+                           text: "Please try again!",
+                           type: "error",
+                      });
+                    }
+              },
+              error : function(XMLHttpRequest, textstatus, error) { 
+                    console.log(error);
+              } 
+           }); 
+     }
+</script>
+
+<script type="text/javascript">
+
+  $(function(){
+    $("#deleteUserModal").DataTable();
+  })
+
+  function deleteUser(idx){
+
+    let url = "deleteStudentModal.php";
+
+    $.post(url,{id:idx},function(result){
+
+      $("#modal-danger").html(result);
+
+      $("#modal-danger").modal('show');
+
+    });
+
+  }
+</script>
+
+<script type="text/javascript">
+
+  $(function(){
+
+    $("#deleteTable").DataTable();
+
+  })
+
+  function enrollSubject(idx){
+
+    let url = "addSubjectStudent.php";
+
+    $.post(url,{id:idx},function(result){
+
+      $("#modal-danger").html(result);
+
+      $("#modal-danger").modal('show');
+
+    });
+
+  }
+
+</script>
+
 <script type="text/javascript">
 	function hideTableInfo() {
 	  var x = document.getElementById("infoApplicant");
 	  $('#infoApplicant').show();
 	  $('#gradeApplicant').hide();
-	  $('#pass').hide();
-	  $('#fail').hide();
+	  $('#viewMore').show();
+	  $('#deleteStudent').show();
+	  $('#editStudent').show();
 	}
-	function hideTableGrade() {
+	function hideTableSubject() {
 	  var x = document.getElementById("gradeApplicant");
 	  $('#infoApplicant').hide();
 	  $('#gradeApplicant').show();
-	  $('#pass').show();
-	  $('#fail').show();
+	  $('#viewMore').hide();
+	  $('#deleteStudent').hide();
+	  $('#editStudent').hide();
 	}
-	function enrollNow() {
-		$(document).ready(function(){
-			$('#personalInfo').ajaxForm({
-				dataType: 'json',
-				success: (o) => {
-					console.log(o),
-					alert(json.message),
-					alert("Successfully enrolled student")
-				},
-				beforeSubmit: (o) => {
-					alert('Submit?')
-					console.log(`Submit?`)
-				}
-			})
-		});
-	}
+
 </script>
 
 <script type="text/javascript">
   $(document).ready( function () {
     $('#exampleGrade').DataTable();
 } );
+</script>
+
+<script type="text/javascript">
+  $(document).on('click', '#btnPrintPEF', function(){
+    var studentNo = $("#studentNo").val();
+    if(studentNo != ""){
+     window.location = '../Student/exportpdf.php?studentNo=' + btoa(studentNo);       
+    }
+  });
 </script>

@@ -188,7 +188,7 @@ $(document).ready( function () {
   "columnDefs": [
             {
             "render": function (data, type, row) {
-              return "<button style='border:none; background-color: Transparent; color: blue;'  onclick='addCourse("+row.fld_availableCourseID+")'>"+data+"</button>";
+              return "<button style='border:none; background-color: Transparent; color: blue;' onclick='addCourse("+row.fld_availableCourseID+")'>"+data+"</button>";
             },
             "targets": 1
         },

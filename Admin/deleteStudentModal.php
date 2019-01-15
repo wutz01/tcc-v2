@@ -110,8 +110,6 @@
 
         <button type="submit" class="btn btn-danger">Delete</button></a>
 
-        <!-- <button type="button" class="btn btn-info" onclick="deleteUser('<?php echo $user['fld_studentNo'] ?>')">Delete</button></a> -->
-
       </div>
 
   </form>
@@ -130,49 +128,9 @@
 
 <script type="text/javascript">
 
-  // function deleteUser(id){
-
-  //   let url = "../api/deleteStudent.php";
-
-  //   $.post(url, {id: id},function(o){
-
-  //     $(".dynamic-alert").show();
-
-  //     if (o.is_successful) {
-
-  //       $(".dynamic-alert").removeClass('alert-success');
-
-  //       $(".dynamic-alert").removeClass('alert-danger');
-
-  //       $(".dynamic-alert").addClass('alert-success');
-
-  //       $(".error-message").html(o.message);
-
-  //       alert(o.message);
-
-  //       window.location.href="users.php";
-
-  //     } else {
-
-  //       $(".dynamic-alert").removeClass('alert-success');
-
-  //       $(".dynamic-alert").removeClass('alert-danger');
-
-  //       $(".dynamic-alert").addClass('alert-danger');
-
-  //       $(".dynamic-alert").html(o.error);
-
-  //     }
-
-  //     $("#modal-danger").modal('hide');
-
-  //   }, 'json');
-
-  // }
-
   function cancel() {
 
-    window.location.href = "students.php";
+    location.reload();
 
   }
 
@@ -187,7 +145,7 @@
       success: (o) => {
         if(o.success){
           alert(o.message)
-          location.reload();
+          location.href = "students.php";
         } else {
           alert(o.message)
         }

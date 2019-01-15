@@ -69,7 +69,7 @@
 <input type="hidden" name="studentNo" id="studentNo" value="<?php echo $id ?>">
               <div class="form-group row">
 
-                <div class="form-group" id="refreshCourse">
+            <div class="form-group" id="refreshCourse">
                <table class="tableAvailableCourses table table-striped width-full" id="tablePreEnrollmentForm">
                   <thead>
                      <tr>
@@ -217,12 +217,12 @@ var pretbl = $("#tablePreEnrollmentForm").DataTable({
 </script>
 
 <script type="text/javascript">
-      $(document).on('click', '#btnPrintPEF', function(){
-        var studentNo = $("#studentNo").val();
-        if(studentNo != ""){
-         window.location = '../Student/exportpdf.php?studentNo=' + btoa(studentNo);       
-        }
-      });
+  $(document).on('click', '#btnPrintPEF', function(){
+    var studentNo = $("#studentNo").val();
+    if(studentNo != ""){
+     window.location = '../Student/exportpdf.php?studentNo=' + btoa(studentNo);       
+    }
+  });
 </script>
 
 <!-- <script type="text/javascript">
