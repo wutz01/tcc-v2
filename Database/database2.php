@@ -1,5 +1,5 @@
-<?php
-	require('../environment.php');
+<?php
+
 	$servername = 'localhost';
 	if ($env === 'production') {
 		$user = 'u984568706_admin';
@@ -10,11 +10,18 @@
 		$pass = '';
 		$db = 'tanauaud_tcc';
 	}
-
-	$GLOBALS['conn'] = $conn = mysqli_connect($servername, $user, $pass, $db);
-
-	if (mysqli_connect_errno()) {
-		echo 'Failed to connect to database'.mysqli_connect_error();
-		die();
-	}
+
+
+	$GLOBALS['conn'] = $conn = mysqli_connect($servername, $user, $pass, $db);
+
+
+
+	if (mysqli_connect_errno()) {
+
+		echo 'Failed to connect to database'.mysqli_connect_error();
+
+		die();
+
+	}
+
 ?>

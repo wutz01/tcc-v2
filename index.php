@@ -1,4 +1,6 @@
 <?php
+  require('environment.php');
+  require('Database/database2.php');
   include('templates/header.php');
   include('templates/top-nav.php');
   include('templates/modals.php');
@@ -134,7 +136,7 @@
   					<div class="c-content-v-center" style="height: 90px;">
   						<div class="c-wrapper">
   							<div class="c-body">
-  								<button type="button" class="btn btn-md c-btn-square c-btn-border-2x c-theme-btn c-btn-uppercase c-btn-bold">Apply</button>
+  								<a href="apply.php"><button type="button" class="btn btn-md c-btn-square c-btn-border-2x c-theme-btn c-btn-uppercase c-btn-bold">Apply</button></a>
   							</div>
   						</div>
   					</div>
@@ -227,7 +229,7 @@
   </div><!-- END: CONTENT/BARS/BAR-1 -->
 
   <!-- BEGIN: CONTENT/MISC/LATEST-ITEMS-2 -->
-  <div class="c-content-box c-size-md c-bg-grey-1">
+  <div class="c-content-box c-size-md c-bg-grey-1" id="courses">
   	<div class="container">
   				<div class="row" data-auto-height="true">
   			<div class="col-md-4  c-margin-b-20">
@@ -244,39 +246,29 @@
   			<div class="col-md-4  c-margin-b-20">
   				<div class="c-content-media-1-slider" data-slider="owl">
   					<div class="owl-carousel owl-theme c-theme owl-single" data-single-item="true" data-auto-play="8000" data-rtl="false">
+              <?php
+                $sql = "SELECT * FROM tbl_program";
+                $stmt = mysqli_query($conn, $sql);
+                while($res = mysqli_fetch_assoc($stmt)){
+              ?>
   						<div class="item">
-  							<div class="c-content-media-1" data-height="height">
-  								<div class="c-content-label c-font-uppercase c-font-bold c-theme-bg">News</div>
-  								<a href="#" class="c-title c-font-uppercase c-font-bold c-theme-on-hover c-font-bold">The Multi-purpose HTML5 Theme</a>
-  								<p>Lorem ipsum dolor sit amet, adipiscing consectetuer adipiscing elit sed diam nonummy et nibh euismod aliquam
-  								erat volutpat sed diam nonummy et nibh euismod aliquam erat volutpat</p>
-  								<div class="c-date">
-  									27 Jan 2015
-  								</div>
-  							</div>
-  						</div>
-  						<div class="item">
-  							<div class="c-content-media-1" data-height="height">
-  								<div class="c-content-label c-font-uppercase c-font-bold c-theme-bg">Posts</div>
-  								<a href="#" class="c-title c-font-uppercase c-font-bold c-theme-on-hover">Meet JANGO. The Theme of 2015</a>
-  								<p>Lorem ipsum dolor sit amet, adipiscing consectetuer adipiscing elit sed diam nonummy et nibh euismod aliquam
-  								erat volutpat sed diam nonummy et nibh euismod aliquam erat volutpat</p>
-  								<div class="c-date">
-  									27 Jan 2015
-  								</div>
-  							</div>
-  						</div>
-  						<div class="item">
-  							<div class="c-content-media-1" data-height="height">
-  								<div class="c-content-label c-font-uppercase c-font-bold c-theme-bg">Events</div>
-  								<a href="#" class="c-title c-font-uppercase c-font-bold c-theme-on-hover">JANGO Showcast 2015</a>
-  								<p>Lorem ipsum dolor sit amet, adipiscing consectetuer adipiscing elit sed diam nonummy et nibh euismod aliquam
-  								erat volutpat sed diam nonummy et nibh euismod aliquam erat volutpat erat volutpat</p>
-  								<div class="c-date">
-  									27 Jan 2015
-  								</div>
-  							</div>
-  						</div>
+                <div class="c-content-media-1" data-height="height">
+                  <div class="c-content-label c-font-uppercase c-font-bold c-theme-bg">Course</div>
+                  <a href="#" class="c-title c-font-uppercase c-font-bold c-theme-on-hover c-font-bold"><?php echo $res['fld_programCode'] ?></a>
+                  <p><?php echo $res['fld_programName'] ?></p>
+                </div>
+              </div>
+              <?php } ?>
+              <!-- <div class="item">
+                <div class="c-content-media-1" data-height="height">
+                  <div class="c-content-label c-font-uppercase c-font-bold c-theme-bg">Course</div>
+                  <a href="#" class="c-title c-font-uppercase c-font-bold c-theme-on-hover c-font-bold">BTTE-ETRO</a>
+                  <p>Bachelor of Technical Teacher Education Major in Electronics Technology</p>
+                  <div class="c-date">
+                    27 Jan 2015
+                  </div>
+                </div>
+              </div> -->
   					</div>
   				</div>
 
@@ -359,15 +351,45 @@
   							</div>
   						</div>
   						<div class="item">
-  							<div class="c-content-media-2 c-bg-img-center" style="background-image: url(assets/base/img/content/stock3/48.jpg); min-height: 360px;">
-  								<div class="c-panel">
-  									<div class="c-fav">
-  										<i class="icon-heart c-font-thin"></i>
-  										<p class="c-font-thin">34</p>
-  									</div>
-  								</div>
-  							</div>
-  						</div>
+                <div class="c-content-media-2 c-bg-img-center" style="background-image: url(assets/base/img/content/stock3/48.jpg); min-height: 360px;">
+                  <div class="c-panel">
+                    <div class="c-fav">
+                      <i class="icon-heart c-font-thin"></i>
+                      <p class="c-font-thin">34</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="c-content-media-2 c-bg-img-center" style="background-image: url(assets/base/img/content/stock3/1.jpg); min-height: 360px;">
+                  <div class="c-panel">
+                    <div class="c-fav">
+                      <i class="icon-heart c-font-thin"></i>
+                      <p class="c-font-thin">16</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="c-content-media-2 c-bg-img-center" style="background-image: url(assets/base/img/content/stock3/57.jpg); min-height: 360px;">
+                  <div class="c-panel">
+                    <div class="c-fav">
+                      <i class="icon-heart c-font-thin"></i>
+                      <p class="c-font-thin">24</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="c-content-media-2 c-bg-img-center" style="background-image: url(assets/base/img/content/stock3/48.jpg); min-height: 360px;">
+                  <div class="c-panel">
+                    <div class="c-fav">
+                      <i class="icon-heart c-font-thin"></i>
+                      <p class="c-font-thin">34</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
   					</div>
   				</div>
   			</div>
@@ -382,22 +404,32 @@
   			<ul class="c-grid">
   				<li>
   					<div class="c-card c-font-right c-bg-opacity-2">
-  						<h3 class="c-font-40 c-font-bold c-font-uppercase">Great<br/>Customer Care</h3>
+  						<h3 class="c-font-40 c-font-bold c-font-uppercase">Vision<br/></h3>
   						<p class="c-font-18">
-  							Lorem ipsum euismod dolor amet consetuer adipiscing elit sed diam nonummy euismod dolore
-  						</p>
+                Section I.
+                  In 2030, the Tanauan City Collge will be globally competitive self-sustaining technological-vocational college of the constituents of Tanauan, Batangas whicg produces Filipino professionals who are patriotic and nationalistic in character, productively contributing to society, highly skilled and technology-driven. 
+              </p>
   					</div>
   				</li>
   				<li>
   				<div class="c-card c-bg-opacity-2">
-  						<h3 class="c-font-40 c-font-bold c-font-uppercase">Awesome<br/>Features Pack</h3>
-  						<p class="c-font-18">
-  							Lorem ipsum euismod dolor amet consetuer adipiscing elit sed diam nonummy euismod dolore
-  						</p>
+  						<h3 class="c-font-40 c-font-bold c-font-uppercase">Mission<br/></h3>
+  						
+              <p class="c-font-18">
+                Section II. In implementing its vision, the TCC endeavors:
+              </p>
+              <br>
+              <ul>1. to provide relevant educational opportunities geared towards local and global demands of an emerging agro-industrial and industrial-tourist-commercial community at reasonable price for constituents of Tanauan, Batangas and its adjacent municipalities and cities in Luzon;</ul>
+              <br>
+              <ul>2. to provide quality education through excellence in training and instruction in technology and sciences, and excellence in languages, humanities and the arts;</ul>
+              <br>
+              <ul>3. to provide advance studies, applied research and extension services, and experimentation in the field of agri-business, commerce and tourism, technology, and social sciences; and</ul>
+              <br>
+              <ul>4. to model the patriotism and nationalism of its visionary leader in Philippine History: Apolinario M. Mabini and Jose P. Laurel.</ul>
   					</div>
   				</li>
   			</ul>
-  			<ul class="c-grid">
+  			<!-- <ul class="c-grid">
   				<li>
   					<div class="c-card c-font-right c-bg-opacity-2">
   						<h3 class="c-font-40 c-font-bold c-font-uppercase">Unlimited<br/>Themed Layouts</h3>
@@ -411,7 +443,7 @@
   						<h3 class="c-font-white c-font-25 c-font-right">Some title here..</h3>
   					</div>
   				</li>
-  			</ul>
+  			</ul> -->
   		</div>
   	</div>
   </div><!-- END: CONTENT/FEATURES/FEATURES-12 -->

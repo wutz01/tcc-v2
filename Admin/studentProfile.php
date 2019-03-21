@@ -130,7 +130,7 @@
 
 				<?php if($id != $user['fld_studentNo']){ ?>
 
-					<form class="well form-horizontal" id="personalInfo">
+				<form class="well form-horizontal" id="personalInfo">
 
 					<h2>Student not found</h2><br>
 
