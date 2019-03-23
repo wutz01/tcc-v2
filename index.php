@@ -472,7 +472,7 @@
   </div><!-- END: CONTENT/MISC/ABOUT-1 -->
 
   <!-- BEGIN: CONTENT/ISOTOPE/GRID-1 -->
-  <div class="c-content-box c-size-md c-bg-img-center" style="background-image: url(assets/base/img/content/backgrounds/bg-82.jpg)">
+  <!-- <div class="c-content-box c-size-md c-bg-img-center" style="background-image: url(assets/base/img/content/backgrounds/bg-82.jpg)">
   	<div class="container">
   		<div class="c-content-title-1">
   			<h3 class="c-center c-font-uppercase c-font-bold c-font-white">Recent Works</h3>
@@ -542,21 +542,18 @@
   			</div>
   		</div>
   	</div>
-  </div><!-- END: CONTENT/ISOTOPE/GRID-1 -->
+  </div> -->
 
   <!-- BEGIN: CONTENT/TESTIMONIALS/TESTIMONIALS-2 -->
-  <div class="c-content-box c-size-lg c-bg-white">
+  <!-- <div class="c-content-box c-size-lg c-bg-white">
   	<div class="container">
-  		<!-- Begin: testimonials 1 component -->
   		<div class="c-content-testimonials-1 c-option-2 wow animated fadeIn" data-slider="owl">
-  			<!-- Begin: Title 1 component -->
   			<div class="c-content-title-1">
   				<h3 class="c-center c-font-uppercase c-font-bold">Our Satisfied Customers</h3>
   				<div class="c-line-center c-theme-bg"></div>
   			</div>
-  			<!-- End-->
 
-  			<!-- Begin: Owlcarousel -->
+
 
   			<div class="owl-carousel owl-theme c-theme c-owl-nav-center wow animated fadeInUp" data-single-item="true" data-slide-speed="8000" data-rtl="false">
   			 	<div class="item">
@@ -600,14 +597,13 @@
   	                </div>
   			  	</div>
   			</div>
-  	        <!-- End-->
+
   	    </div>
-  	    <!-- End-->
+
   	</div>
-  </div><!-- END: CONTENT/TESTIMONIALS/TESTIMONIALS-2 -->
-	<!-- END: PAGE CONTENT -->
-</div>
-<!-- END: PAGE CONTAINER -->
+  </div>
+
+</div> -->
 <?php
   include('templates/footer.php');
 ?>
