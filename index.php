@@ -280,7 +280,7 @@
   							<div class="c-content-v-center c-theme-bg" data-height="height">
   								<div class="c-wrapper">
   									<div class="c-body c-center c-padding-10">
-  										<h3 class="c-font-30 c-line-height-35 c-font-white c-font-bold c-font-uppercase">Unlimited Expendabilities & Possibilities!</h3>
+  										<h3 class="c-font-30 c-line-height-35 c-font-white c-font-bold c-font-uppercase">Tanauan City College</h3>
   									</div>
   								</div>
   							</div>
@@ -289,7 +289,7 @@
   							<div class="c-content-v-center c-bg-red-2" data-height="height">
   								<div class="c-wrapper">
   									<div class="c-body c-center c-padding-10">
-  										<h3 class="c-font-30 c-line-height-35 c-font-white c-font-bold c-font-uppercase">CLEAN HTML & CSS JANGO IS LAUNCH READY!</h3>
+  										<h3 class="c-font-30 c-line-height-35 c-font-white c-font-bold c-font-uppercase">Absolute Quality, relevant, free admission (no hidden charges)</h3>
   									</div>
   								</div>
   							</div>
@@ -407,14 +407,14 @@
   						<h3 class="c-font-40 c-font-bold c-font-uppercase">Vision<br/></h3>
   						<p class="c-font-18">
                 Section I.
-                  In 2030, the Tanauan City Collge will be globally competitive self-sustaining technological-vocational college of the constituents of Tanauan, Batangas whicg produces Filipino professionals who are patriotic and nationalistic in character, productively contributing to society, highly skilled and technology-driven. 
+                  In 2030, the Tanauan City Collge will be globally competitive self-sustaining technological-vocational college of the constituents of Tanauan, Batangas whicg produces Filipino professionals who are patriotic and nationalistic in character, productively contributing to society, highly skilled and technology-driven.
               </p>
   					</div>
   				</li>
   				<li>
   				<div class="c-card c-bg-opacity-2">
   						<h3 class="c-font-40 c-font-bold c-font-uppercase">Mission<br/></h3>
-  						
+
               <p class="c-font-18">
                 Section II. In implementing its vision, the TCC endeavors:
               </p>
