@@ -234,12 +234,12 @@
   				<div class="row" data-auto-height="true">
   			<div class="col-md-4  c-margin-b-20">
   				<div class="c-content-media-1" data-height="height">
-  					<div class="c-content-label c-font-uppercase c-font-bold c-theme-bg">Blog</div>
-  					<a href="#" class="c-title c-font-uppercase c-theme-on-hover c-font-bold">Take the web by storm with JANGO</a>
+  					<div class="c-content-label c-font-uppercase c-font-bold c-theme-bg">Admission</div>
+  					<a href="#" class="c-title c-font-uppercase c-theme-on-hover c-font-bold">Take the admission now!</a>
   					<p>Lorem ipsum dolor sit amet, consetuer adipiscing elit sed diam nonummy et nibh euismod aliquam erat volutpat</p>
   					<div class="c-author">
-  						<div class="c-portrait" style="background-image: url(assets/base/img/content/team/team16.jpg)"></div>
-  						<div class="c-name c-font-uppercase">Jack Nilson</div>
+  						<!-- <div class="c-portrait" style="background-image: url(assets/base/img/content/team/team16.jpg)"></div> -->
+  						<!-- <div class="c-name c-font-uppercase"></div> -->
   					</div>
   				</div>
   			</div>
