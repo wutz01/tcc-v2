@@ -1,3 +1,3 @@
 <?php
-  $GLOBALS['env'] = 'dev';
+  $GLOBALS['env'] = 'production';
 ?>
