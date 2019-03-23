@@ -42,7 +42,7 @@
 
       </div>
 
-<form method="post" action="../api/editSubject.php" id="updateSubjectModal">
+<form method="post" action="../api/deleteSubject.php" id="deleteSubjectModal">
 
       <div class="modal-body">
 
@@ -56,7 +56,7 @@
 
                 <label>Subject Code</label>
 
-                <input type="text" class="form-control" name="subjectCode" id="subjectCode" placeholder="Student Number" value="<?php echo $user['fld_subCode']; ?>"/>
+                <input type="text" class="form-control" name="subejctCode" id="subejctCode" placeholder="Student Number" value="<?php echo $user['fld_subCode']; ?>" disabled/>
 
               </div>
 
@@ -64,7 +64,7 @@
 
                 <label>Subject Description</label>
 
-                <input type="text" class="form-control" name="subjectDes" id="subjectDes" placeholder="Student Number" value="<?php echo $user['fld_description']; ?>"/>
+                <input type="text" class="form-control" name="subjectDes" id="subjectDes" placeholder="Student Number" value="<?php echo $user['fld_description']; ?>" disabled/>
 
               </div>
 
@@ -72,7 +72,7 @@
 
                 <label>Units</label>
 
-                <input type="number" class="form-control" name="subjectUnits" id="subjectUnits" placeholder="Student Number" value="<?php echo $user['fld_units']; ?>"/>
+                <input type="text" class="form-control" name="subjectUnits" id="subjectUnits" placeholder="Student Number" value="<?php echo $user['fld_units']; ?>" disabled/>
 
               </div>
 
@@ -80,7 +80,7 @@
 
                 <label>Lecture Hours</label>
 
-                <input type="number" class="form-control" name="subjectLecHrs" id="subjectLecHrs" placeholder="Student Number" value="<?php echo $user['fld_lecHrs']; ?>"/>
+                <input type="text" class="form-control" name="subjectLecHrs" id="subjectLecHrs" placeholder="Student Number" value="<?php echo $user['fld_lecHrs']; ?>" disabled/>
 
               </div>
 
@@ -88,7 +88,7 @@
 
                 <label>Laboratory Hours</label>
 
-                <input type="number" class="form-control" name="subjectLabHrs" id="subjectLabHrs" placeholder="Student Number" value="<?php echo $user['fld_labHrs']; ?>"/>
+                <input type="text" class="form-control" name="subjectLabHrs" id="subjectLabHrs" placeholder="Student Number" value="<?php echo $user['fld_labHrs']; ?>" disabled/>
 
               </div>
 
@@ -96,7 +96,7 @@
 
                 <label>Pre-Requisite</label>
 
-                <input type="text" class="form-control" name="subjectPreReq" id="subjectPreReq" placeholder="Student Number" value="<?php echo $user['fld_preReq']; ?>"/>
+                <input type="text" class="form-control" name="subjectPreReq" id="subjectPreReq" placeholder="Student Number" value="<?php echo $user['fld_preReq']; ?>" disabled/>
 
               </div>
 
@@ -116,7 +116,7 @@
 
         <button type="button" class="btn btn-info pull-left" data-dismiss="modal" onclick="cancel()">Cancel</button>
 
-        <button type="submit" class="btn btn-danger">Update</button></a>
+        <button type="submit" class="btn btn-danger">Delete</button></a>
 
         <!-- <button type="button" class="btn btn-info" onclick="deleteUser('<?php echo $user['fld_studentNo'] ?>')">Delete</button></a> -->
 
@@ -134,7 +134,7 @@
 
 </div>
 
-
+<script src="../assets/plugins/jquery-form/jquery-form.min.js"></script>
 
 <script type="text/javascript">
 
@@ -186,11 +186,9 @@
 
 </script>
 
-<script src="../assets/plugins/jquery-form/jquery-form.min.js"></script>
-
 <script type="text/javascript">
   $(function () {
-    $('#updateSubjectModal').ajaxForm({
+    $('#deleteSubjectModal').ajaxForm({
       dataType: 'json',
       success: (o) => {
         if(o.success){
@@ -201,7 +199,7 @@
         }
       },
       beforeSubmit: (o) => {
-        alert('Do you want to update subject?');
+        alert('Do you want to delete student?');
       }
     });
   })

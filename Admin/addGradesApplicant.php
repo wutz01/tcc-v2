@@ -39,7 +39,7 @@
                 <div class="example">
                   <div class="form-group row">
                     <form method="post" id="gradeApplicantSubmit" action="addGradesApplicantAPI.php">
-                      <center><table id="example" style="width: 50%">
+                      <center><table id="example" style="width: 50%" class="table-bordered">
                             <tr>
                                <th>Subject Name</th>
                                <th>Grade</th>
@@ -79,7 +79,7 @@
                       </table>
                       </center>
                       <button class="btn btn-success pull-right" name="validate" type="submit">Save</button> 
-                      <a href="acceptedApplicantProfile.php?id=<?php echo $_GET["id"] ?>"><button class="btn btn-danger">Cancel</button></a>
+                      <a href="acceptedApplicantProfile.php?id=<?php echo $_GET["id"] ?>"><button class="btn btn-danger" type="button">Cancel</button></a>
                       </form>
                     </div>
                   </div>
@@ -98,10 +98,9 @@
 <?php
    include_once "../General/footer.php";
 ?>
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> -->
 <script src="../OSPI/assets/js/jquery.form.min.js"></script>
-<!-- <script src="../OSPI/assets/js/jquery-3.1.1.min.js"></script> -->
-
+<link rel="stylesheet" type="text/css" href="../assets/js/datatables.min.css"/> 
+<script type="text/javascript" src="../assets/js/datatables.min.js"></script>
 <script>
   function addRow() {
     let subject = $("#subjectNameSelect").val();
@@ -134,8 +133,7 @@
     });
   })
 </script>
-<link rel="stylesheet" type="text/css" href="../assets/js/datatables.min.css"/> 
-<script type="text/javascript" src="../assets/js/datatables.min.js"></script>
+
 <script type="text/javascript">
   $(document).ready( function () {
     $('#example').DataTable();

@@ -1,5 +1,6 @@
 <?php  
 include_once "studentClass.php";
+include '../Database/database2.php';
 $student = new Student();
 
 if($_POST['getfunctionName'] == 'getsubjectlist')
@@ -91,7 +92,18 @@ else if ($_POST["getfunctionName"] == "populateMyGrades") {
                     <th>{$fld_subCode}</th>
                     <th>{$fld_description}</th>
                     <th>{$fld_units}</th>";
-                    
+            $queryCheck = "SELECT * FROM tbl_grades WHERE fld_studentNo = '$studentNo'";
+            $stmtCheck = mysqli_query($conn, $queryCheck);
+
+            if(mysqli_num_rows($stmtCheck)<=0){
+                $output .="
+                    <th>NG</th>
+                    <th>NG</th>
+                    <th>NG</th>
+                    <th>NG</th>
+                </tr>";
+            } else {
+
             $getGrades = $student->readMyGrades($studentNo, $fld_subjectID);
             while ($row = $getGrades->fetch(PDO::FETCH_ASSOC)) {
             extract($row);
@@ -102,6 +114,7 @@ else if ($_POST["getfunctionName"] == "populateMyGrades") {
                     <th>{$fld_numericalGrade}</th>
                 </tr>";
                 }
+            }
 
             $totalNoOfUnits = $totalNoOfUnits + $fld_units;
 

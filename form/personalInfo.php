@@ -56,7 +56,7 @@
       </div>
 
       <div class="form-group">
-        <label  class="col-md-2 control-label">Sex</label>
+        <label  class="col-md-2 control-label">Sex<span style="color:red; font-size: 18px;">*</span></label>
         <div class="col-md-3">
           <label class="radio-inline">
             <input type="radio" name="sexApplicant" id="sexApplicant"  value="Male">Male
@@ -66,7 +66,7 @@
           </label>
         </div>
 
-        <label for="gender" class="col-md-1 control-label">Gender</label>
+        <label for="gender" class="col-md-1 control-label">Gender<span style="color:red; font-size: 18px;">*</span></label>
         <div class="col-md-2">
           <select class="form-control c-square c-theme" id="gender" name="gender">
             <option value="Not Specified">Not Specified</option>
@@ -83,20 +83,20 @@
             <option value="ARMM">ARMM (Autonomous Region in Muslim Mindanao)</option>
             <option value="CAR">CAR (Cordillera Administrative Region)</option>
             <option value="NCR">NCR (National Capital Region)</option>
-            <option value="Region 1">Region 1 (Ilocos Region)</option>
-            <option value="Region 2">Region 2 (Cagayan Valley)</option>
-            <option value="Region 3">Region 3 (Central Luzon)</option>
-            <option value="Region 4A">Region 4A (CALABARZON)</option>
-            <option value="Region 4B">Region 4B (MIMAROPA)</option>
-            <option value="Region 5">Region 5 (Bicol Region)</option>
-            <option value="Region 6">Region 6 (Western Visayas)</option>
-            <option value="Region 7">Region 7 (Central Visayas)</option>
-            <option value="Region 8">Region 8 (Eastern Visayas)</option>
-            <option value="Region 9">Region 9 (Zamboanga Peninsula)</option>
-            <option value="Region 10">Region 10 (Northern Mindanao)</option>
-            <option value="Region 11">Region 11 (Davao Region)</option>
-            <option value="Region 12">Region 12 (SOCCSKSARGEN)</option>
-            <option value="Region 13">Region 13 (Caraga Region)</option>
+            <option value="Region1">Region 1 (Ilocos Region)</option>
+            <option value="Region2">Region 2 (Cagayan Valley)</option>
+            <option value="Region3">Region 3 (Central Luzon)</option>
+            <option value="Region4A">Region 4A (CALABARZON)</option>
+            <option value="Region4B">Region 4B (MIMAROPA)</option>
+            <option value="Region5">Region 5 (Bicol Region)</option>
+            <option value="Region6">Region 6 (Western Visayas)</option>
+            <option value="Region7">Region 7 (Central Visayas)</option>
+            <option value="Region8">Region 8 (Eastern Visayas)</option>
+            <option value="Region9">Region 9 (Zamboanga Peninsula)</option>
+            <option value="Region10">Region 10 (Northern Mindanao)</option>
+            <option value="Region11">Region 11 (Davao Region)</option>
+            <option value="Region12">Region 12 (SOCCSKSARGEN)</option>
+            <option value="Region13">Region 13 (Caraga Region)</option>
           </select>
         </div>
       </div>

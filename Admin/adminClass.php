@@ -385,6 +385,22 @@ class Admin
         return $stmt;
     }
 
+    public function getStudentList()
+    {
+        // $query = "SELECT fld_firstName, fld_middleName, fld_lastName, Username, staffId, status, fld_yearLevel FROM tbl_users LEFT JOIN tbl_student ON tbl_users.staffId = tbl_student.fld_studentNo WHERE accesstype = 'Student'";
+        
+        $query = "SELECT * FROM tbl_users LEFT JOIN tbl_student ON tbl_users.staffId = tbl_student.fld_studentNo WHERE accesstype = 'Student'";
+
+        $stmt = $this->importConn->prepare($query);
+        
+        $stmt->execute();
+        
+        return $stmt;
+    }
+// SELECT column_name(s)
+// FROM table1
+// LEFT JOIN table2 ON table1.column_name = table2.column_name;
+
     public function getApplicantSubjectDefault()
     {
         $query = "SELECT * FROM tbl_subjects_applicant WHERE fld_status = 'ACTIVE' AND fld_default = 1";
@@ -946,15 +962,19 @@ class Admin
     {
         
         $query = "UPDATE tbl_section 
-                  SET fld_staffId = :fld_staffId 
-                  WHERE fld_sectionID = :fld_sectionID";
-        
+                  SET fld_staffId = '$staffID'
+                  WHERE fld_sectionID = '$sectionID'";
+
         $stmt = $this->importConn->prepare($query);
         
         // bind parameters
-        $stmt->bindParam(':fld_staffId', $staffID);
-        $stmt->bindParam(':fld_sectionID', $sectionID);
+        $stmt->bindParam(1, $staffID);
+        $stmt->bindParam(2, $sectionID);
+
+        // print_r($staffID);
+        // die();
         
+
         if (!$stmt->execute()) {
             return false;
         }

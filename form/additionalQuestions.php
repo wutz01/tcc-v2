@@ -13,7 +13,7 @@
 <div class="form-group">
   <label for="spouseName" class="col-md-2 control-label">Name<span style="color:red; font-size: 18px;">*</span></label>
   <div class="col-md-4">
-    <input type="text" class="form-control c-square c-theme" id="spouseName" placeholder="Spouse Name" name="spouseName" required>
+    <input type="text" class="form-control c-square c-theme" id="spouseName" placeholder="Spouse Name" name="spouseName">
   </div>
 
   <div class="col-md-5">

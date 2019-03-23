@@ -49,37 +49,60 @@ $applicantNumber = "APPL-" . str_pad($nextId, 5, "0",STR_PAD_LEFT);
   $motherEducationalAttainment = $request['motherEducationalAttainment'];
 
 //additionalQuestions
-  $spouseName = $request['spouseName'];
-  $marriedStatus = $request['marriedStatus'];
-  $spouseAddress = $request['spouseAddress'];
-  $employerSpouseContact = $request['employerSpouseContact'];
-  $employerSpouseOccupation = $request['employerSpouseOccupation'];
-  $employerSpouseEmployer = $request['employerSpouseEmployer'];
-  $employerApplicantAddress = $request['employerApplicantAddress'];
-  $localAbroadSpouse = $request['localAbroadSpouse'];
+	if ($civilStatus == 'Married') {
+		$spouseName = $request['spouseName'];
+		$marriedStatus = $request['marriedStatus'];
+		$spouseAddress = $request['spouseAddress'];
+		$employerSpouseContact = $request['employerSpouseContact'];
+		$employerSpouseOccupation = $request['employerSpouseOccupation'];
+		$employerSpouseEmployer = $request['employerSpouseEmployer'];
+		$employerApplicantAddress = $request['employerApplicantAddress'];
+		$localAbroadSpouse = $request['localAbroadSpouse'];
 
-  $childrenName1 = $request['childrenName'];
-  $childrenName=  implode(", ", $childrenName1);
+		$childrenName1 = $request['childrenName'];
+		$childrenName=  implode(", ", $childrenName1);
 
-  $childSex1 = $request['childrenSex'];
-  $childSex =  implode(", ", $childSex1);
+		$childSex1 = $request['childrenSex'];
+		$childSex =  implode(", ", $childSex1);
 
-  $childrenAge1 = $request['childrenAge'];
-  $childrenAge=  implode(", ", $childrenAge1);
+		$childrenAge1 = $request['childrenAge'];
+		$childrenAge=  implode(", ", $childrenAge1);
 
-  $childrenBirthDate1 = $request['childrenBirthDate'];
-  $childrenBirthDate=  implode(", ", $childrenBirthDate1);
+		$childrenBirthDate1 = $request['childrenBirthDate'];
+		$childrenBirthDate=  implode(", ", $childrenBirthDate1);
 
-  $childrenBirthPlace1 = $request['childrenBirthPlace'];
-  $childrenBirthPlace=  implode(", ", $childrenBirthPlace1);
+		$childrenBirthPlace1 = $request['childrenBirthPlace'];
+		$childrenBirthPlace=  implode(", ", $childrenBirthPlace1);
 
-  $childrenEducationalAttainment1 = $request['childrenEducationalAttainment'];
-  $childrenEducationalAttainment=  implode(",", $childrenEducationalAttainment1);
+		$childrenEducationalAttainment1 = $request['childrenEducationalAttainment'];
+		$childrenEducationalAttainment=  implode(",", $childrenEducationalAttainment1);
+	} else {
+		$spouseName = '';
+		$marriedStatus = '';
+		$spouseAddress = '';
+		$employerSpouseContact = '';
+		$employerSpouseOccupation = '';
+		$employerSpouseEmployer = '';
+		$employerApplicantAddress = '';
+		$localAbroadSpouse = '';
+		$childrenName = '';
+		$childSex = '';
+		$childrenAge =  '';
+		$childrenBirthDate = '';
+		$childrenBirthPlace = '';
+		$childrenEducationalAttainment = '';
+	}
 
-  $occupationApplicant = $request['occupationApplicant'];
-  $employerApplicant = $request['employerApplicant'];
-  $employerApplicantAddresss = $request['employerApplicantAddresss'];
-  $localAbroadApplicant = $request['localAbroadApplicant'];
+	$occupationApplicant = $request['occupationApplicant'];
+	if($occupationApplicant == ''){
+		$employerApplicant = '';
+		$employerApplicantAddresss = '';
+		$localAbroadApplicant = '';
+	} else {
+		$employerApplicant = $request['employerApplicant'];
+		$employerApplicantAddresss = $request['employerApplicantAddresss'];
+		$localAbroadApplicant = $request['localAbroadApplicant'];
+	}
 
   $guardianName = $request['guardianName'];
   $guardianRelation = $request['guardianRelation'];
@@ -103,26 +126,43 @@ $applicantNumber = "APPL-" . str_pad($nextId, 5, "0",STR_PAD_LEFT);
   $elementaryRegion = $request['elementaryRegion'];
   $elementaryYearGrad = $request['elementaryYearGrad'];
 
-  $secondarySchoolName = $request['secondarySchoolName'];
-  $secondarySchoolType = $request['secondarySchoolType'];
-  $secondaryAward = $request['secondaryAward'];
-  $secondaryAddress = $request['secondaryAddress'];
-  $secondaryRegion = $request['secondaryRegion'];
-  $secondaryYearGrad = $request['secondaryYearGrad'];
+	$secondarySchoolName = $request['secondarySchoolName'];
+	$secondarySchoolType = $request['secondarySchoolType'];
+	$secondaryAward = $request['secondaryAward'];
+	$secondaryAddress = $request['secondaryAddress'];
+	$secondaryRegion = $request['secondaryRegion'];
+	$secondaryYearGrad = $request['secondaryYearGrad'];
 
   $collegeSchoolName = $request['collegeSchoolName'];
-  $collegeSchoolType = $request['collegeSchoolType'];
-  $collegeAward = $request['collegeAward'];
-  $collegeAddress = $request['collegeAddress'];
-  $collegeRegion = $request['collegeRegion'];
-  $collegeYearGrad = $request['collegeYearGrad'];
+  if($collegeSchoolName == ''){
+	$collegeSchoolType = '';
+	$collegeAward = '';
+	$collegeAddress = '';
+	$collegeRegion = '';
+	$collegeYearGrad = '';
+  } else {
+  	$collegeSchoolType = $request['collegeSchoolType'];
+	$collegeAward = $request['collegeAward'];
+	$collegeAddress = $request['collegeAddress'];
+	$collegeRegion = $request['collegeRegion'];
+	$collegeYearGrad = $request['collegeYearGrad'];
+  }
 
   $vocationalSchoolName = $request['vocationalSchoolName'];
-  $vocationalSchoolType = $request['vocationalSchoolType'];
-  $vocationalAward = $request['vocationalAward'];
-  $vocationalAddress = $request['vocationalAddress'];
-  $vocationalRegion = $request['vocationalRegion'];
-  $vocationalYearGrad = $request['vocationalYearGrad'];
+  if($vocationalSchoolName === ''){
+	$vocationalSchoolType = '';
+	$vocationalAward = '';
+	$vocationalAddress = '';
+	$vocationalRegion = '';
+	$vocationalYearGrad = '';
+  } else {
+	$vocationalSchoolType = $request['vocationalSchoolType'];
+	$vocationalAward = $request['vocationalAward'];
+	$vocationalAddress = $request['vocationalAddress'];
+	$vocationalRegion = $request['vocationalRegion'];
+	$vocationalYearGrad = $request['vocationalYearGrad'];
+  }
+  
 
   $learnersData = $request['learnersData'];
   $shsTrack = $request['shsTrack'];
@@ -138,9 +178,6 @@ $applicantNumber = "APPL-" . str_pad($nextId, 5, "0",STR_PAD_LEFT);
   }	else {
   	$shsTrackStrand = '';
   }
-
-  // print_r($request);
-  // die();
 
 $query = "INSERT INTO tbl_applicant (
 	fld_applicationDate,
@@ -385,8 +422,15 @@ $query = "INSERT INTO tbl_applicant (
 
 
 $res = mysqli_query($conn, $query);
+// print_r($query);
+// die();
+$json['message'] = "Applied successfull!";
+
 $json['success'] = true;
-$json['message'] = "Applied successfully.";
+
+mysqli_close($conn);
+
 echo json_encode($json, 200);
-exit();
+
+die();
 ?>

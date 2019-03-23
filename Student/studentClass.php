@@ -34,7 +34,7 @@ class Student
         $stmt->execute();
         $list = array();
         $row = $stmt->fetchAll(PDO::FETCH_BOTH);
-
+        
         $subjectList='';
         foreach($row as $record){
 
@@ -47,7 +47,7 @@ class Student
             }
         }
         $list = explode(",", $subjectList); 
-      
+        
         $list2 = array();
         foreach($list as $subjID){
 
@@ -62,14 +62,13 @@ class Student
                                               WHERE tbl_creditedsubjects.fld_subjectID = '$subjID')");
             // bind values
             // $stmt2->bindParam(1, $subjID);
-         
+
             $stmt2->execute();
             if($stmt2->rowCount() > 0){
                 $row2 = $stmt2->fetch(PDO::FETCH_ASSOC);
                 array_push($list2, $row2);
             }
         }
-  
         return $list2;
     }
 
@@ -145,9 +144,11 @@ class Student
 
         $stmt->execute();
         $row = $stmt->fetch(PDO::FETCH_OBJ);
-
+        
         return $row->fld_maxUnits;
+
     }
+
 
     public function screenSubject($courseid,$studentnumber,$startSY,$endSY,$semester,$programid,$yearlevel)
     {
@@ -173,7 +174,7 @@ class Student
                 if($subjectexist != 1)
                 {
                     $unitsexceed = $this->checkMaxunits($subjectid,$studentnumber,$startSY,$endSY,$semester,$programid,$yearlevel);
-                    if($unitsexceed != 1)
+                    if($unitsexceed == 0)
                     {
                         return $this->addSubject($courseid,$studentnumber,$startSY,$endSY,$semester);
                     }else{

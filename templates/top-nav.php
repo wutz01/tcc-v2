@@ -35,7 +35,7 @@
               <a href="javascript:;" class="c-link">Qualified Applicants</a>
             </li>
             <li class="all-nav courses-nav">
-              <a href="javascript:;" class="c-link">Courses</a>
+              <a href="#courses" class="c-link">Courses</a>
             </li>
             <li class="all-nav login-nav">
               <a href="javascript:showLogin();" class="c-link">Login</a>

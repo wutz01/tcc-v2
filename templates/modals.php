@@ -77,7 +77,7 @@
                 <form id="global-login-frm" method="POST" action="Login/ajaxRequest.php">
                     <div class="form-group">
                         <label for="login-email" class="hide">Username</label>
-                        <input type="text" class="form-control input-lg c-square" id="login-email" placeholder="Username" name="username">
+                        <input type="text" class="form-control input-lg c-square" id="login-email" placeholder="Username / Student Number" name="username">
                     </div>
                     <div class="form-group">
                         <label for="login-password" class="hide">Password</label>

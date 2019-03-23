@@ -3,11 +3,12 @@
    include_once "../General/topBar.php";
    include_once "../General/leftSideBar.php";
    include_once "studentClass.php";
+   include '../Database/database2.php';
    
    $student = new Student();
    $maxunits = $student->getUnits($_SESSION['yearlevel'],$_SESSION['programID']);
 
-   ?>
+?>
 <!-- Page -->
 <div class="page animsition">
    <div class="page-header">
@@ -64,7 +65,7 @@
                               <tfoot>
                                  <tr>
                                     <th></th>
-                                    <th><span class="pull-right" id="totalunit">Total Units:</span></th>
+                                    <th><span class="pull-right" id="totalunit">Total Units: </span></th>
                                     <th><label class="control-label" name="totalUnits" id="totalUnits"></label></th>
                                     <th></th>
                                     <th></th>
@@ -98,49 +99,51 @@
          </div>
          <div class="modal-body">
             <div class="form-group row">
-              <div class="col-sm-3"> 
+              <!-- <div class="col-sm-3"> 
                 <input type="text" class="form-control" name="code" id="code">
-              </div> 
-              <div class="col-sm-3">
+              </div> --> 
+              <!-- <div class="col-sm-3">
                 <select class='form-control' name='selectType' id='selectType' data-plugin='selectpicker' data-live-search='true'>
                   <option value='Course Code'>Course Code</option>
                   <option value='Course Description'>Course Description</option>
                   <option value='Section'>Section</option>
                 </select>
-              </div>
-              <div class="col-sm-6">
+              </div> -->
+              <!-- <div class="col-sm-6">
                 <button type="button" id="" class="btn btn-primary">Search</button>
-              </div>
+              </div> -->
             </div>
             <div class="form-group" id="refreshCourse">
-                           <table class="tableAvailableCourses table table-striped width-full" id="tableAvailableCourses">
-                              <thead>
-                                 <tr>
-                                    <th>Subject&nbsp;Code</th>
-                                    <th>Description</th>
-                                    <th>Units</th>
-                                    <th>Day</th>
-                                    <th>Start Time</th>
-                                    <th>End Time</th>
-                                    <th>Section</th>
-                                 </tr>
-                              </thead>
-                              <tbody>
-                               
-                              </tbody>
-                              <tfoot>
-                                 <tr>
-                                    <th>Subject&nbsp;Code</th>
-                                    <th>Description</th>
-                                    <th>Units</th>
-                                    <th>Day</th>
-                                    <th>Start Time</th>
-                                    <th>End Time</th>
-                                    <th>Section</th>
-                                 </tr>
-                              </tfoot>
-                           </table>
-                        </div>
+               <table class="tableAvailableCourses table table-striped width-full" id="tableAvailableCourses">
+                  <thead>
+                     <tr>
+                        <!-- <th><input type="checkbox" id="getCheck"></th> -->
+                        <th>Subject&nbsp;Code</th>
+                        <th>Description</th>
+                        <th>Units</th>
+                        <th>Day</th>
+                        <th>Start Time</th>
+                        <th>End Time</th>
+                        <th>Section</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+
+                  </tbody>
+                  <tfoot>
+                     <tr>
+                        <!-- <th></th> -->
+                        <th>Subject&nbsp;Code</th>
+                        <th>Description</th>
+                        <th>Units</th>
+                        <th>Day</th>
+                        <th>Start Time</th>
+                        <th>End Time</th>
+                        <th>Section</th>
+                     </tr>
+                  </tfoot>
+               </table>
+            </div>
          </div>
          <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -151,12 +154,18 @@
 <!-- End Modal -->
 <?php
    include_once "../General/footer.php";
-   ?>
+?>
+<link rel="stylesheet" type="text/css" href="../assets/js/datatables.min.css"/> 
+<script type="text/javascript" src="../assets/js/datatables.min.js"></script>
+<!-- <script type="text/javascript">
+$(document).ready( function () {
+    $('#tablePreEnrollmentForm').DataTable();
+  } );
+</script> -->
 <script type="text/javascript">
-
    var subjtbl = $("#tableAvailableCourses").DataTable({
     "processing": true,
-    "serverSide": true,
+    "serverSide": false,
     "ajax":{
     "method":"POST",
     "url":"ajaxRequest.php",
@@ -181,13 +190,17 @@
               return "<button style='border:none; background-color: Transparent; color: blue;'  onclick='addCourse("+row.fld_availableCourseID+")'>"+data+"</button>";
             },
             "targets": 0
-        },
+        }
   ]
+});
+
+$("#getCheck").click(function(){
+    $('input:checkbox').not(this).prop('checked', this.checked);
 });
 
    var pretbl = $("#tablePreEnrollmentForm").DataTable({
     "processing": true,
-    "serverSide": true,
+    "serverSide": false,
     "ajax":{
     "method":"POST",
     "url":"../Student/ajaxRequest.php",
@@ -221,51 +234,54 @@
 });
 
 
-     function addCourse(id){
-            var courseID        = id; 
-            var applicantID     = "";
-            var getfunctionName = "addsubject";
-            var studentNumber   = "<?php echo $_SESSION['studentNumber']; ?>";
-            var startsy = "<?php echo $_SESSION['startSY']; ?>";
-            var endsy   = "<?php echo $_SESSION['endSY']; ?>";
-            var semester = "<?php echo $_SESSION['semester']; ?>";
-            var programID = "<?php echo $_SESSION['programID']; ?>";
-            var yearlevel = "<?php echo $_SESSION['yearlevel']; ?>";
+        function addCourse(id){
+              var courseID        = id; 
+              var applicantID     = "";
+              var getfunctionName = "addsubject";
+              var studentNumber   = "<?php echo $_SESSION['studentNumber']; ?>";
+              var startsy = "<?php echo $_SESSION['startSY']; ?>";
+              var endsy   = "<?php echo $_SESSION['endSY']; ?>";
+              var semester = "<?php echo $_SESSION['semester']; ?>";
+              var programID = "<?php echo $_SESSION['programID']; ?>";
+              var yearlevel = "<?php echo $_SESSION['yearlevel']; ?>";
 
-            $.ajax({
-              url: "../Student/ajaxRequest.php",
-              method: "POST",
-              data: {
-                getfunctionName: getfunctionName,
-                courseID: courseID,
-                studentNumber: studentNumber,
-                programID: programID,
-                startsy: startsy,
-                endsy: endsy,
-                semester: semester,
-                yearlevel: yearlevel,
-                applicantID: applicantID
-              },
-              success: function(data) {
-                    if(data == 1)
-                    {
-                      pretbl.ajax.reload();
-                      $('#addCourseModal').modal('toggle');
-                    }else{
-                      swal({
-                           title: "Error!",
-                           text: data,
-                           type: "error",
-                      });
-                    }
-              },
-              error : function(XMLHttpRequest, textstatus, error) { 
-                    console.log(error);
-              } 
-           }); 
-
-             
-        };
+              $.ajax({
+                url: "../Student/ajaxRequest.php",
+                method: "POST",
+                data: {
+                  getfunctionName: getfunctionName,
+                  courseID: courseID,
+                  studentNumber: studentNumber,
+                  programID: programID,
+                  startsy: startsy,
+                  endsy: endsy,
+                  semester: semester,
+                  yearlevel: yearlevel,
+                  applicantID: applicantID
+                },
+                success: function(data) {
+                      if(data == 1)
+                      {
+                        swal({
+                           title: "Success",
+                           text: "Successfully added subject",
+                           type: "success",
+                        }); 
+                        pretbl.ajax.reload();
+                      }else{
+                        swal({
+                             title: "Error!",
+                             text: data,
+                             type: "error",
+                        });
+                      }
+                },
+                error : function(XMLHttpRequest, textstatus, error) { 
+                      console.log(error);
+                } 
+             }); 
+               
+          };
 
      function removeSubj(id)
      {
@@ -279,6 +295,11 @@
               success: function(data) {
                     if(data == 1)
                     {
+                      swal({
+                           title: "Success",
+                           text: "Successfully remove subject!",
+                           type: "success",
+                      });
                       pretbl.ajax.reload();
                     }else{
                       swal({
@@ -298,12 +319,12 @@
 
 </script>
 
-  <script type="text/javascript">
-        $(document).on('click', '#btnPrintPEF', function(){
-               var studentNo = $("#studentNo").val();
-               if(studentNo != ""){
-               window.location = 'exportpdf.php?studentNo=' + btoa(studentNo);       
-             }
-        });
+<script type="text/javascript">
+      $(document).on('click', '#btnPrintPEF', function(){
+             var studentNo = $("#studentNo").val();
+             if(studentNo != ""){
+             window.location = 'exportpdf.php?studentNo=' + btoa(studentNo);       
+           }
+      });
 
-  </script>
+</script>
