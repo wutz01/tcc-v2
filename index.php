@@ -234,12 +234,12 @@
   				<div class="row" data-auto-height="true">
   			<div class="col-md-4  c-margin-b-20">
   				<div class="c-content-media-1" data-height="height">
-  					<div class="c-content-label c-font-uppercase c-font-bold c-theme-bg">Admission</div>
-  					<a href="#" class="c-title c-font-uppercase c-theme-on-hover c-font-bold">Take the admission now!</a>
+  					<div class="c-content-label c-font-uppercase c-font-bold c-theme-bg">Blog</div>
+  					<a href="#" class="c-title c-font-uppercase c-theme-on-hover c-font-bold">Take the web by storm with JANGO</a>
   					<p>Lorem ipsum dolor sit amet, consetuer adipiscing elit sed diam nonummy et nibh euismod aliquam erat volutpat</p>
   					<div class="c-author">
-  						<!-- <div class="c-portrait" style="background-image: url(assets/base/img/content/team/team16.jpg)"></div> -->
-  						<!-- <div class="c-name c-font-uppercase"></div> -->
+  						<div class="c-portrait" style="background-image: url(assets/base/img/content/team/team16.jpg)"></div>
+  						<div class="c-name c-font-uppercase">Jack Nilson</div>
   					</div>
   				</div>
   			</div>
@@ -280,7 +280,7 @@
   							<div class="c-content-v-center c-theme-bg" data-height="height">
   								<div class="c-wrapper">
   									<div class="c-body c-center c-padding-10">
-  										<h3 class="c-font-30 c-line-height-35 c-font-white c-font-bold c-font-uppercase">Tanauan City College</h3>
+  										<h3 class="c-font-30 c-line-height-35 c-font-white c-font-bold c-font-uppercase">Unlimited Expendabilities & Possibilities!</h3>
   									</div>
   								</div>
   							</div>
@@ -289,7 +289,7 @@
   							<div class="c-content-v-center c-bg-red-2" data-height="height">
   								<div class="c-wrapper">
   									<div class="c-body c-center c-padding-10">
-  										<h3 class="c-font-30 c-line-height-35 c-font-white c-font-bold c-font-uppercase">Absolute Quality, relevant, free admission (no hidden charges)</h3>
+  										<h3 class="c-font-30 c-line-height-35 c-font-white c-font-bold c-font-uppercase">CLEAN HTML & CSS JANGO IS LAUNCH READY!</h3>
   									</div>
   								</div>
   							</div>
@@ -407,16 +407,19 @@
   						<h3 class="c-font-40 c-font-bold c-font-uppercase">Vision<br/></h3>
   						<p class="c-font-18">
                 Section I.
-                  In 2030, the Tanauan City Collge will be globally competitive self-sustaining technological-vocational college of the constituents of Tanauan, Batangas whicg produces Filipino professionals who are patriotic and nationalistic in character, productively contributing to society, highly skilled and technology-driven.
+                <br><br>
+                  In 2030, the Tanauan City Collge will be globally competitive self-sustaining technological-vocational college of the constituents of Tanauan, Batangas whicg produces Filipino professionals who are patriotic and nationalistic in character, productively contributing to society, highly skilled and technology-driven. 
               </p>
   					</div>
   				</li>
   				<li>
   				<div class="c-card c-bg-opacity-2">
   						<h3 class="c-font-40 c-font-bold c-font-uppercase">Mission<br/></h3>
-
+  						
               <p class="c-font-18">
-                Section II. In implementing its vision, the TCC endeavors:
+                Section II. 
+                <br><br>
+                In implementing its vision, the TCC endeavors:
               </p>
               <br>
               <ul>1. to provide relevant educational opportunities geared towards local and global demands of an emerging agro-industrial and industrial-tourist-commercial community at reasonable price for constituents of Tanauan, Batangas and its adjacent municipalities and cities in Luzon;</ul>
@@ -447,32 +450,52 @@
   		</div>
   	</div>
   </div><!-- END: CONTENT/FEATURES/FEATURES-12 -->
+  <div class="c-content-box c-size-md">
+    <div class="container">
+      <div class="c-content-bar-1 c-opt-1 wow animated fadeInUp">
+        <div class="c-content-title-1">
+          <h3 class="c-font-uppercase c-font-bold">About us</h3>
+          <div class="c-line-center c-theme-bg"></div>
+        </div>
+        <center>Section IV</center><br>
+          <blockquote>
+            At the outset of the decision of citizen Hon. Mayor Antonio C. Halili to run for the chief executive position of the city of Tanauan, the major platform of his administration was to provide free college education to his city mates many of who, do not have the resources to access and complete tertiary educaiton. Upon his victory in the election, he requested his wife Ms. Gina Yson who belongs to a family of educators, to get her former high school classmates to fast track the organization of a free community college using the existing facilities of the city high school for evening classes. Led by Mr. Benjamin A. Carandang together with the educators of Tanauan Institute Batch '63 who were active in the campaign trail, the group first established their vision of coming up with not just a college but a school that shall be worthy of the names of the city's model heroes, Gat. Apolinario Mabini and Pres. Jose P. Laurel. In no time at all, the group of Batch '63 consulted with and modeled the community college from the most outstanding colleges in the country. In the process of organization the college, the citizens of Tanauan rallied to support the project which made it easy to get the legislative branch to formally craft the charter of the school. Thus, the Tanauan City College was born on August 29, 201 a landmark development in the City of Tanauan. - for revision
+          </blockquote>
+      </div>
+    </div>
+  </div>
 
   <!-- BEGIN: CONTENT/MISC/ABOUT-1 -->
-  <div class="c-content-box c-size-md c-bg-white">
+  <!-- <div class="c-content-box c-size-md c-bg-white">
   	<div class="container">
   		<div class="row">
   			<div class="col-sm-6 wow animated fadeInLeft">
-  				<!-- Begin: Title 1 component -->
+  				Begin: Title 1 component
   				<div class="c-content-title-1">
   					<h3 class="c-font-uppercase c-font-bold">About us</h3>
   					<div class="c-line-left c-theme-bg"></div>
-  				</div>
+  				</div> -->
   				<!-- End-->
-  				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed elit diam nonummy nibh euismod tincidunt ut laoreet dolore magna aluam erat volutpat. Ut wisi enim ad minim veniam quis nostrud exerci et tation diam nisl ut aliquip ex ea commodo consequat euismod tincidunt ut laoreet dolore magna aluam. </p>
-  				<ul class="c-content-list-1 c-theme  c-font-uppercase">
+          <!-- <p>Section IV
+            <br>
+            <br>
+          </p>
+  				<p>
+            At the outset of the decision of citizen Hon. Mayor Antonio C. Halili to run for the chief executive position of the city of Tanauan, the major platform of his administration was to provide free college education to his city mates many of who, do not have the resources to access and complete tertiary educaiton. Upon his victory in the election, he requested his wife Ms. Gina Yson who belongs to a family of educators, to get her former high school classmates to fast track the organization of a free community college using the existing facilities of the city high school for evening classes. Led by Mr. Benjamin A. Carandang together with the educators of Tanauan Institute Batch '63 who were active in the campaign trail, the group first established their vision of coming up with not just a college but a school that shall be worthy of the names of the city's model heroes, Gat. Apolinario Mabini and Pres. Jose P. Laurel. In no time at all, the group of Batch '63 consulted with and modeled the community college from the most outstanding colleges in the country. In the process of organization the college, the citizens of Tanauan rallied to support the project which made it easy to get the legislative branch to formally craft the charter of the school. Thus, the Tanauan City College was born on August 29, 201 a landmark development in the City of Tanauan. - for revision
+          </p> -->
+  				<!-- <ul class="c-content-list-1 c-theme  c-font-uppercase">
   					<li>Perfect Design interface</li>
   					<li>Huge Community</li>
   					<li>Support for Everyone</li>
-  				</ul>
-  				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed elit diam nonummy nibh euismod tincidunt ut laoreet dolore.</p>
-  			</div>
+  				</ul> -->
+  				<!-- <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed elit diam nonummy nibh euismod tincidunt ut laoreet dolore.</p> -->
+  			<!-- </div>
   		</div>
   	</div>
-  </div><!-- END: CONTENT/MISC/ABOUT-1 -->
+  </div> --><!-- END: CONTENT/MISC/ABOUT-1 -->
 
   <!-- BEGIN: CONTENT/ISOTOPE/GRID-1 -->
-  <!-- <div class="c-content-box c-size-md c-bg-img-center" style="background-image: url(assets/base/img/content/backgrounds/bg-82.jpg)">
+  <div class="c-content-box c-size-md c-bg-img-center" style="background-image: url(assets/base/img/content/backgrounds/bg-82.jpg)">
   	<div class="container">
   		<div class="c-content-title-1">
   			<h3 class="c-center c-font-uppercase c-font-bold c-font-white">Recent Works</h3>
@@ -542,18 +565,21 @@
   			</div>
   		</div>
   	</div>
-  </div> -->
+  </div><!-- END: CONTENT/ISOTOPE/GRID-1 -->
 
   <!-- BEGIN: CONTENT/TESTIMONIALS/TESTIMONIALS-2 -->
-  <!-- <div class="c-content-box c-size-lg c-bg-white">
+  <div class="c-content-box c-size-lg c-bg-white">
   	<div class="container">
+  		<!-- Begin: testimonials 1 component -->
   		<div class="c-content-testimonials-1 c-option-2 wow animated fadeIn" data-slider="owl">
+  			<!-- Begin: Title 1 component -->
   			<div class="c-content-title-1">
   				<h3 class="c-center c-font-uppercase c-font-bold">Our Satisfied Customers</h3>
   				<div class="c-line-center c-theme-bg"></div>
   			</div>
+  			<!-- End-->
 
-
+  			<!-- Begin: Owlcarousel -->
 
   			<div class="owl-carousel owl-theme c-theme c-owl-nav-center wow animated fadeInUp" data-single-item="true" data-slide-speed="8000" data-rtl="false">
   			 	<div class="item">
@@ -597,13 +623,14 @@
   	                </div>
   			  	</div>
   			</div>
-
+  	        <!-- End-->
   	    </div>
-
+  	    <!-- End-->
   	</div>
-  </div>
-
-</div> -->
+  </div><!-- END: CONTENT/TESTIMONIALS/TESTIMONIALS-2 -->
+	<!-- END: PAGE CONTENT -->
+</div>
+<!-- END: PAGE CONTAINER -->
 <?php
   include('templates/footer.php');
 ?>
