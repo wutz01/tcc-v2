@@ -459,13 +459,15 @@
   					<div class="c-line-left c-theme-bg"></div>
   				</div>
   				<!-- End-->
-  				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed elit diam nonummy nibh euismod tincidunt ut laoreet dolore magna aluam erat volutpat. Ut wisi enim ad minim veniam quis nostrud exerci et tation diam nisl ut aliquip ex ea commodo consequat euismod tincidunt ut laoreet dolore magna aluam. </p>
-  				<ul class="c-content-list-1 c-theme  c-font-uppercase">
+  				<p>
+            At the outset of the decision of citizen Hon. Mayor Antonio C. Halili to run for the chief executive position of the city of Tanauan, the major platform of his administration was to provide free college education to his city mates many of who, do not have the resources to access and complete tertiary educaiton. Upon his victory in the election, he requested his wife Ms. Gina Yson who belongs to a family of educators, to get her former high school classmates to fast track the organization of a free community college using the existing facilities of the city high school for evening classes. Led by Mr. Benjamin A. Carandang together with the educators of Tanauan Institute Batch '63 who were active in the campaign trail, the group first established their vision of coming up with not just a college but a school that shall be worthy of the names of the city's model heroes, Gat. Apolinario Mabini and Pres. Jose P. Laurel. In no time at all, the group of Batch '63 consulted with and modeled the community college from the most outstanding colleges in the country. In the process of organization the college, the citizens of Tanauan rallied to support the project which made it easy to get the legislative branch to formally craft the charter of the school. Thus, the Tanauan City College was born on August 29, 201 a landmark development in the City of Tanauan.
+          </p>
+  				<!-- <ul class="c-content-list-1 c-theme  c-font-uppercase">
   					<li>Perfect Design interface</li>
   					<li>Huge Community</li>
   					<li>Support for Everyone</li>
   				</ul>
-  				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed elit diam nonummy nibh euismod tincidunt ut laoreet dolore.</p>
+  				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed elit diam nonummy nibh euismod tincidunt ut laoreet dolore.</p> -->
   			</div>
   		</div>
   	</div>
