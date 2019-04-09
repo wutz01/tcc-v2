@@ -77,7 +77,7 @@
 							<h3 class="c-font-uppercase c-font-bold">About <span class="c-theme-font">TCC</span></h3>
 							<div class="c-line-left hide"></div>
 						</div>
-						<p class="c-text c-font-16 c-font-regular">Tolerare unus ducunt ad brevis buxum. Est alter buxum, cesaris. Eheu, lura! Racanas crescere in emeritis oenipons! Ubi est rusticus repressor? Lixa grandis clabulare est. Eposs tolerare.</p>
+						<p class="c-text c-font-16 c-font-regular"></p>
 					</div>
 					<div class="col-md-5">
 						<div class="c-content-title-1 c-title-md">

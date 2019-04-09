@@ -236,7 +236,14 @@
   				<div class="c-content-media-1" data-height="height">
   					<div class="c-content-label c-font-uppercase c-font-bold c-theme-bg">Admission</div>
   					<a href="#" class="c-title c-font-uppercase c-theme-on-hover c-font-bold">Take the admission now!</a>
-  					<p>Lorem ipsum dolor sit amet, consetuer adipiscing elit sed diam nonummy et nibh euismod aliquam erat volutpat</p>
+            <p>Making education for all Tanaueños a reality</p>
+  					<!-- <p>Technical Vocational Track</p>
+            <ul>
+              <li>Mechatonics Servicing</li>
+              <li>Electrical Installation & Maintenance</li>
+              <li>Automative Servicing</li>
+              <li>Electronic Products Assembly & Servicing</li>
+            </ul> -->
   					<div class="c-author">
   						<!-- <div class="c-portrait" style="background-image: url(assets/base/img/content/team/team16.jpg)"></div> -->
   						<!-- <div class="c-name c-font-uppercase"></div> -->
