@@ -70,7 +70,7 @@
 
 			<div class="c-line"></div>
 
-			<div class="c-foot">
+			<!-- <div class="c-foot">
 				<div class="row">
 					<div class="col-md-7">
 						<div class="c-content-title-1 c-title-md">
@@ -95,7 +95,7 @@
 						</form>
 					</div>
 				</div>
-			</div>
+			</div> -->
 
 		</div>
 
