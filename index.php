@@ -405,7 +405,7 @@
   </div><!-- END: CONTENT/MISC/LATEST-ITEMS-2 -->
 
   <!-- BEGIN: CONTENT/FEATURES/FEATURES-12 -->
-  <div class="c-content-box c-size-md c-bg-parallax" style="background-image: url(assets/base/img/content/backgrounds/bg-75.jpg)">
+  <div class="c-content-box c-size-md c-bg-parallax" style="background-image: url(assets/base/img/content/backgrounds/tcc.jpg)">
   	<div class="container">
   		<div class="c-content-feature-8 c-opt-2">
   			<ul class="c-grid">
