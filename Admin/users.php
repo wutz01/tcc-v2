@@ -10,13 +10,13 @@
 
 ?>
 
-<?php
+    <?php
 
   $admin = new Admin();
 
 ?>
 
-<!-- <script type="text/javascript">
+        <!-- <script type="text/javascript">
 
   $('#myModal').on('shown.bs.modal', function () {
 
@@ -26,53 +26,55 @@
 
 </script> -->
 
-<div class="page animsition">
+        <div class="page animsition">
 
-   <div class="page-header">
+            <div class="page-header">
 
-      <h1 class="page-title">Admin</h1>
+                <h1 class="page-title">Admin</h1>
 
-      <ol class="breadcrumb">
+                <ol class="breadcrumb">
 
-         <li><a href="../General/dashboard.php">Home</a></li>
+                    <li><a href="../General/dashboard.php">Home</a></li>
 
-         <li class="active">Manage Users</li>
+                    <li class="active">Manage Users</li>
 
-      </ol>
+                </ol>
 
-   </div>
+            </div>
 
-  <div class="page-content">
+            <div class="page-content">
 
-    <div class="panel">
+                <div class="panel">
 
-      <div class="panel-body container-fluid">
+                    <div class="panel-body container-fluid">
 
-        <div class="row row-lg">
+                        <div class="row row-lg">
 
-          <div class="col-sm-12">
+                            <div class="col-sm-12">
 
-            <div class="col-sm-12">
+                                <div class="col-sm-12">
 
-              <div class="example-wrap">
+                                    <div class="example-wrap">
 
-              <h4 class="example-title">Manage Users</h4>
+                                        <h4 class="example-title">Manage Users</h4>
 
-              <button class="btn btn-primary pull-right"  data-toggle="modal" data-target="#addSubject">Add new user</button><br><br>
+                                        <button class="btn btn-primary pull-right" data-toggle="modal" data-target="#addSubject">Add new user</button>
+                                        <br>
+                                        <br>
 
-                <div class="example">
+                                        <div class="example">
 
-<div class="card-body">
+                                            <div class="card-body">
 
-    <?php if (isset($_SESSION['msgAdd'])): ?>
+                                                <?php if (isset($_SESSION['msgAdd'])): ?>
 
-        <div class="notif">
+                                                    <div class="notif">
 
-          <div class="alert alert-success alert-dismissable show">
+                                                        <div class="alert alert-success alert-dismissable show">
 
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 
-              <?php 
+                                                            <?php
 
                 echo $_SESSION['msgAdd'];
 
@@ -80,21 +82,21 @@
 
               ?>
 
-          </div>
+                                                        </div>
 
-        </div>
+                                                    </div>
 
-    <?php endif ?>
+                                                    <?php endif ?>
 
-    <?php if (isset($_SESSION['msgNot'])): ?>
+                                                        <?php if (isset($_SESSION['msgNot'])): ?>
 
-        <div class="notif">
+                                                            <div class="notif">
 
-          <div class="alert alert-danger alert-dismissable show">
+                                                                <div class="alert alert-danger alert-dismissable show">
 
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 
-              <?php 
+                                                                    <?php
 
                 echo $_SESSION['msgNot'];
 
@@ -102,21 +104,21 @@
 
               ?>
 
-          </div>
+                                                                </div>
 
-        </div>
+                                                            </div>
 
-    <?php endif ?>
+                                                            <?php endif ?>
 
-    <?php if (isset($_SESSION['msgError'])): ?>
+                                                                <?php if (isset($_SESSION['msgError'])): ?>
 
-        <div class="notif">
+                                                                    <div class="notif">
 
-          <div class="alert alert-danger alert-dismissable show">
+                                                                        <div class="alert alert-danger alert-dismissable show">
 
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                                                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 
-              <?php 
+                                                                            <?php
 
                 echo $_SESSION['msgError'];
 
@@ -124,21 +126,21 @@
 
               ?>
 
-          </div>
+                                                                        </div>
 
-        </div>
+                                                                    </div>
 
-    <?php endif ?>
+                                                                    <?php endif ?>
 
-    <?php if (isset($_SESSION['msgUpdate'])): ?>
+                                                                        <?php if (isset($_SESSION['msgUpdate'])): ?>
 
-        <div class="notif">
+                                                                            <div class="notif">
 
-          <div class="alert alert-success alert-dismissable show">
+                                                                                <div class="alert alert-success alert-dismissable show">
 
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                                                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 
-              <?php 
+                                                                                    <?php
 
                 echo $_SESSION['msgUpdate'];
 
@@ -146,420 +148,414 @@
 
               ?>
 
-          </div>
+                                                                                </div>
 
-        </div>
+                                                                            </div>
 
-    <?php endif ?>
+                                                                            <?php endif ?>
 
-</div>
+                                            </div>
 
-<div class="modal fade" id="modal-danger" tabindex="-1" role="dialog" aria-labelledby="deleteUserModal" aria-hidden="true"></div>
+                                            <div class="modal fade" id="modal-danger" tabindex="-1" role="dialog" aria-labelledby="deleteUserModal" aria-hidden="true"></div>
 
-<!-- Modal -->
+                                            <!-- Modal -->
 
-<div class="modal fade" id="addSubject" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal fade" id="addSubject" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 
-  <div class="modal-dialog" role="document" style="width: 60%">
+                                                <div class="modal-dialog" role="document" style="width: 60%">
 
-    <div class="modal-content">
+                                                    <div class="modal-content">
 
-      <div class="modal-header">
+                                                        <div class="modal-header">
 
-        <h4 class="modal-title" id="exampleModalLabel">Add User</h4>
+                                                            <h4 class="modal-title" id="exampleModalLabel">Add User</h4>
 
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 
-          <span aria-hidden="true">&times;</span>
+                                                                <span aria-hidden="true">&times;</span>
 
-        </button>
+                                                            </button>
 
-      </div>
+                                                        </div>
 
-      <div class="modal-body">
+                                                        <div class="modal-body">
 
-        <div class="tab-pane active" id="subject" role="tabpanel">
+                                                            <div class="tab-pane active" id="subject" role="tabpanel">
 
+                                                                <form action="addUserAPI.php" method="post" id="addUser">
 
+                                                                    <div class="form-group row">
 
-          <form action="addUserAPI.php" method="post" id="addUser">
+                                                                        <div class="col-sm-4">
 
-              <div class="form-group row">
+                                                                            <label>Firstname</label>
 
-                <div class="col-sm-4">
+                                                                            <input type="text" class="form-control" name="firstName" id="Firstname" placeholder="Firstname" />
 
-                  <label>Firstname</label>
+                                                                        </div>
 
-                  <input type="text" class="form-control" name="firstName" id="Firstname" placeholder="Firstname" />
+                                                                        <div class="col-sm-4">
 
-                </div>
+                                                                            <label>Middlename</label>
 
-                <div class="col-sm-4">
+                                                                            <input type="text" class="form-control" name="middleName" id="Middlename" placeholder="Middlename" />
 
-                  <label>Middlename</label>
+                                                                        </div>
 
-                  <input type="text" class="form-control" name="middleName" id="Middlename" placeholder="Middlename" />
+                                                                        <div class="col-sm-4">
 
-                </div>
+                                                                            <label>Lastname</label>
 
-                <div class="col-sm-4">
+                                                                            <input type="text" class="form-control" name="lastName" id="Lastname" placeholder="Lastname" />
 
-                  <label>Lastname</label>
+                                                                        </div>
 
-                  <input type="text" class="form-control" name="lastName" id="Lastname" placeholder="Lastname" />
+                                                                        <div class="col-sm-4">
 
-                </div>
+                                                                            <label>Email Address</label>
 
-                <div class="col-sm-4">
+                                                                            <input type="email" class="form-control" name="emailAddress" id="emailAddress" placeholder="Email Address" />
 
-                  <label>Email Address</label>
+                                                                        </div>
 
-                  <input type="email" class="form-control" name="emailAddress" id="emailAddress" placeholder="Email Address" />
+                                                                        <div class="col-sm-4">
 
-                </div>
+                                                                            <label>Employment Type</label>
 
-                <div class="col-sm-4">
+                                                                            <select class='form-control' name='employmentType' id='employmentType'>
 
-                  <label>Employment Type</label>
+                                                                                <option value='1' data-hidden="true">Part Time</option>
 
-                  <select class='form-control' name='employmentType' id='employmentType'>
+                                                                                <option value='2' data-hidden="true">Full Time</option>
 
-                    <option value='1' data-hidden="true">Part Time</option>
+                                                                            </select>
 
-                    <option value='2' data-hidden="true">Full Time</option>
+                                                                        </div>
 
-                  </select>
+                                                                        <div class="col-sm-4">
 
-                </div>
+                                                                            <label>Max Units</label>
 
-                <div class="col-sm-4">
+                                                                            <input type="number" class="form-control" name="maxUnits" id="maxUnits" placeholder="Max Units" />
 
-                  <label>Max Units</label>
+                                                                        </div>
 
-                  <input type="number" class="form-control" name="maxUnits" id="maxUnits" placeholder="Max Units" />
+                                                                        <div class="col-sm-4">
 
-                </div>
+                                                                            <label>Schedule</label>
+                                                                            <br>
+                                                                            <input type="checkbox" name="schedule[]" value="M"> M
+                                                                            <input type="checkbox" name="schedule[]" value="T"> T
+                                                                            <input type="checkbox" name="schedule[]" value="W"> W
+                                                                            <input type="checkbox" name="schedule[]" value="Th"> Th
+                                                                            <input type="checkbox" name="schedule[]" value="F"> F
+                                                                            <input type="checkbox" name="schedule[]" value="S"> S
 
-                <div class="col-sm-4">
+                                                                        </div>
 
-                  <label>Schedule</label><br>
-                  <input type="checkbox" name="schedule[]" value="M"> M
-                  <input type="checkbox" name="schedule[]" value="T"> T
-                  <input type="checkbox" name="schedule[]" value="W"> W
-                  <input type="checkbox" name="schedule[]" value="Th"> Th
-                  <input type="checkbox" name="schedule[]" value="F"> F
-                  <input type="checkbox" name="schedule[]" value="S"> S
+                                                                        <div class="col-sm-4">
 
-                </div>
+                                                                            <label>Username</label>
 
-                  <div class="col-sm-4">
+                                                                            <input type="text" class="form-control" name="userName" id="userName" placeholder="Username" />
 
-                    <label>Username</label>
+                                                                        </div>
 
-                    <input type="text" class="form-control" name="userName" id="userName" placeholder="Username" />
+                                                                        <div class="col-sm-4">
 
-                  </div>
+                                                                            <label>Access Type</label>
 
-                  <div class="col-sm-4">
+                                                                            <select class='form-control' name='accessType' id='accessType'>
 
-                    <label>Access Type</label>
+                                                                                <option value='Admin' data-hidden="true">ADMIN</option>
 
-                    <select class='form-control' name='accessType' id='accessType'>
+                                                                                <option value='Faculty' data-hidden="true">FACULTY</option>
 
-                      <option value='Admin' data-hidden="true">ADMIN</option>
+                                                                                <option value='Registrar4old' data-hidden="true">REGISTRAR4OLD</option>
 
-                      <option value='Faculty' data-hidden="true">FACULTY</option>
+                                                                            </select>
 
-                      <option value='Registrar4old' data-hidden="true">REGISTRAR4OLD</option>
+                                                                        </div>
 
-                    </select>
+                                                                        <div class="col-sm-4">
 
-                  </div>
+                                                                            <label>Status</label>
 
-                  <div class="col-sm-4">
+                                                                            <select class='form-control' name='statusUser' id='statusUser'>
 
-                    <label>Status</label>
+                                                                                <option value='active' data-hidden="true">ACTIVE</option>
 
-                    <select class='form-control' name='statusUser' id='statusUser'>
+                                                                                <option value='inactive' data-hidden="true">INACTIVE</option>
 
-                      <option value='active' data-hidden="true">ACTIVE</option>
+                                                                                <option value='resignedTerminated' data-hidden="true">Resign/Terminated</option>
 
-                      <option value='inactive' data-hidden="true">INACTIVE</option>
+                                                                            </select>
 
-                      <option value='resignedTerminated' data-hidden="true">Resign/Terminated</option>
+                                                                        </div>
 
-                    </select>
+                                                                        <div class="col-sm-4">
 
-                  </div>
+                                                                            <label>Password</label>
 
-                      <div class="col-sm-4">
+                                                                            <input type="password" class="form-control" name="password" id="password" placeholder="Password" />
 
-                        <label>Password</label>
+                                                                        </div>
 
-                        <input type="password" class="form-control" name="password" id="password" placeholder="Password" />
+                                                                        <div class="col-sm-4">
 
-                      </div>
+                                                                            <label>Confirm Password</label>
 
-                      <div class="col-sm-4">
+                                                                            <input type="password" class="form-control" name="cPassword" id="cPassword" placeholder="Confirm Password" />
 
-                        <label>Confirm Password</label>
+                                                                        </div>
 
-                        <input type="password" class="form-control" name="cPassword" id="cPassword" placeholder="Confirm Password" />
+                                                                        <div class="col-sm-1">
 
-                      </div>
+                                                                        </div>
 
-                    <div class="col-sm-1">
+                                                                    </div>
 
-                </div>
+                                                            </div>
 
-              </div>
+                                                        </div>
 
-            </div>
+                                                        <div class="modal-footer">
 
-          </div>
+                                                            <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Close</button>
 
-          <div class="modal-footer">
+                                                            <button type="submit" class="btn btn-primary">Add User</button>
 
-            <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Close</button>
+                                                        </div>
 
-            <button type="submit" class="btn btn-primary">Add User</button>
+                                                        </form>
 
-          </div>
+                                                    </div>
 
-      </form>
+                                                </div>
 
-    </div>
+                                            </div>
 
-  </div>
+                                            <div class="form-group row">
 
-</div>
+                                                <table id=tableUsers class="display" style="width:100%">
 
+                                                    <thead>
 
+                                                        <tr class="listApply">
 
-                  <div class="form-group row">
+                                                            <th>Staff ID</th>
 
-                          <table id=tableUsers class="display" style="width:100%">
+                                                            <th>Username</th>
 
-                           <thead>
+                                                            <th>Access Type</th>
 
-                              <tr class="listApply">
+                                                            <th>Status</th>
 
-                                 <th>Staff ID</th>
+                                                            <th>Action</th>
 
-                                 <th>Username</th>
+                                                        </tr>
 
-                                 <th>Access Type</th>
+                                                    </thead>
 
-                                 <th>Status</th>
+                                                    <tbody>
 
-                                 <th>Action</th>
+                                                      <?php
+                                                        $UsersList = $admin->getUsersList();
+                                                        while($row = $UsersList->fetch(PDO::FETCH_ASSOC)){
+                                                        extract($row);
+                                                      ?>
+                                                            <tr class="listApply">
 
-                              </tr>
+                                                                <?php if($staffId == '1' || $staffId == '0'){ ?>
 
-                           </thead>
+                                                                    <td>-</td>
 
-                           <tbody>
+                                                                    <?php }  else { ?>
 
-                            <?php
+                                                                        <td>
+                                                                            <?php echo $staffId; ?>
+                                                                        </td>
 
-                              $UsersList = $admin->getUsersList();
+                                                                        <?php } ?>
 
-                              while($row = $UsersList->fetch(PDO::FETCH_ASSOC)){
+                                                                            <td>
+                                                                                <?php echo $Username; ?>
+                                                                            </td>
 
-                              extract($row);
+                                                                            <td>
+                                                                                <?php echo $accessType; ?>
+                                                                            </td>
 
-                            ?>
+                                                                            <?php if($status == 'active'){ ?>
 
-                              <tr class="listApply">
+                                                                                <td>Active</td>
 
-                                <?php if($staffId == '1' || $staffId == '0'){ ?>
+                                                                                <?php }  elseif($status == 'inactive') { ?>
 
-                                 <td>-</td>
+                                                                                    <td>Inactive</td>
 
-                                 <?php }  else { ?>
+                                                                                    <?php } elseif($status == 'resignedTerminated') {?>
 
-                                  <td><?php echo $staffId; ?></td>
+                                                                                        <td>Resign/Terminated</td>
 
-                                 <?php } ?>
+                                                                                        <?php } else { ?>
 
-                                 <td><?php echo $Username; ?></td>
+                                                                                            <td>
+                                                                                                <?php echo $status; ?>
+                                                                                            </td>
 
-                                 <td><?php echo $accessType; ?></td>
+                                                                                            <?php } ?>
 
-                                 <?php if($status == 'active'){ ?>
+                                                                                                <td>
 
-                                 <td>Active</td>
+                                                                                                    <button class="btn btn-info" type="button" onclick="updateUser('<?php echo $row['staffId']; ?>')">Edit</button>
+                                                                                                    </button>
 
-                                 <?php }  elseif($status == 'inactive') { ?>
+                                                                                                    <button class="btn btn-danger" type="button" onclick="deleteUser('<?php echo $row['staffId']; ?>')">Delete</button>
+                                                                                                    </button>
+                                                                                                </td>
 
-                                  <td>Inactive</td>
+                                                            </tr>
 
-                                 <?php } elseif($status == 'resignedTerminated') {?>
-
-                                 <td>Resign/Terminated</td>
-
-                                <?php } else { ?>
-
-                                  <td><?php echo $status; ?></td>
-
-                                <?php } ?>
-
-                                 <td>
-
-                                <button class="btn btn-info" type="button" onclick="updateUser('<?php echo $row['staffId']; ?>')">Edit</button></button>
-
-                                <button class="btn btn-danger" type="button" onclick="deleteUser('<?php echo $row['staffId']; ?>')">Delete</button></button></td>
-
-                              </tr>
-
-                              <?php
+                                                            <?php
 
                                 }
 
                               ?>
 
-                           </tbody>
+                                                    </tbody>
 
-                           <tfoot>
+                                                    <tfoot>
 
-                              <tr class="listApply">
+                                                        <tr class="listApply">
 
-                                 <th>Staff ID</th>
+                                                            <th>Staff ID</th>
 
-                                 <th>Username</th>
+                                                            <th>Username</th>
 
-                                 <th>Access Type</th>
+                                                            <th>Access Type</th>
 
-                                 <th>Status</th>
+                                                            <th>Status</th>
 
-                                 <th>Action</th>
+                                                            <th>Action</th>
 
-                              </tr>
+                                                        </tr>
 
-                           </tfoot>
+                                                    </tfoot>
 
-                        </table>
+                                                </table>
 
-                     </div>
+                                            </div>
 
+                                        </div>
 
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
 
                 </div>
 
-              </div>
-
             </div>
-
-          </div>
 
         </div>
 
-      </div>
+        </div>
 
-    </div>
+        </div>
 
-  </div>
+        </div>
 
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- End Page -->
-
-
+        <!-- End Page -->
 
 <?php
 
-   include_once "../General/footer.php";
+include_once "../General/footer.php";
 
 ?>
 <script src="../assets/plugins/jquery-form/jquery-form.min.js"></script>
 
 <script type="text/javascript">
-    $(document).ready(function(){
+  $(document).ready(function() {
       $('#addUser').ajaxForm({
-        dataType: 'json',
-        success: (o) => {
-          if(o.success){
-          alert(o.message)
-          location.reload();
-          } else {
-            alert(o.message)
+          dataType: 'json',
+          success: (o) => {
+              if (o.success) {
+                  alert(o.message)
+                  location.reload();
+              } else {
+                  alert(o.message)
+              }
+          },
+          beforeSubmit: (o) => {
+              alert('Add user?')
+              console.log(`Submit?`)
           }
-        },
-        beforeSubmit: (o) => {
-          alert('Add user?')
-          console.log(`Submit?`)
-        }
       })
-    });
+  });
 </script>
 
 <script type="text/javascript">
+  $(function() {
 
-  $(function(){
-
-    $("#deleteTable").DataTable();
+      $("#deleteTable").DataTable();
 
   })
 
-  function updateUser(idx){
+  function updateUser(idx) {
 
-    let url = "editUserModal.php";
+      let url = "editUserModal.php";
 
-    $.post(url,{id:idx},function(result){
+      $.post(url, {
+          id: idx
+      }, function(result) {
 
-      $("#modal-danger").html(result);
+          $("#modal-danger").html(result);
 
-      $("#modal-danger").modal('show');
+          $("#modal-danger").modal('show');
 
-    });
+      });
 
   }
-
 </script>
-
 
 <script type="text/javascript">
+  $(function() {
 
-  $(function(){
-
-    $("#deleteUserModal").DataTable();
+      $("#deleteUserModal").DataTable();
 
   })
 
-  function deleteUser(idx){
+  function deleteUser(idx) {
 
-    let url = "deleteUserModal.php";
+      let url = "deleteUserModal.php";
 
-    $.post(url,{id:idx},function(result){
+      $.post(url, {
+          id: idx
+      }, function(result) {
 
-      $("#modal-danger").html(result);
+          $("#modal-danger").html(result);
 
-      $("#modal-danger").modal('show');
+          $("#modal-danger").modal('show');
 
-    });
+      });
 
   }
-
 </script>
 
-
-
-<link rel="stylesheet" type="text/css" href="../assets/js/datatables.min.css"/> 
+<link rel="stylesheet" type="text/css" href="../assets/js/datatables.min.css" />
 
 <script type="text/javascript" src="../assets/js/datatables.min.js"></script>
 
 <script type="text/javascript">
+  $(document).ready(function() {
 
-  $(document).ready( function () {
+      $('#tableUsers').DataTable();
 
-    $('#tableUsers').DataTable();
-
-} );
-
+  });
 </script>
