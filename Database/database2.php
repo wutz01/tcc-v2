@@ -1,5 +1,5 @@
 <?php
-	$servername = 'dev';
+	$servername = 'production';
 	if ($env === 'production') {
 		$user = 'u984568706_admin';
 		$pass = 'RxV6QRBmVVam';
