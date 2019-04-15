@@ -12,15 +12,8 @@
 
 
 	$GLOBALS['conn'] = $conn = mysqli_connect($servername, $user, $pass, $db);
-
-
-
 	if (mysqli_connect_errno()) {
-
-		echo 'Failed to connect to database '.mysqli_connect_error();
-
+		echo 'Failed to connect to database '. mysqli_connect_error();
 		die();
-
 	}
-
 ?>
