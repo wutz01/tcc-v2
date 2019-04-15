@@ -73,6 +73,7 @@
     $(`a[href="#tab_2_${step}_content"]`).tab('show')
   }
   $(function () {
+    console.log(`valid?`, $('#apply-frm')[0].checkValidity())
     $(".all-nav").removeClass('c-active')
     $(".apply-nav").addClass('c-active')
 

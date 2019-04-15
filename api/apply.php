@@ -162,7 +162,7 @@ $applicantNumber = "APPL-" . str_pad($nextId, 5, "0",STR_PAD_LEFT);
 	$vocationalRegion = $request['vocationalRegion'];
 	$vocationalYearGrad = $request['vocationalYearGrad'];
   }
-  
+
 
   $learnersData = $request['learnersData'];
   $shsTrack = $request['shsTrack'];
@@ -424,7 +424,7 @@ $query = "INSERT INTO tbl_applicant (
 $res = mysqli_query($conn, $query);
 // print_r($query);
 // die();
-$json['message'] = "Applied successfull!";
+$json['message'] = "Application has been sent.";
 
 $json['success'] = true;
 
