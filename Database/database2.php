@@ -1,5 +1,6 @@
 <?php
-	$servername = 'production';
+	$env = 'production';
+	$servername = 'localhost';
 	if ($env === 'production') {
 		$user = 'u984568706_admin';
 		$pass = 'RxV6QRBmVVam';
@@ -12,7 +13,6 @@
 
 
 	$GLOBALS['conn'] = $conn = mysqli_connect($servername, $user, $pass, $db);
-	print_r($conn);
 	if (mysqli_connect_errno()) {
 		echo 'Failed to connect to database '. mysqli_connect_error();
 		die();
