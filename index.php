@@ -207,7 +207,7 @@
   							<div class="c-content-line-icon c-theme c-icon-globe"></div>
   						</div>
   						<h3 class="c-font-uppercase c-title c-font-bold">Public Administration</h3>
-  						<p>Bachelor of Science In Public Administration</p>
+  						<p>Bachelor of Public Administration</p>
   					</div>
   				</div>
   			</div>
