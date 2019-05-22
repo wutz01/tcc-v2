@@ -11,7 +11,7 @@
 					<div class="col-md-6">
 						<div class="c-left">
 							<div class="socicon">
-								<a href="#" class="socicon-btn socicon-btn-circle socicon-solid c-bg-grey-1 c-font-grey-2 c-theme-on-hover socicon-facebook tooltips" data-original-title="Facebook" data-container="body"></a>
+								<a href="https://www.facebook.com/Tanauan-City-College-554034167997845/" class="socicon-btn socicon-btn-circle socicon-solid c-bg-grey-1 c-font-grey-2 c-theme-on-hover socicon-facebook tooltips" data-original-title="Facebook" data-container="body"></a>
 								<a href="#" class="socicon-btn socicon-btn-circle socicon-solid c-bg-grey-1 c-font-grey-2 c-theme-on-hover socicon-twitter tooltips" data-original-title="Twitter" data-container="body"></a>
 								<!-- <a href="#" class="socicon-btn socicon-btn-circle socicon-solid c-bg-grey-1 c-font-grey-2 c-theme-on-hover socicon-youtube tooltips" data-original-title="Youtube" data-container="body"></a> -->
 								<!-- <a href="#" class="socicon-btn socicon-btn-circle socicon-solid c-bg-grey-1 c-font-grey-2 c-theme-on-hover socicon-tumblr tooltips" data-original-title="Tumblr" data-container="body"></a> -->
@@ -37,21 +37,22 @@
 				<div class="row">
 					<div class="col-md-4 col-sm-6 col-xs-12">
 						<ul class="c-links c-theme-ul">
-							<li><a href="#">About TCC</a></li>
-							<li><a href="#">Privacy Policy</a></li>
-							<li><a href="#">Terms &	Conditions</a></li>
-							<!-- <li><a href="#">Delivery</a></li> -->
-							<li><a href="#">Promotions</a></li>
-							<li><a href="#">News</a></li>
-						</ul>
-						<ul class="c-links c-theme-ul">
-							<li><a href="#">Courses</a></li>
+							<li><a href="#aboutUs">About TCC</a></li>
+							<li><a href="#courseOffer">Courses</a></li>
 							<li><a href="#">Tracks</a></li>
 							<li><a href="#">Apply</a></li>
 							<li><a href="#">Exam Results</a></li>
 							<li><a href="#">Qualified Applicants</a></li>
-							<li><a href="#">Login</a></li>
+							<li><a href="javascript:showLogin();">Login</a></li>
+							<!-- <li><a href="#">Privacy Policy</a></li> -->
+							<!-- <li><a href="#">Terms &	Conditions</a></li> -->
+							<!-- <li><a href="#">Delivery</a></li> -->
+							<!-- <li><a href="#">Promotions</a></li> -->
+							<!-- <li><a href="#">News</a></li> -->
 						</ul>
+						<!-- <ul class="c-links c-theme-ul">
+
+						</ul> -->
 					</div>
 					<div class="col-md-5 col-sm-6 col-xs-12">
 					</div>
@@ -61,8 +62,8 @@
 							<div class="c-line-left hide"></div>
 						</div>
 						<p class="c-address c-font-16">
-							Brgy. Trapiche 1 <br/> Tanauan City, Batangas <br/> Phone: (043)-706-8743
-							<br/> Email: <a href="mailto:tanauancitycolleges@gmail.com"><span class="c-theme-color">tanauancitycolleges@gmail.com</span></a>
+							Brgy. Trapiche 1 <br/> Tanauan City, Batangas <br/> Phone: (043)-702-4160 / (043)-786-2113
+							<br/> Email: <a href="mailto:tanauancitycollege@gmail.com"><span class="c-theme-color">tanauancitycollege@gmail.com</span></a>
 						</p>
 					</div>
 				</div>

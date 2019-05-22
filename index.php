@@ -148,7 +148,7 @@
   <!-- END: CONTENT/BARS/BAR-3 -->
 
   <!-- BEGIN: CONTENT/MISC/SERVICES-1-1 -->
-  <div class="c-content-box c-size-md c-bg-grey-1  ">
+  <div class="c-content-box c-size-md c-bg-grey-1" id="courseOffer">
   	<div class="container">
   		<div class="c-content-feature-2-grid" data-auto-height="true" data-mode="base-height">
 				<div class="c-content-title-1">
@@ -159,7 +159,8 @@
   				<div class="col-md-4 col-sm-6">
   					<div class="c-content-feature-2" data-wow-delay1="1s" data-height="height">
   						<div class="c-icon-wrapper">
-  							<div class="c-content-line-icon c-theme c-icon-screen-chart"></div>
+  							<!-- <div class="c-content-line-icon c-theme c-icon-screen-chart"></div> -->
+                <img src="assets/photos/computer-eng.png" alt="" width="80">
   						</div>
   						<h3 class="c-font-uppercase c-title c-font-bold">Computer Engineering</h3>
   						<p>Bachelor of Science In Computer Engineering</p>
@@ -168,7 +169,8 @@
   				<div class="col-md-4 col-sm-6">
   					<div class="c-content-feature-2" data-wow-delay1="1s" data-height="height">
   						<div class="c-icon-wrapper">
-  							<div class="c-content-line-icon c-theme c-icon-support"></div>
+  							<!-- <div class="c-content-line-icon c-theme c-icon-support"></div> -->
+                <img src="assets/photos/entrep.jpg" alt="" width="80">
   						</div>
   						<h3 class="c-font-uppercase c-title c-font-bold">Entrepreneurship</h3>
   						<p>Bachelor of Science In Entrepreneurship</p>
@@ -178,6 +180,7 @@
   					<div class="c-content-feature-2" data-wow-delay1="1s" data-height="height">
   						<div class="c-icon-wrapper">
   							<div class="c-content-line-icon c-theme c-icon-comment"></div>
+                <!-- <img src="assets/photos/entrep.jpg" alt="" width="80"> -->
   						</div>
   						<h3 class="c-font-uppercase c-title c-font-bold">Electronics Technology</h3>
   						<p>Bachelor of Technical Teacher Education Major in Electronics Technology</p>
@@ -204,10 +207,41 @@
   				<div class="col-md-4 col-sm-6">
   					<div class="c-content-feature-2" data-wow-delay1="2s" data-height="height">
   						<div class="c-icon-wrapper">
-  							<div class="c-content-line-icon c-theme c-icon-globe"></div>
+  							<!-- <div class="c-content-line-icon c-theme c-icon-globe"></div> -->
+                <img src="assets/photos/admin.jpg" alt="" width="80">
   						</div>
   						<h3 class="c-font-uppercase c-title c-font-bold">Public Administration</h3>
   						<p>Bachelor of Public Administration</p>
+  					</div>
+  				</div>
+  				<div class="col-md-4 col-sm-6">
+  					<div class="c-content-feature-2" data-wow-delay1="2s" data-height="height">
+  						<div class="c-icon-wrapper">
+  							<!-- <div class="c-content-line-icon c-theme c-icon-globe"></div> -->
+                <img src="assets/photos/accounting.jpg" alt="" width="80">
+  						</div>
+  						<h3 class="c-font-uppercase c-title c-font-bold">Management Accounting</h3>
+  						<p>Bachelor of Science in Management Accounting</p>
+  					</div>
+  				</div>
+  				<div class="col-md-4 col-sm-6">
+  					<div class="c-content-feature-2" data-wow-delay1="2s" data-height="height">
+  						<div class="c-icon-wrapper">
+  							<!-- <div class="c-content-line-icon c-theme c-icon-globe"></div> -->
+                <img src="assets/photos/teacher.jpg" alt="" width="80">
+  						</div>
+  						<h3 class="c-font-uppercase c-title c-font-bold">Teacher</h3>
+  						<p>Bachelor of Technical Teacher Education</p>
+  					</div>
+  				</div>
+  				<div class="col-md-4 col-sm-6">
+  					<div class="c-content-feature-2" data-wow-delay1="2s" data-height="height">
+  						<div class="c-icon-wrapper">
+  							<!-- <div class="c-content-line-icon c-theme c-icon-globe"></div> -->
+                <img src="assets/photos/senior-high.png" alt="" width="90">
+  						</div>
+  						<h3 class="c-font-uppercase c-title c-font-bold">Senior High</h3>
+  						<p>Senior Highschool</p>
   					</div>
   				</div>
   			</div>
@@ -456,7 +490,7 @@
   </div><!-- END: CONTENT/FEATURES/FEATURES-12 -->
 
   <!-- BEGIN: CONTENT/MISC/ABOUT-1 -->
-  <div class="c-content-box c-size-md c-bg-white">
+  <div class="c-content-box c-size-md c-bg-white" id="aboutUs">
   	<div class="container">
   		<div class="row">
   			<div class="col-sm-6 wow animated fadeInLeft">

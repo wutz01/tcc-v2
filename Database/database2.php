@@ -1,5 +1,5 @@
 <?php
-	$env = 'production';
+	$env = 'dev';
 	$servername = 'localhost';
 	if ($env === 'production') {
 		$user = 'u984568706_admin';

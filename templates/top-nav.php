@@ -7,7 +7,9 @@
 			<div class="c-navbar-wrapper clearfix">
 				<div class="c-brand c-pull-left">
 					<a href="index.php" class="c-logo">
-						<h1 style="color: white; padding-left: 15px; padding-top: 3px; font-size: 30px">TCC</h1>
+						<img src="assets/photos/tcc-logo.png" alt="" width="60">
+						<span style="color: white; font-size: 40px; font-weight: bold; vertical-align: middle;"> TCC</span>
+						<!-- <h1 style="color: white; padding-left: 15px; padding-top: 3px; font-size: 30px">TCC</h1> -->
 					</a>
 					<button class="c-hor-nav-toggler" type="button" data-target=".c-mega-menu">
 					<span class="c-line"></span>
